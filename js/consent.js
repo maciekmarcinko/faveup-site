@@ -78,10 +78,18 @@
     }
   };
 
+  // The old Figma site ran this same tag without asking, so returning visitors can still carry its
+  // cookies. Without consent they must not stay.
+  if (saved !== 'granted') clearGaCookies();
+
   const choose = (value) => {
+    const wasGranted = read() === 'granted';
     write(value);
     gtag('consent', 'update', { analytics_storage: value });
     if (value === 'denied') clearGaCookies();
+    // The load's page_view went out before consent, as a cookieless ping that GA does not report.
+    // Most visitors see a single page (the landing, a QR signup), so re-send it once they accept.
+    if (value === 'granted' && !wasGranted) gtag('event', 'page_view');
     hide();
   };
 
