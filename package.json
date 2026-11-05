@@ -8,7 +8,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build-en.mjs",
+    "dev": "node scripts/build-en.mjs && node scripts/serve.mjs",
     "icons": "node scripts/icons.mjs",
     "deploy": "node scripts/deploy.mjs"
   }

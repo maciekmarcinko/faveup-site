@@ -3,24 +3,57 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FaveUp — Sprzedawaj więcej dzięki prostym powiadomieniom</title>
+    <title data-i18n="meta.title">Powiadomienia push i kod QR dla lokalnych firm | FaveUp</title>
     <meta
       name="description"
-      content="FaveUp to prosty kanał powiadomień dla lokalnych firm: klienci skanują QR kod i dostają nowości oraz promocje prosto na telefon."
+      content="Klienci skanują kod QR w Twoim lokalu, a Ty wysyłasz im powiadomienia push o promocjach i nowościach. Lojalność stałych klientów bez SMS-ów i walki o zasięgi."
+      data-i18n-attr="content:meta.description"
     />
+    <link rel="canonical" href="https://www.faveup.app/" data-i18n-attr="href:meta.canonical" />
+    <link rel="alternate" hreflang="pl" href="https://www.faveup.app/" />
+    <link rel="alternate" hreflang="en" href="https://www.faveup.app/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.faveup.app/" />
     <meta name="theme-color" content="#36D6C6" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.faveup.app/" />
-    <meta property="og:title" content="FaveUp" />
-    <meta property="og:description" content="Sprzedawaj więcej dzięki prostym powiadomieniom." />
+    <meta property="og:url" content="https://www.faveup.app/" data-i18n-attr="content:meta.canonical" />
+    <meta property="og:title" content="FaveUp – powiadomienia push dla lokalnych firm" data-i18n-attr="content:meta.ogTitle" />
+    <meta
+      property="og:description"
+      content="Sprzedawaj więcej dzięki prostym powiadomieniom. Klienci skanują kod QR, a Ty informujesz ich o promocjach i nowościach."
+      data-i18n-attr="content:meta.ogDescription"
+    />
     <meta property="og:image" content="https://www.faveup.app/assets/img/og-logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Logo FaveUp" />
+    <meta property="og:image:alt" content="Logo FaveUp" data-i18n-attr="content:meta.ogImageAlt" />
     <meta property="og:site_name" content="FaveUp" />
-    <meta property="og:locale" content="pl_PL" />
-    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale" content="pl_PL" data-i18n-attr="content:meta.ogLocale" />
+    <meta property="og:locale:alternate" content="en_US" data-i18n-attr="content:meta.ogLocaleAlt" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" data-i18n="meta.jsonld">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.faveup.app/#organization",
+            "name": "FaveUp",
+            "url": "https://www.faveup.app/",
+            "logo": "https://www.faveup.app/assets/apple-touch-icon.png",
+            "email": "hello@faveup.app",
+            "description": "Powiadomienia push dla lokalnych firm: klienci skanują kod QR i dostają promocje oraz nowości z ulubionych miejsc."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.faveup.app/#website",
+            "name": "FaveUp",
+            "url": "https://www.faveup.app/",
+            "inLanguage": "pl-PL",
+            "publisher": { "@id": "https://www.faveup.app/#organization" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -29,15 +62,32 @@
     <link rel="stylesheet" href="css/landing.css" />
     <script>
       document.documentElement.classList.add('js');
-      // Old deep links from the Figma site pointed at the deck via the hash router.
-      if (/^#\/(prezentacja|owner-presentation)/.test(location.hash)) location.replace('prezentacja/');
+      // This script is copied into en/index.html as is, so it reads the page language instead of assuming PL.
+      (() => {
+        const pageLang = document.documentElement.lang;
+        // Old deep links from the Figma site pointed at the deck via the hash router.
+        if (/^#\/(prezentacja|owner-presentation)/.test(location.hash)) {
+          location.replace(pageLang === 'en' ? '../prezentacja/?lang=en' : 'prezentacja/');
+          return;
+        }
+        if (pageLang !== 'pl') return;
+        // Old ?lang=en links and visitors who picked English earlier land on the English page.
+        let saved = null;
+        try {
+          saved = localStorage.getItem('faveup-lang');
+        } catch {
+          // Private mode: no remembered choice.
+        }
+        const asked = new URLSearchParams(location.search).get('lang');
+        if (asked === 'en' || (!asked && saved === 'en')) location.replace(`en/${location.hash}`);
+      })();
     </script>
     <script type="module" src="js/landing.js"></script>
   </head>
   <body>
     <header class="topbar" data-topbar>
       <div class="container topbar__inner">
-        <a class="brand" href="./" aria-label="FaveUp">
+        <a class="brand" href="./" aria-label="FaveUp" data-i18n-attr="href:nav.homeHref">
           <span class="logo" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path fill="#fff" d="M12 21.5C12 21.5 3.5 14.5 3.5 9C3.5 5.5 6 3.5 8.5 3.5C10.5 3.5 11.5 4.5 12 6C12.5 4.5 13.5 3.5 15.5 3.5C18 3.5 20.5 5.5 20.5 9C20.5 14.5 12 21.5 12 21.5Z" /><circle cx="12" cy="9" r="2.5" fill="none" stroke="#40E0D0" stroke-width="2" /></svg>
           </span>
@@ -62,8 +112,8 @@
             </button>
           </div>
           <div class="segmented segmented--lang" role="group" aria-label="Język" data-i18n-attr="aria-label:nav.langLabel">
-            <button type="button" data-set-lang="pl" aria-pressed="true">PL</button>
-            <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+            <a href="./" hreflang="pl" lang="pl" data-set-lang="pl" aria-current="page" data-i18n-attr="aria-current:nav.plCurrent">PL</a>
+            <a href="en/" hreflang="en" lang="en" data-set-lang="en" aria-current="false" data-i18n-attr="href:nav.enHref; aria-current:nav.enCurrent">EN</a>
           </div>
         </div>
       </div>
@@ -75,7 +125,7 @@
         <div class="hero__bg" aria-hidden="true"><span class="blob blob--a"></span><span class="blob blob--b"></span></div>
         <div class="container hero__grid">
           <div class="hero__copy">
-            <p class="eyebrow rise"><span class="eyebrow__dot"></span><span data-i18n="hero.eyebrow">Dla lokalnych firm</span></p>
+            <p class="eyebrow rise"><span class="eyebrow__dot"></span><span data-i18n="hero.eyebrow">Powiadomienia push dla lokalnych firm</span></p>
             <h1 class="hero__title rise" style="--delay: 0.05s" data-i18n="hero.title">Sprzedawaj więcej dzięki prostym powiadomieniom</h1>
             <p class="hero__lead rise" style="--delay: 0.1s" data-i18n="hero.subtitle">
               Twoi stali klienci zawsze dowiedzą się na czas - żaden nie przegapi już ważnej chwili w Twoim lokalu
@@ -111,7 +161,7 @@
                     </div>
                     <p class="notif__title" data-i18n="phone.notifTitle">☕ Świeże ziarna właśnie dotarły!</p>
                     <p class="notif__body" data-i18n="phone.notifBody">Spróbuj naszej etiopskiej mieszanki. Pierwsze 20 osób dostaje 20% zniżki!</p>
-                    <img class="notif__image" src="assets/img/aroma-swieza-kawa-ziarna.webp" alt="" width="720" height="313" />
+                    <img class="notif__image" src="assets/img/aroma-swieza-kawa-ziarna.webp" alt="Świeże ziarna kawy w kawiarni Aroma Café" width="720" height="313" data-i18n-attr="alt:phone.imageAlt" />
                   </div>
                   <div class="phone__unlock">
                     <svg class="i" aria-hidden="true"><use href="assets/icons.svg#lock" /></svg>
@@ -172,7 +222,7 @@
                 <span class="what__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#zap" /></svg></span>
                 <h2 class="h2" data-i18n="what.title">Czym jest FaveUp?</h2>
               </div>
-              <p class="what__lead" data-i18n="what.desc">FaveUp to prosty kanał powiadomień omijający szum social mediów i nieskuteczne newslettery: klienci skanują QR kod, otrzymują informacje o promocjach, nowościach i nowych produktach, a Ty budujesz lojalność i zwiększasz sprzedaż.</p>
+              <p class="what__lead" data-i18n="what.desc">FaveUp to prosty kanał powiadomień push dla lokalnych firm, który omija szum social mediów, kampanie SMS i nieskuteczne newslettery: klienci skanują kod QR w Twoim lokalu, otrzymują informacje o promocjach, nowościach i nowych produktach, a Ty budujesz lojalność stałych klientów i zwiększasz sprzedaż.</p>
             </div>
           </div>
         </div>
@@ -205,7 +255,7 @@
                 <span class="step__num">01</span>
                 <h3 class="step__title" data-i18n="how.s1Title">Skan kodu QR</h3>
               </div>
-              <p class="step__desc" data-i18n="how.s1Desc">Klienci skanują Twój kod QR przy kasie, barze czy stoliku albo znajdują Cię w aplikacji FaveUp i zaczynają Cię obserwować.</p>
+              <p class="step__desc" data-i18n="how.s1Desc">Klienci skanują Twój kod QR przy kasie, barze czy stoliku albo znajdują Cię na mapie w aplikacji FaveUp i dodają Twój lokal do ulubionych.</p>
             </li>
             <li class="step reveal" style="--delay: 0.08s">
               <div class="step__visual">
@@ -224,7 +274,7 @@
                 <span class="step__num">02</span>
                 <h3 class="step__title" data-i18n="how.s2Title">Wysyłasz powiadomienie</h3>
               </div>
-              <p class="step__desc" data-i18n="how.s2Desc">W kilku kliknięciach informujesz klientów o nowościach i promocjach.</p>
+              <p class="step__desc" data-i18n="how.s2Desc">W prostym panelu w przeglądarce piszesz o nowościach, promocji czy wolnych terminach, AI pomaga ująć to krótko, a Ty wysyłasz jednym kliknięciem.</p>
             </li>
             <li class="step reveal" style="--delay: 0.16s">
               <div class="step__visual">
@@ -275,7 +325,7 @@
         <div class="container">
           <div class="section__head reveal">
             <h2 class="h2 h2--xl" data-i18n="why.title">Dlaczego FaveUp?</h2>
-            <p class="section__sub" data-i18n="why.subtitle">Najprostszy sposób na utrzymanie kontaktu z klientami</p>
+            <p class="section__sub" data-i18n="why.subtitle">Najprostszy sposób na utrzymanie kontaktu ze stałymi klientami</p>
           </div>
           <div class="benefits">
             <article class="benefit reveal">
@@ -304,7 +354,7 @@
                 <span class="benefit__num">04</span>
                 <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smartphone" /></svg></span>
               </div>
-              <p class="benefit__text" data-i18n="why.b4">Masz stały kanał do swoich klientów bez budowania i utrzymywania własnej aplikacji, jak robią to duże sieci</p>
+              <p class="benefit__text" data-i18n="why.b4">Masz stały kanał do swoich klientów bez budowania i utrzymywania własnej aplikacji mobilnej, jak robią to duże sieci</p>
             </article>
           </div>
         </div>
@@ -314,14 +364,14 @@
         <div class="container">
           <div class="section__head reveal">
             <h2 class="h2 h2--xl" data-i18n="for.title">Dla kogo?</h2>
-            <p class="section__sub" data-i18n="for.subtitle">Możemy pomóc wielu branżom — poniżej kilka z nich</p>
+            <p class="section__sub" data-i18n="for.subtitle">Pomagamy lokalnym firmom z wielu branż — poniżej kilka z nich</p>
           </div>
           <ul class="industries">
-            <li class="industry reveal"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#coffee" /></svg><span data-i18n="for.i1">Restauracje i Kawiarnie</span></li>
+            <li class="industry reveal"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#coffee" /></svg><span data-i18n="for.i1">Kawiarnie, Restauracje i Cukiernie</span></li>
             <li class="industry reveal" style="--delay: 0.04s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shopping-bag" /></svg><span data-i18n="for.i2">Sklepy Detaliczne</span></li>
             <li class="industry reveal" style="--delay: 0.08s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#hammer" /></svg><span data-i18n="for.i3">Lokalni Rzemieślnicy</span></li>
-            <li class="industry reveal" style="--delay: 0.12s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#dumbbell" /></svg><span data-i18n="for.i4">Siłownie i Studia</span></li>
-            <li class="industry reveal" style="--delay: 0.16s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scissors" /></svg><span data-i18n="for.i5">Salony i Spa</span></li>
+            <li class="industry reveal" style="--delay: 0.12s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#dumbbell" /></svg><span data-i18n="for.i4">Siłownie i Studia Fitness</span></li>
+            <li class="industry reveal" style="--delay: 0.16s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scissors" /></svg><span data-i18n="for.i5">Fryzjerzy i Salony Beauty</span></li>
             <li class="industry industry--cta reveal" style="--delay: 0.2s">
               <a href="#contact" data-join>
                 <svg class="i" aria-hidden="true"><use href="assets/icons.svg#sparkles" /></svg>
@@ -330,6 +380,41 @@
               </a>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container container--mid">
+          <div class="section__head reveal">
+            <h2 class="h2 h2--xl" data-i18n="faq.title">Najczęstsze pytania</h2>
+            <p class="section__sub" data-i18n="faq.subtitle">Wszystko, co warto wiedzieć o powiadomieniach push dla Twojego lokalu</p>
+          </div>
+          <div class="faq reveal">
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q1">Czym FaveUp różni się od SMS-ów, newslettera i social mediów?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a1">Posty w social mediach giną w algorytmie, newslettery przepadają wśród innych maili, a za każdą wiadomość w kampanii SMS płacisz osobno. Powiadomienie push z FaveUp trafia od razu na ekran telefonu osób, które same wybrały Twój lokal – bez algorytmu, reklam i walki o zasięgi.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q2">Czy FaveUp to program lojalnościowy?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a2">FaveUp buduje lojalność klientów, ale nie jest kolejną kartą z pieczątkami. Zamiast nagrody po dziesiątej kawie dajesz stałym klientom to, czego szukają: wiadomość o świeżej dostawie, nowym produkcie, wolnym terminie czy promocji na najbliższą godzinę. Dzięki temu wracają częściej i chętniej kupują nowości.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q3">Jak klienci zaczynają obserwować mój lokal?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a3">Stawiasz kod QR przy kasie, na barze lub stoliku – jako naklejkę albo stojak. Klient skanuje go telefonem i dodaje Twoje miejsce do ulubionych. Może też znaleźć Cię na mapie w aplikacji FaveUp.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q4">Czy muszę mieć własną aplikację mobilną?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a4">Nie. Klienci mają wszystkie ulubione miejsca w jednej aplikacji FaveUp, a Ty wysyłasz powiadomienia z prostego panelu w przeglądarce. Nie budujesz ani nie utrzymujesz własnej aplikacji.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q5">Dla jakich firm jest FaveUp?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a5">Dla lokalnych firm, które mają stałych klientów: kawiarni, restauracji, piekarni i cukierni, sklepów, salonów fryzjerskich i kosmetycznych, siłowni, studiów fitness, lokalnych rzemieślników i miejsc kultury. Test z kodami QR prowadzimy już w kawiarni, cukierni i lokalnym centrum kultury w Brochowie.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q6">Ile kosztuje FaveUp i kiedy start?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a6">Aplikacja jest w fazie rozwoju. Firmy, które zapiszą się teraz do wersji beta, dostaną 20% zniżki na start.</p>
+            </details>
+          </div>
         </div>
       </section>
 
@@ -380,7 +465,7 @@
             </div>
             <nav class="footer__links">
               <a href="mailto:hello@faveup.app">hello@faveup.app</a>
-              <a class="footer__deck" href="prezentacja/">
+              <a class="footer__deck" href="prezentacja/" data-i18n-attr="href:footer.presentationHref">
                 <span data-i18n="footer.presentation">Szczegółowa Prezentacja</span>
                 <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right" /></svg>
               </a>
@@ -401,7 +486,7 @@
         <div class="container hero__grid">
           <div class="hero__copy">
             <h1 class="hero__title" data-i18n="users.title">Natychmiastowe aktualizacje z miejsc, które kochasz</h1>
-            <p class="hero__lead hero__lead--muted" data-i18n="users.subtitle">Połącz się ze swoimi ulubionymi firmami, miejscami natychmiast i bądź na bieżąco</p>
+            <p class="hero__lead hero__lead--muted" data-i18n="users.subtitle">Obserwuj ulubione kawiarnie, restauracje i lokalne miejsca, a o promocjach i nowościach dowiesz się od razu</p>
             <div class="hero__actions">
               <a class="btn btn--primary btn--attention btn--lg" href="#waitlist" data-join data-i18n="users.cta">Dołącz do listy oczekujących</a>
             </div>
@@ -435,7 +520,7 @@
                       </div>
                       <p class="notif__title" data-i18n="phone.notifTitle">☕ Świeże ziarna właśnie dotarły!</p>
                       <p class="notif__body" data-i18n="phone.notifBody">Spróbuj naszej etiopskiej mieszanki. Pierwsze 20 osób dostaje 20% zniżki!</p>
-                      <img class="notif__image" src="assets/img/aroma-swieza-kawa-ziarna.webp" alt="" width="720" height="313" />
+                      <img class="notif__image" src="assets/img/aroma-swieza-kawa-ziarna.webp" alt="Świeże ziarna kawy w kawiarni Aroma Café" width="720" height="313" data-i18n-attr="alt:phone.imageAlt" />
                     </div>
                     <div class="phone__unlock">
                       <svg class="i" aria-hidden="true"><use href="assets/icons.svg#lock" /></svg>

@@ -1,5 +1,12 @@
 // Publishes site/ (as committed on main) to the gh-pages branch that GitHub Pages serves.
 import { execFileSync } from 'node:child_process';
+import { buildEnglish } from './build-en.mjs';
+
+// Deploy publishes what is committed, so a stale or uncommitted en/index.html would ship
+// English that no longer matches the Polish page.
+await buildEnglish();
+const stale = execFileSync('git', ['status', '--porcelain', '--', 'site/en'], { encoding: 'utf8' });
+if (stale) throw new Error(`site/en/ changed after rebuilding; commit it and deploy again:\n${stale}`);
 
 const split = execFileSync('git', ['subtree', 'split', '--prefix', 'site', 'main'], {
   encoding: 'utf8',
