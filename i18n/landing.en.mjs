@@ -75,6 +75,9 @@ export default {
   'what.title': 'What is FaveUp?',
   'what.desc':
     'FaveUp is a simple push notification channel for local businesses that bypasses social media noise, SMS blasts and ineffective newsletters: customers scan a QR code at your place and get news about promotions, novelties and new products, while you build customer loyalty and grow sales among your regulars.',
+  'what.exampleLabel': 'Real-life example',
+  'what.examplePush': 'Today until 6 pm only: freshly roasted coffee beans 20% off. Just 25 bags, first come, first served! ☕',
+  'what.exampleResult': 'Customers came the same day and used the promotion.',
 
   'how.title': 'How does it work in practice?',
   'how.subtitle': '4 simple steps to reach your customers',
