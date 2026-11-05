@@ -1,0 +1,482 @@
+<!doctype html>
+<!-- Generated from site/prezentacja/index.html and i18n/deck.en.mjs by scripts/build-en.mjs. Do not edit. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="meta.title">FaveUp Presentation for Business Owners | Push Notifications</title>
+    <meta
+      name="description"
+      content="How FaveUp helps local businesses reach regular customers with push notifications: the problem, the solution, benefits, the QR code pilot and contact."
+      data-i18n-attr="content:meta.description"
+    />
+    <link rel="canonical" href="https://www.faveup.app/en/prezentacja/" data-i18n-attr="href:meta.canonical" />
+    <link rel="alternate" hreflang="pl" href="https://www.faveup.app/prezentacja/" />
+    <link rel="alternate" hreflang="en" href="https://www.faveup.app/en/prezentacja/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.faveup.app/prezentacja/" />
+    <meta name="theme-color" content="#3ED6BF" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.faveup.app/en/prezentacja/" data-i18n-attr="content:meta.canonical" />
+    <meta property="og:title" content="FaveUp – presentation for business owners" data-i18n-attr="content:meta.ogTitle" />
+    <meta
+      property="og:description"
+      content="How FaveUp helps local businesses reach regular customers with push notifications: the problem, the solution, benefits, the QR code pilot and contact."
+      data-i18n-attr="content:meta.description"
+    />
+    <meta property="og:image" content="https://www.faveup.app/assets/img/og-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FaveUp logo" data-i18n-attr="content:meta.ogImageAlt" />
+    <meta property="og:site_name" content="FaveUp" />
+    <meta property="og:locale" content="en_US" data-i18n-attr="content:meta.ogLocale" />
+    <meta property="og:locale:alternate" content="pl_PL" data-i18n-attr="content:meta.ogLocaleAlt" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+    <link rel="preload" href="../../assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/deck.css" />
+    <script>
+      document.documentElement.classList.add('js');
+      // Copied into en/prezentacja/index.html as is, so it reads the page language instead of assuming PL.
+      // Old ?lang=en links and visitors who picked English earlier land on the English deck.
+      (() => {
+        if (document.documentElement.lang !== 'pl') return;
+        let saved = null;
+        try {
+          saved = localStorage.getItem('faveup-lang');
+        } catch {
+          // Private mode: no remembered choice.
+        }
+        const asked = new URLSearchParams(location.search).get('lang');
+        if (asked === 'en' || (!asked && saved === 'en')) location.replace(`../en/prezentacja/${location.hash}`);
+      })();
+    </script>
+    <script type="module" src="../../js/deck.js"></script>
+  </head>
+  <body class="deck-page">
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="logo-mark" viewBox="0 0 24 24">
+        <path fill="#fff" d="M12 21.5C12 21.5 3.5 14.5 3.5 9C3.5 5.5 6 3.5 8.5 3.5C10.5 3.5 11.5 4.5 12 6C12.5 4.5 13.5 3.5 15.5 3.5C18 3.5 20.5 5.5 20.5 9C20.5 14.5 12 21.5 12 21.5Z" />
+        <circle cx="12" cy="9" r="2.5" fill="none" stroke="#40E0D0" stroke-width="2" />
+      </symbol>
+      <symbol id="traffic-light" viewBox="0 0 24 24">
+        <rect x="7" y="2" width="10" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="7" r="1.8" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="1.8" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="17" r="1.8" fill="none" stroke="currentColor" stroke-width="2" />
+      </symbol>
+      <symbol id="overlap" viewBox="0 0 40 28">
+        <circle cx="14" cy="14" r="11" fill="none" stroke="currentColor" stroke-width="2.2" />
+        <circle cx="26" cy="14" r="11" fill="rgb(62 214 190 / .35)" stroke="currentColor" stroke-width="2.2" />
+      </symbol>
+    </svg>
+
+    <header class="deck-bar">
+      <a class="deck-bar__brand" href="../" aria-label="FaveUp — home page" data-i18n-attr="href:chrome.homeHref; aria-label:chrome.home">
+        <span class="logo logo--deck" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span>
+        <span class="deck-bar__name">FaveUp</span>
+        <span class="deck-bar__divider" aria-hidden="true"></span>
+        <span class="deck-bar__motto" data-i18n="chrome.motto">Built with ❤️ for local businesses and their communities</span>
+      </a>
+      <div class="deck-bar__actions">
+        <a class="pdf-btn" href="../../assets/FaveUp-Prezentacja.pdf" download="FaveUp - Prezentacja.pdf">
+          <svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#download" /></svg>
+          <span data-i18n="chrome.pdf">Download PDF (PL)</span>
+        </a>
+        <div class="segmented segmented--lang segmented--deck" role="group" aria-label="Language" data-i18n-attr="aria-label:chrome.langLabel">
+          <a href="../../prezentacja/" hreflang="pl" lang="pl" data-set-lang="pl" aria-current="false" data-i18n-attr="href:chrome.plHref; aria-current:chrome.plCurrent">PL</a>
+          <a href="./" hreflang="en" lang="en" data-set-lang="en" aria-current="page" data-i18n-attr="href:chrome.enHref; aria-current:chrome.enCurrent">ENG</a>
+        </div>
+      </div>
+    </header>
+
+    <p class="deck-hint">
+      <svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#smartphone" /></svg>
+      <span data-i18n="chrome.rotate">Turn your phone sideways for bigger slides</span>
+    </p>
+
+    <main class="deck" data-deck>
+      <div class="deck__stage" data-stage>
+        <!-- 1 · Intro -->
+        <section class="slide slide--teal s-intro" data-slide id="slide-1" aria-roledescription="slajd" aria-label="1 / 12">
+          <div class="s-intro__copy">
+            <div class="logo-card">
+              <span class="logo logo--card" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span>
+              <span class="logo-card__text"><b>FaveUp</b><small>Business</small></span>
+            </div>
+            <h1 class="s-intro__title" data-i18n="d1.title">Sell more with simple notifications</h1>
+            <p class="s-intro__lead" data-i18n="d1.lead">Your regulars always hear in time – none of them will miss an important moment at your place again</p>
+          </div>
+          <div class="s-intro__phone">
+            <div class="phone" data-arrive>
+              <div class="phone__frame">
+                <div class="phone__screen">
+                  <div class="phone__status">
+                    <span>9:41</span>
+                    <span class="phone__status-icons" aria-hidden="true">
+                      <svg viewBox="0 0 16 12" fill="#fff"><rect x="0" y="8" width="2.4" height="4" rx=".6" /><rect x="3.8" y="6" width="2.4" height="6" rx=".6" /><rect x="7.6" y="3.5" width="2.4" height="8.5" rx=".6" /><rect x="11.4" y="1" width="2.4" height="11" rx=".6" /></svg>
+                      <svg viewBox="0 0 16 12" fill="#fff"><path d="M8 2.2c2.3 0 4.4.9 5.9 2.4l1.1-1.1A9.9 9.9 0 0 0 8 .6 9.9 9.9 0 0 0 1 3.5l1.1 1.1A8.3 8.3 0 0 1 8 2.2Zm0 3.2c1.4 0 2.7.6 3.6 1.5l1.1-1.1A6.7 6.7 0 0 0 8 3.8c-1.8 0-3.5.7-4.7 1.9l1.1 1.1c1-.9 2.2-1.4 3.6-1.4Zm0 3.2c-.6 0-1.1.2-1.5.6L8 10.7l1.5-1.5c-.4-.4-.9-.6-1.5-.6Z" /></svg>
+                      <svg viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#fff" stroke-opacity=".6" /><rect x="2" y="2" width="19" height="8" rx="1.8" fill="#fff" /><rect x="23.6" y="4" width="1.6" height="4" rx=".8" fill="#fff" fill-opacity=".6" /></svg>
+                    </span>
+                  </div>
+                  <div class="phone__clock">
+                    <div class="phone__time">9:41</div>
+                    <div class="phone__date" data-i18n="phone.date">Tuesday, December 17</div>
+                  </div>
+                  <div class="notif">
+                    <div class="notif__head">
+                      <img class="notif__avatar" src="../../assets/img/aroma-cafe.webp" alt="" width="48" height="48" />
+                      <div class="notif__app">
+                        <div class="notif__name">Aroma Café <small data-i18n="phone.now">now</small></div>
+                        <div class="notif__via">FaveUp</div>
+                      </div>
+                    </div>
+                    <p class="notif__title" data-i18n="phone.notifTitle">Cinnamon rolls just came out of the oven! 🥐☕</p>
+                    <p class="notif__body" data-i18n="phone.notifBody">Show this push at the bar → coffee + cinnamon roll -50%. ⏱️ Only for 1h!</p>
+                    <img class="notif__image" src="../../assets/img/cynamonki.webp" alt="" width="399" height="501" />
+                  </div>
+                  <div class="phone__unlock">
+                    <svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#lock" /></svg>
+                    <span data-i18n="phone.unlock">Slide to unlock</span>
+                  </div>
+                  <div class="phone__home" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="phone__island" aria-hidden="true"></div>
+            </div>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>1 / 12</span></footer>
+        </section>
+
+        <!-- 2 · Film -->
+        <section class="slide slide--light s-film" data-slide id="slide-2" aria-roledescription="slajd" aria-label="2 / 12">
+          <div class="s-film__copy">
+            <h2 class="s-title s-title--lg" data-i18n="d2.title">From a missed post<br />to a notification on time</h2>
+            <p class="s-film__lead" data-i18n="d2.lead">The same moment, two scenarios: a post that gets lost in the feed, and a push that reaches the customer right away.</p>
+            <button class="film-btn" type="button" data-play="deck-film" data-state="idle">
+              <span class="film-btn__icon">
+                <svg class="i" data-when="idle paused" aria-hidden="true"><use href="../../assets/icons.svg#play" /></svg>
+                <svg class="i" data-when="playing" aria-hidden="true"><use href="../../assets/icons.svg#pause" /></svg>
+              </span>
+              <span data-when="idle" data-i18n="d2.play">Play the film</span>
+              <span data-when="playing" data-i18n="d2.pause">Pause the film</span>
+              <span data-when="paused" data-i18n="d2.resume">Resume the film</span>
+              <span class="film-btn__time" data-when="playing paused" data-time>0:00 / 0:36</span>
+            </button>
+          </div>
+          <div class="s-film__phone">
+            <div class="phone phone--film" id="deck-film" data-player>
+              <div class="phone__frame">
+                <div class="phone__screen">
+                  <img class="phone__poster" src="../../assets/video/faveup-animacja-poster.jpg" alt="" width="540" height="960" />
+                  <video class="phone__video" src="../../assets/video/faveup-animacja.mp4" playsinline preload="none"></video>
+                  <button class="phone__hit" type="button" aria-label="Play the film: how FaveUp works" data-i18n-attr="aria-label:player.playAria"></button>
+                  <div class="phone__hint" aria-hidden="true"><span><svg class="i"><use href="../../assets/icons.svg#play" /></svg></span></div>
+                  <div class="phone__spinner" aria-hidden="true"></div>
+                  <div class="phone__controls">
+                    <button class="phone__close" type="button" aria-label="Close the film" data-i18n-attr="aria-label:player.closeAria">
+                      <svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#x" /></svg>
+                    </button>
+                    <button class="phone__mute" type="button" aria-label="Mute / unmute" data-i18n-attr="aria-label:player.muteAria">
+                      <svg class="i i-on" aria-hidden="true"><use href="../../assets/icons.svg#volume-2" /></svg>
+                      <svg class="i i-off" aria-hidden="true"><use href="../../assets/icons.svg#volume-x" /></svg>
+                    </button>
+                    <div class="phone__progress" aria-hidden="true"><span></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>2 / 12</span></footer>
+        </section>
+
+        <!-- 3 · Problem -->
+        <section class="slide slide--light s-problem" data-slide id="slide-3" aria-roledescription="slajd" aria-label="3 / 12">
+          <h2 class="s-title" data-i18n="d3.title">The problem we discovered</h2>
+          <div class="s-problem__top">
+            <blockquote class="quote" data-i18n="d3.quote">"I spent a whole week looking for a hairdresser appointment before my sister's wedding. Everything was booked. On Saturday a friend told me my favourite salon had three free slots on Thursday. Nobody knew about them. They stayed empty."</blockquote>
+            <div class="s-problem__context">
+              <p class="s-strong" data-i18n="d3.common">This happens every day in thousands of local places in Poland.</p>
+              <p class="s-muted" data-i18n="d3.desc">Local businesses have loyal customers, but no effective, direct channel to reach them. The customer would have come – they just didn't know.</p>
+            </div>
+          </div>
+          <div class="grid-4">
+            <article class="card">
+              <span class="ico"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#megaphone-off" /></svg></span>
+              <h3 class="card__title" data-i18n="d3.p1t">No effective channel</h3>
+              <p class="card__text s-muted" data-i18n="d3.p1d">Social media posts get lost in the algorithm – no guarantee of reach</p>
+            </article>
+            <article class="card">
+              <span class="ico ico--alert"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#smartphone" /></svg></span>
+              <h3 class="card__title" data-i18n="d3.p2t">Own app out of reach</h3>
+              <p class="card__text s-muted" data-i18n="d3.p2d">Too expensive and time-consuming for a small business</p>
+            </article>
+            <article class="card">
+              <span class="ico ico--alert"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#layers" /></svg></span>
+              <h3 class="card__title" data-i18n="d3.p3t">Loyalty app chaos</h3>
+              <p class="card__text s-muted" data-i18n="d3.p3d">Users get lost in dozens of separate apps</p>
+            </article>
+            <article class="card">
+              <span class="ico ico--alert"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#clock" /></svg></span>
+              <h3 class="card__title" data-i18n="d3.p4t">Info arrives too late</h3>
+              <p class="card__text s-muted" data-i18n="d3.p4d">Offers and events are gone before the customer finds out</p>
+            </article>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>3 / 12</span></footer>
+        </section>
+
+        <!-- 4 · Solution -->
+        <section class="slide slide--light s-solution" data-slide id="slide-4" aria-roledescription="slajd" aria-label="4 / 12">
+          <h2 class="s-title" data-i18n="d4.title">How we want to fix it</h2>
+          <div class="grid-2 s-solution__cards">
+            <article class="callout">
+              <span class="ico ico--white ico--heart"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#user-round" /></svg></span>
+              <div>
+                <h3 class="callout__label" data-i18n="d4.clientLabel">For the customer:</h3>
+                <p data-i18n="d4.client">FaveUp is an app where customers follow their favourite local places and see only what's happening right now: offers, appointments and time-limited promotions. Zero algorithm, zero noise – only the places they chose themselves.</p>
+              </div>
+            </article>
+            <article class="callout">
+              <span class="ico ico--white ico--alert"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#store" /></svg></span>
+              <div>
+                <h3 class="callout__label" data-i18n="d4.businessLabel">For the business:</h3>
+                <p data-i18n="d4.business">On the business side: a simple web panel. You write a message, AI helps you make it short and engaging, and you send a push with one button – straight to people who consciously follow you. With a guarantee of instant delivery that Instagram doesn't give.</p>
+              </div>
+            </article>
+          </div>
+          <h3 class="s-label" data-i18n="d4.how">How does it work?</h3>
+          <ol class="flow">
+            <li class="flow__card">
+              <div class="flow__art" aria-hidden="true">
+                <svg class="i"><use href="../../assets/icons.svg#qr-code" /></svg>
+                <svg class="i i--thin"><use href="../../assets/icons.svg#arrow-right" /></svg>
+                <svg class="i"><use href="../../assets/icons.svg#smartphone" /></svg>
+                <svg class="i i--teal"><use href="../../assets/icons.svg#map-pin" /></svg>
+              </div>
+              <p><span class="num">1</span><span data-i18n="d4.s1">The customer adds a place to favourites with a QR code on site or the map in the app</span></p>
+            </li>
+            <li class="flow__arrow" aria-hidden="true"><svg class="i"><use href="../../assets/icons.svg#arrow-right" /></svg></li>
+            <li class="flow__card">
+              <div class="flow__art" aria-hidden="true">
+                <svg class="i"><use href="../../assets/icons.svg#message-square-text" /></svg>
+                <svg class="i i--thin"><use href="../../assets/icons.svg#send" /></svg>
+                <svg class="i"><use href="../../assets/icons.svg#users" /></svg>
+              </div>
+              <p><span class="num">2</span><span data-i18n="d4.s2">You send short updates to your loyal customers</span></p>
+            </li>
+            <li class="flow__arrow" aria-hidden="true"><svg class="i"><use href="../../assets/icons.svg#arrow-right" /></svg></li>
+            <li class="flow__card">
+              <div class="flow__art" aria-hidden="true">
+                <svg class="i"><use href="../../assets/icons.svg#smartphone" /></svg>
+                <span class="banned"><svg class="i"><use href="../../assets/icons.svg#newspaper" /></svg></span>
+                <span class="banned"><svg class="i"><use href="../../assets/icons.svg#sparkles" /></svg></span>
+              </div>
+              <p><span class="num">3</span><span data-i18n="d4.s3">The customer gets up-to-date information (news, events, promotions) without ads or algorithms</span></p>
+            </li>
+          </ol>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>4 / 12</span></footer>
+        </section>
+
+        <!-- 5 · Owner benefits -->
+        <section class="slide slide--light s-benefits" data-slide id="slide-5" aria-roledescription="slajd" aria-label="5 / 12">
+          <h2 class="s-title" data-i18n="d5.title">Benefits for the owner</h2>
+          <div class="grid-2 grid-2--rows">
+            <article class="card card--benefit">
+              <span class="chip">01</span>
+              <span class="ico ico--lg"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#target" /></svg></span>
+              <p data-i18n="d5.b1">Reaches people who already know and like the place more effectively – they get notified about new products, promotions, events and news</p>
+            </article>
+            <article class="card card--benefit">
+              <span class="chip">02</span>
+              <span class="ico ico--lg"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chart-column-increasing" /></svg></span>
+              <p data-i18n="d5.b2">Increases sales among loyal customers</p>
+            </article>
+            <article class="card card--benefit">
+              <span class="chip">03</span>
+              <span class="ico ico--lg ico--alert"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#clock" /></svg></span>
+              <p data-i18n="d5.b3">Can add time-limited offers and boost customer engagement with limited-time promotions</p>
+            </article>
+            <article class="card card--benefit">
+              <span class="chip">04</span>
+              <span class="ico ico--lg"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#send" /></svg></span>
+              <p data-i18n="d5.b4">Gets a simple communication channel without fighting for reach and ads</p>
+            </article>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>5 / 12</span></footer>
+        </section>
+
+        <!-- 6 · Customer benefits -->
+        <section class="slide slide--teal s-benefits" data-slide id="slide-6" aria-roledescription="slajd" aria-label="6 / 12">
+          <h2 class="s-title" data-i18n="d6.title">Benefits for the customer</h2>
+          <div class="grid-2 grid-2--rows">
+            <article class="card card--benefit">
+              <span class="chip">01</span>
+              <span class="ico ico--lg ico--heart"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#gallery-vertical-end" /></svg></span>
+              <p data-i18n="d6.b1">Collects favourite venues and places (cafés, clubs, fitness, museums, etc.) and their latest news in one place</p>
+            </article>
+            <article class="card card--benefit">
+              <span class="chip">02</span>
+              <span class="ico ico--lg"><span class="banned"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#newspaper" /></svg></span></span>
+              <p data-i18n="d6.b2">Eliminates algorithms, ads, irrelevant posts and endless scrolling</p>
+            </article>
+            <article class="card card--benefit">
+              <span class="chip">03</span>
+              <span class="ico ico--lg ico--dot"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#bell" /></svg></span>
+              <p data-i18n="d6.b3">Can be the first to know about time-limited offers and promotions</p>
+            </article>
+            <article class="card card--benefit">
+              <span class="chip">04</span>
+              <span class="ico ico--lg"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#shield-check" /></svg></span>
+              <p data-i18n="d6.b4">Gives the confidence of not missing important news, thanks to a dedicated app just for favourite places, where nothing else shows up</p>
+            </article>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>6 / 12</span></footer>
+        </section>
+
+        <!-- 7 · Competition -->
+        <section class="slide slide--light s-compare" data-slide id="slide-7" aria-roledescription="slajd" aria-label="7 / 12">
+          <h2 class="s-title"><span data-i18n="d7.title">FaveUp vs the closest competition</span> <span class="s-title__muted" data-i18n="d7.examples">(e.g. Embargo, Stampify)</span></h2>
+          <div class="s-compare__grid">
+            <div class="common">
+              <svg class="common__icon" aria-hidden="true"><use href="#overlap" /></svg>
+              <h3 data-i18n="d7.common">Common ground</h3>
+              <ul>
+                <li data-i18n="d7.c1">Loyalty programme for customers</li>
+                <li data-i18n="d7.c2">Higher customer engagement</li>
+              </ul>
+            </div>
+            <div class="advantage">
+              <h3 data-i18n="d7.adv">FaveUp's advantage</h3>
+              <div class="advantage__grid">
+                <article class="card card--adv">
+                  <span class="ico ico--heart"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#user-round" /></svg></span>
+                  <h4 data-i18n="d7.a1t">Focus on loyal customers</h4>
+                  <p data-i18n="d7.a1d">engages people who actually come back and are more willing to buy extra products.</p>
+                </article>
+                <article class="card card--adv">
+                  <span class="ico"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chart-column-increasing" /></svg></span>
+                  <h4 data-i18n="d7.a2t">Growing sales among regulars</h4>
+                  <p data-i18n="d7.a2d">showcases new products, not just rewards after collecting stamps.</p>
+                </article>
+                <article class="card card--adv">
+                  <span class="ico"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#zap" /></svg></span>
+                  <h4 data-i18n="d7.a3t">Faster testing of promotions and news</h4>
+                  <p data-i18n="d7.a3d">launch offers instantly and watch how customers react.</p>
+                </article>
+                <article class="card card--adv">
+                  <span class="ico"><span class="banned banned--line"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#stamp" /></svg></span></span>
+                  <h4 data-i18n="d7.a4t">A different customer profile than “stamp collectors”</h4>
+                  <p data-i18n="d7.a4d">FaveUp attracts loyal customers, not people focused only on a free reward.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>7 / 12</span></footer>
+        </section>
+
+        <!-- 8 · Test with us -->
+        <section class="slide slide--light s-test" data-slide id="slide-8" aria-roledescription="slajd" aria-label="8 / 12">
+          <h2 class="s-title s-title--sm" data-i18n="d8.title">Test with us – from a single scan to a real customer relationship</h2>
+          <p class="banner" data-i18n="d8.banner">We want to check whether a bonus really motivates customers to stay in touch with us.</p>
+          <div class="grid-3">
+            <article class="card card--step"><span class="chip">01</span><span class="ico ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#qr-code" /></svg></span><p data-i18n="d8.s1">Put a QR code at the till: a 10x10 cm sticker or a stand.</p></article>
+            <article class="card card--step"><span class="chip">02</span><span class="ico ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#message-square-heart" /></svg></span><p data-i18n="d8.s2">The cashier invites: “Scan the QR, a bonus for your next visit is waiting for you.”</p></article>
+            <article class="card card--step"><span class="chip">03</span><span class="ico ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#circle-help" /></svg></span><p data-i18n="d8.s3">Customer asks for details? Answer: “It's a new app to stay up to date with what's happening here – just sign up for the waitlist.”</p></article>
+            <article class="card card--step"><span class="chip">04</span><span class="ico ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#contact-round" /></svg></span><p data-i18n="d8.s4">The customer scans the QR and signs up: name and e-mail.</p></article>
+            <article class="card card--step"><span class="chip">05</span><span class="ico ico--sm ico--alert"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#mail" /></svg></span><p data-i18n="d8.s5">The system instantly sends the bonus by e-mail.</p></article>
+            <article class="card card--step"><span class="chip">06</span><span class="ico ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chart-column-increasing" /></svg></span><p data-i18n="d8.s6">We count how many customers come back with the code. <strong>&gt;10% = test success.</strong></p></article>
+          </div>
+          <div class="conclusions">
+            <p class="conclusions__label" data-i18n="d8.concl">Conclusions</p>
+            <p class="conclusions__card"><span class="ico ico--white ico--sm"><svg class="i" aria-hidden="true"><use href="#traffic-light" /></svg></span><span data-i18n="d8.c1">A positive result is the green light for the full version of the app, which you co-create as a Design Partner.</span></p>
+            <p class="conclusions__card"><span class="ico ico--white ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#users-round" /></svg></span><span data-i18n="d8.c2">You start right away with a base of customers who want to stay up to date with your place.</span></p>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>8 / 12</span></footer>
+        </section>
+
+        <!-- 9 · Partners -->
+        <section class="slide slide--light s-partners" data-slide id="slide-9" aria-roledescription="slajd" aria-label="9 / 12">
+          <h2 class="s-title" data-i18n="d9.title">Already working with us</h2>
+          <p class="s-sub" data-i18n="d9.sub">We're already running the QR code test in three places in Brochów.</p>
+          <div class="s-partners__grid">
+            <ul class="partners">
+              <li class="partner">
+                <img src="../../assets/deck/cafe-jezykowa.webp" alt="" width="96" height="96" />
+                <div><h3>Cafe Językowa</h3><p data-i18n="d9.t1">Café</p></div>
+                <span class="pill"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#map-pin" /></svg>Brochów</span>
+              </li>
+              <li class="partner">
+                <img src="../../assets/deck/made-in-brochow.webp" alt="" width="96" height="96" />
+                <div><h3>Made in Brochów</h3><p data-i18n="d9.t2">Local culture centre</p></div>
+                <span class="pill"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#map-pin" /></svg>Brochów</span>
+              </li>
+              <li class="partner">
+                <img src="../../assets/deck/zalewski.webp" alt="" width="96" height="96" />
+                <div><h3>Cukiernia Zalewski</h3><p data-i18n="d9.t3">Patisserie</p></div>
+                <span class="pill"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#map-pin" /></svg>Brochów</span>
+              </li>
+            </ul>
+            <div class="big-stat">
+              <p class="big-stat__pre" data-i18n="d9.almost">almost</p>
+              <p class="big-stat__num">200</p>
+              <p class="big-stat__post" data-i18n="d9.people">people signed up<br />to the waitlists</p>
+            </div>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>9 / 12</span></footer>
+        </section>
+
+        <!-- 10 · Customer app design -->
+        <section class="slide slide--light s-design" data-slide id="slide-10" aria-roledescription="slajd" aria-label="10 / 12">
+          <h2 class="s-title" data-i18n="d10.title">Customer app design</h2>
+          <div class="screens">
+            <figure><figcaption data-i18n="d10.l1">Push notification</figcaption><img src="../../assets/deck/client-1.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+            <figure><figcaption data-i18n="d10.l2">News</figcaption><img src="../../assets/deck/client-2.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+            <figure><figcaption data-i18n="d10.l3">Places</figcaption><img src="../../assets/deck/client-3.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+            <figure><figcaption data-i18n="d10.l4">Settings</figcaption><img src="../../assets/deck/client-4.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>10 / 12</span></footer>
+        </section>
+
+        <!-- 11 · Owner panel design -->
+        <section class="slide slide--light s-design" data-slide id="slide-11" aria-roledescription="slajd" aria-label="11 / 12">
+          <h2 class="s-title" data-i18n="d11.title">Owner panel design</h2>
+          <div class="screens">
+            <figure><figcaption data-i18n="d11.l1">Dashboard</figcaption><img src="../../assets/deck/owner-1.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+            <figure><figcaption data-i18n="d11.l2">Create a push</figcaption><img src="../../assets/deck/owner-2.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+            <figure><figcaption data-i18n="d11.l3">QR code</figcaption><img src="../../assets/deck/owner-3.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+            <figure><figcaption data-i18n="d11.l4">Settings</figcaption><img src="../../assets/deck/owner-4.webp" alt="" width="560" height="1206" loading="lazy" /></figure>
+          </div>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>11 / 12</span></footer>
+        </section>
+
+        <!-- 12 · Contact -->
+        <section class="slide slide--teal s-contact" data-slide id="slide-12" aria-roledescription="slajd" aria-label="12 / 12">
+          <div class="s-contact__copy">
+            <h2 class="s-title s-title--contact" data-i18n="d12.title">Let's agree on the details of a test at your place</h2>
+            <h3 class="s-contact__meet" data-i18n="d12.meet">Let's meet for 15 minutes</h3>
+            <p class="s-contact__desc" data-i18n="d12.desc">We'll decide where to put the QR code, what bonus to offer customers and how to measure the test results.</p>
+            <a class="s-contact__cta" href="mailto:hello@faveup.app?subject=Test%20FaveUp%20w%20moim%20lokalu" data-i18n="d12.cta">Write or call, and we'll set a date →</a>
+          </div>
+          <aside class="contact-card">
+            <p class="contact-card__label" data-i18n="d12.contact">Contact</p>
+            <div class="contact-card__person">
+              <img src="../../assets/deck/maciej-marcinko.webp" alt="" width="120" height="120" />
+              <div><p class="contact-card__name">Maciej Marcinko</p><p class="contact-card__role">CEO &amp; Founder of FaveUp</p></div>
+            </div>
+            <a class="contact-card__row" href="tel:+48600543120"><span class="ico ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#smartphone" /></svg></span><span>+48 600 543 120</span></a>
+            <a class="contact-card__row contact-card__row--mail" href="mailto:hello@faveup.app"><span class="ico ico--sm"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#mail" /></svg></span><span>hello@faveup.app</span></a>
+          </aside>
+          <footer class="slide__foot"><span class="slide__brand"><span class="logo logo--foot" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span><span data-i18n="deck.foot">FaveUp · Built with ❤️ for local businesses and their communities</span></span><span>12 / 12</span></footer>
+        </section>
+      </div>
+    </main>
+
+    <nav class="deck-nav" aria-label="Slide navigation" data-i18n-attr="aria-label:chrome.navLabel">
+      <button type="button" data-prev aria-label="Previous slide" data-i18n-attr="aria-label:chrome.prev"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-left" /></svg></button>
+      <span class="deck-nav__count" aria-live="polite"><b data-current>1</b> <span>/</span> 12</span>
+      <button type="button" data-next aria-label="Next slide" data-i18n-attr="aria-label:chrome.next"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-right" /></svg></button>
+    </nav>
+  </body>
+</html>

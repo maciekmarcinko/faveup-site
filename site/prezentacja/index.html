@@ -3,19 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FaveUp — Szczegółowa Prezentacja</title>
-    <meta name="description" content="FaveUp dla właścicieli lokali: problem, rozwiązanie, korzyści, test z kodami QR i kontakt." />
+    <title data-i18n="meta.title">Prezentacja FaveUp dla właścicieli lokali | Powiadomienia push</title>
+    <meta
+      name="description"
+      content="Jak FaveUp pomaga lokalnym firmom docierać do stałych klientów powiadomieniami push: problem, rozwiązanie, korzyści, test z kodami QR i kontakt."
+      data-i18n-attr="content:meta.description"
+    />
+    <link rel="canonical" href="https://www.faveup.app/prezentacja/" data-i18n-attr="href:meta.canonical" />
+    <link rel="alternate" hreflang="pl" href="https://www.faveup.app/prezentacja/" />
+    <link rel="alternate" hreflang="en" href="https://www.faveup.app/en/prezentacja/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.faveup.app/prezentacja/" />
     <meta name="theme-color" content="#3ED6BF" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.faveup.app/prezentacja/" />
-    <meta property="og:title" content="FaveUp — Szczegółowa Prezentacja" />
+    <meta property="og:url" content="https://www.faveup.app/prezentacja/" data-i18n-attr="content:meta.canonical" />
+    <meta property="og:title" content="FaveUp – prezentacja dla właścicieli lokali" data-i18n-attr="content:meta.ogTitle" />
+    <meta
+      property="og:description"
+      content="Jak FaveUp pomaga lokalnym firmom docierać do stałych klientów powiadomieniami push: problem, rozwiązanie, korzyści, test z kodami QR i kontakt."
+      data-i18n-attr="content:meta.description"
+    />
     <meta property="og:image" content="https://www.faveup.app/assets/img/og-logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Logo FaveUp" />
+    <meta property="og:image:alt" content="Logo FaveUp" data-i18n-attr="content:meta.ogImageAlt" />
     <meta property="og:site_name" content="FaveUp" />
-    <meta property="og:locale" content="pl_PL" />
-    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale" content="pl_PL" data-i18n-attr="content:meta.ogLocale" />
+    <meta property="og:locale:alternate" content="en_US" data-i18n-attr="content:meta.ogLocaleAlt" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
@@ -25,6 +38,19 @@
     <link rel="stylesheet" href="../css/deck.css" />
     <script>
       document.documentElement.classList.add('js');
+      // Copied into en/prezentacja/index.html as is, so it reads the page language instead of assuming PL.
+      // Old ?lang=en links and visitors who picked English earlier land on the English deck.
+      (() => {
+        if (document.documentElement.lang !== 'pl') return;
+        let saved = null;
+        try {
+          saved = localStorage.getItem('faveup-lang');
+        } catch {
+          // Private mode: no remembered choice.
+        }
+        const asked = new URLSearchParams(location.search).get('lang');
+        if (asked === 'en' || (!asked && saved === 'en')) location.replace(`../en/prezentacja/${location.hash}`);
+      })();
     </script>
     <script type="module" src="../js/deck.js"></script>
   </head>
@@ -47,7 +73,7 @@
     </svg>
 
     <header class="deck-bar">
-      <a class="deck-bar__brand" href="../" aria-label="FaveUp — strona główna" data-i18n-attr="aria-label:chrome.home">
+      <a class="deck-bar__brand" href="../" aria-label="FaveUp — strona główna" data-i18n-attr="href:chrome.homeHref; aria-label:chrome.home">
         <span class="logo logo--deck" aria-hidden="true"><svg><use href="#logo-mark" /></svg></span>
         <span class="deck-bar__name">FaveUp</span>
         <span class="deck-bar__divider" aria-hidden="true"></span>
@@ -59,8 +85,8 @@
           <span data-i18n="chrome.pdf">Pobierz PDF</span>
         </a>
         <div class="segmented segmented--lang segmented--deck" role="group" aria-label="Język" data-i18n-attr="aria-label:chrome.langLabel">
-          <button type="button" data-set-lang="pl" aria-pressed="true">PL</button>
-          <button type="button" data-set-lang="en" aria-pressed="false">ENG</button>
+          <a href="./" hreflang="pl" lang="pl" data-set-lang="pl" aria-current="page" data-i18n-attr="href:chrome.plHref; aria-current:chrome.plCurrent">PL</a>
+          <a href="../en/prezentacja/" hreflang="en" lang="en" data-set-lang="en" aria-current="false" data-i18n-attr="href:chrome.enHref; aria-current:chrome.enCurrent">ENG</a>
         </div>
       </div>
     </header>

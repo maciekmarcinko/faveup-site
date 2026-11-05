@@ -1,29 +1,11 @@
+import { setupLangLinks } from './lang-links.js';
 import { setupPlayer } from './phone-player.js';
 
 // The waitlist inbox the Figma site already used.
 const FORMSPREE_URL = 'https://formspree.io/f/xwlezeap';
 
-// Each language is its own static page (/ and /en/, see scripts/build-en.mjs). The remembered
-// choice sends returning English visitors from / to /en/ and opens the deck in the same language.
 const pageLang = document.documentElement.lang;
-const rememberLang = (lang) => {
-  try {
-    localStorage.setItem('faveup-lang', lang);
-  } catch {
-    // Private mode: the choice just isn't remembered.
-  }
-};
-rememberLang(pageLang);
-for (const link of document.querySelectorAll('[data-set-lang]')) {
-  link.addEventListener('click', (event) => {
-    rememberLang(link.dataset.setLang);
-    // Keep the business/users view when switching language.
-    if (location.hash) {
-      event.preventDefault();
-      location.href = link.getAttribute('href') + location.hash;
-    }
-  });
-}
+setupLangLinks();
 
 // ---------- Business / users views (kept on the old hash routes so existing links work) ----------
 

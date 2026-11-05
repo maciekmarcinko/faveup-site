@@ -67,7 +67,7 @@
         const pageLang = document.documentElement.lang;
         // Old deep links from the Figma site pointed at the deck via the hash router.
         if (/^#\/(prezentacja|owner-presentation)/.test(location.hash)) {
-          location.replace(pageLang === 'en' ? '../prezentacja/?lang=en' : 'prezentacja/');
+          location.replace('prezentacja/');
           return;
         }
         if (pageLang !== 'pl') return;

@@ -141,7 +141,7 @@ export default {
   'form.thanksDesc': "We'll get back to you at that address.",
 
   'footer.presentation': 'Detailed Presentation',
-  'footer.presentationHref': '../prezentacja/?lang=en',
+  'footer.presentationHref': 'prezentacja/',
   'footer.dev': 'The app is currently in development.',
   'footer.copy': '© 2026 FaveUp. Connecting local businesses with their communities.',
 
