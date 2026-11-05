@@ -145,6 +145,8 @@ export default {
 
   'footer.presentation': 'Detailed Presentation',
   'footer.presentationHref': 'prezentacja/',
+  'footer.privacy': 'Privacy policy',
+  'footer.privacyHref': 'privacy/',
   'footer.dev': 'The app is currently in development.',
   'footer.copy': '© 2026 FaveUp. Connecting local businesses with their communities.',
 

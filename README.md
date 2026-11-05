@@ -9,6 +9,7 @@ Rebuild of the Figma Make site at `www.faveup.app` as plain static files, with t
 - `site/google2c6b51a2208c8e3d.html` verifies the site in Google Search Console (`https://www.faveup.app/` property, usabilitysolutions.contact@gmail.com). Keep it, or verification is lost.
 - SEO: each language has its own title, description, canonical, Open Graph tags and JSON-LD, both pages list each other with `hreflang`, and `site/robots.txt` points at `site/sitemap.xml`. Keyword targets are listed under "Keywords" below.
 - Waitlist forms post to the same Formspree form the Figma site used (`xwlezeap`), now with `source` (business-view / users-view) and `language` fields.
+- Google Analytics 4 (property "FaveUp", Measurement ID `G-CYXPNEX0P0`) runs behind a cookie banner: `site/js/consent.js`, loaded with an absolute `/js/consent.js` path by every public page, including the QR signup pages built in `../QRs`. It uses Consent Mode v2: analytics cookies stay off until the visitor clicks Accept, and ad signals are never granted. The choice is stored in `localStorage` (`faveup-consent`), and any element with `data-cookie-settings` reopens the banner. The tag only loads on `www.faveup.app`, so local previews never count as visits. The privacy policy it links to is `site/privacy/` (English: `/en/privacy/`, built from `i18n/privacy.en.mjs`); update it when the site starts collecting anything new. Keep the admin panel without the script.
 
 ## Keywords
 
