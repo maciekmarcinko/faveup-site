@@ -14,5 +14,14 @@
   </url>
   <url>
     <loc>https://www.faveup.app/prezentacja/</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.faveup.app/prezentacja/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faveup.app/en/prezentacja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.faveup.app/prezentacja/" />
+  </url>
+  <url>
+    <loc>https://www.faveup.app/en/prezentacja/</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.faveup.app/prezentacja/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.faveup.app/en/prezentacja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.faveup.app/prezentacja/" />
   </url>
 </urlset>

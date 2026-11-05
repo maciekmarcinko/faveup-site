@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Generated from ../index.html and i18n/landing.en.mjs by scripts/build-en.mjs. Do not edit. -->
+<!-- Generated from site/index.html and i18n/landing.en.mjs by scripts/build-en.mjs. Do not edit. -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -68,7 +68,7 @@
         const pageLang = document.documentElement.lang;
         // Old deep links from the Figma site pointed at the deck via the hash router.
         if (/^#\/(prezentacja|owner-presentation)/.test(location.hash)) {
-          location.replace(pageLang === 'en' ? '../prezentacja/?lang=en' : 'prezentacja/');
+          location.replace('prezentacja/');
           return;
         }
         if (pageLang !== 'pl') return;
@@ -464,7 +464,7 @@
             </div>
             <nav class="footer__links">
               <a href="mailto:hello@faveup.app">hello@faveup.app</a>
-              <a class="footer__deck" href="../prezentacja/?lang=en" data-i18n-attr="href:footer.presentationHref">
+              <a class="footer__deck" href="prezentacja/" data-i18n-attr="href:footer.presentationHref">
                 <span data-i18n="footer.presentation">Detailed Presentation</span>
                 <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#arrow-right" /></svg>
               </a>

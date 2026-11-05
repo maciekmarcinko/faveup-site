@@ -112,13 +112,15 @@
   border: 1px solid rgb(16 36 31 / 0.08);
 }
 
-.segmented--deck button {
+.segmented--deck button,
+.segmented--deck a {
   padding: 6px 12px;
   font-size: 12px;
   font-weight: 700;
 }
 
-.segmented--deck button[aria-pressed='true'] {
+.segmented--deck button[aria-pressed='true'],
+.segmented--deck a[aria-current='page'] {
   background: #fff;
   color: #0d9488;
   box-shadow: 0 1px 3px rgb(16 36 31 / 0.15);
