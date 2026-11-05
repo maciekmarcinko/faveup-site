@@ -668,8 +668,8 @@
   }
 }
 
-.what__push-head strong {
-  white-space: nowrap;
+.what__push > div {
+  min-width: 0;
 }
 
 .what__case-label {
@@ -708,8 +708,9 @@
 
 .what__push-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 8px;
+  column-gap: 8px;
   font-size: 15px;
 }
 
