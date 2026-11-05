@@ -27,7 +27,7 @@ function collect(file, seen = new Set()) {
 
 function hashOf(file) {
   const h = crypto.createHash('sha256');
-  for (const f of [...collect(file)].sort()) h.update(f).update(fs.readFileSync(f));
+  for (const f of [...collect(file)].sort()) h.update(path.relative(site, f)).update(fs.readFileSync(f));
   return h.digest('hex').slice(0, 10);
 }
 
