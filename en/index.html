@@ -1,0 +1,600 @@
+<!doctype html>
+<!-- Generated from ../index.html and i18n/landing.en.mjs by scripts/build-en.mjs. Do not edit. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="meta.title">Push Notifications &amp; QR Codes for Local Businesses | FaveUp</title>
+    <meta
+      name="description"
+      content="Customers scan a QR code at your place and you send them push notifications about deals and new products. Win repeat customers without SMS blasts or chasing reach."
+      data-i18n-attr="content:meta.description"
+    />
+    <link rel="canonical" href="https://www.faveup.app/en/" data-i18n-attr="href:meta.canonical" />
+    <link rel="alternate" hreflang="pl" href="https://www.faveup.app/" />
+    <link rel="alternate" hreflang="en" href="https://www.faveup.app/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.faveup.app/" />
+    <meta name="theme-color" content="#36D6C6" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.faveup.app/en/" data-i18n-attr="content:meta.canonical" />
+    <meta property="og:title" content="FaveUp – push notifications for local businesses" data-i18n-attr="content:meta.ogTitle" />
+    <meta
+      property="og:description"
+      content="Sell more with simple notifications. Customers scan a QR code and you tell them about deals and new products."
+      data-i18n-attr="content:meta.ogDescription"
+    />
+    <meta property="og:image" content="https://www.faveup.app/assets/img/og-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FaveUp logo" data-i18n-attr="content:meta.ogImageAlt" />
+    <meta property="og:site_name" content="FaveUp" />
+    <meta property="og:locale" content="en_US" data-i18n-attr="content:meta.ogLocale" />
+    <meta property="og:locale:alternate" content="pl_PL" data-i18n-attr="content:meta.ogLocaleAlt" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" data-i18n="meta.jsonld">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.faveup.app/#organization",
+            "name": "FaveUp",
+            "url": "https://www.faveup.app/",
+            "logo": "https://www.faveup.app/assets/apple-touch-icon.png",
+            "email": "hello@faveup.app",
+            "description": "Push notifications for local businesses: customers scan a QR code and get deals and news from their favorite places."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.faveup.app/en/#website",
+            "name": "FaveUp",
+            "url": "https://www.faveup.app/en/",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.faveup.app/#organization" }
+          }
+        ]
+      }
+    </script>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="preload" href="../assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/landing.css" />
+    <script>
+      document.documentElement.classList.add('js');
+      // This script is copied into en/index.html as is, so it reads the page language instead of assuming PL.
+      (() => {
+        const pageLang = document.documentElement.lang;
+        // Old deep links from the Figma site pointed at the deck via the hash router.
+        if (/^#\/(prezentacja|owner-presentation)/.test(location.hash)) {
+          location.replace(pageLang === 'en' ? '../prezentacja/?lang=en' : 'prezentacja/');
+          return;
+        }
+        if (pageLang !== 'pl') return;
+        // Old ?lang=en links and visitors who picked English earlier land on the English page.
+        let saved = null;
+        try {
+          saved = localStorage.getItem('faveup-lang');
+        } catch {
+          // Private mode: no remembered choice.
+        }
+        const asked = new URLSearchParams(location.search).get('lang');
+        if (asked === 'en' || (!asked && saved === 'en')) location.replace(`en/${location.hash}`);
+      })();
+    </script>
+    <script type="module" src="../js/landing.js"></script>
+  </head>
+  <body>
+    <header class="topbar" data-topbar>
+      <div class="container topbar__inner">
+        <a class="brand" href="./" aria-label="FaveUp" data-i18n-attr="href:nav.homeHref">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="#fff" d="M12 21.5C12 21.5 3.5 14.5 3.5 9C3.5 5.5 6 3.5 8.5 3.5C10.5 3.5 11.5 4.5 12 6C12.5 4.5 13.5 3.5 15.5 3.5C18 3.5 20.5 5.5 20.5 9C20.5 14.5 12 21.5 12 21.5Z" /><circle cx="12" cy="9" r="2.5" fill="none" stroke="#40E0D0" stroke-width="2" /></svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">FaveUp</span>
+            <span class="brand__tagline" data-i18n="brand.tagline">Built with ❤️ for local businesses and their communities</span>
+          </span>
+        </a>
+        <div class="topbar__actions">
+          <a class="btn btn--primary btn--attention btn--sm topbar__cta" href="#contact" data-join>
+            <span class="topbar__cta-long" data-i18n="nav.join">Join the waitlist</span>
+            <span class="topbar__cta-short" data-i18n="nav.joinShort">Join</span>
+          </a>
+          <div class="segmented" role="group" aria-label="View" data-i18n-attr="aria-label:nav.viewLabel">
+            <button type="button" data-view-button="business" aria-pressed="true" title="For Business" data-i18n-attr="title:nav.business">
+              <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#building-2" /></svg>
+              <span class="view-label hide-xs" data-i18n="nav.business">For Business</span>
+            </button>
+            <button type="button" data-view-button="users" aria-pressed="false" title="For Users" data-i18n-attr="title:nav.users">
+              <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#users" /></svg>
+              <span class="view-label hide-xs" data-i18n="nav.users">For Users</span>
+            </button>
+          </div>
+          <div class="segmented segmented--lang" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.langLabel">
+            <a href="../" hreflang="pl" lang="pl" data-set-lang="pl" aria-current="false" data-i18n-attr="aria-current:nav.plCurrent">PL</a>
+            <a href="./" hreflang="en" lang="en" data-set-lang="en" aria-current="page" data-i18n-attr="href:nav.enHref; aria-current:nav.enCurrent">EN</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================== FOR BUSINESS ====================== -->
+    <main id="view-business" data-view="business">
+      <section class="hero">
+        <div class="hero__bg" aria-hidden="true"><span class="blob blob--a"></span><span class="blob blob--b"></span></div>
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow rise"><span class="eyebrow__dot"></span><span data-i18n="hero.eyebrow">Push notifications for local businesses</span></p>
+            <h1 class="hero__title rise" style="--delay: 0.05s" data-i18n="hero.title">Sell more with simple notifications</h1>
+            <p class="hero__lead rise" style="--delay: 0.1s" data-i18n="hero.subtitle">Your regulars always hear in time – none of them will miss an important moment at your place again</p>
+            <div class="hero__actions rise" style="--delay: 0.15s">
+              <a class="btn btn--primary btn--attention btn--lg" href="#contact" data-join data-i18n="hero.cta">Join the waitlist</a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="phone" id="hero-phone" data-player data-arrive>
+              <div class="phone__frame">
+                <div class="phone__screen">
+                  <div class="phone__status">
+                    <span>9:41</span>
+                    <span class="phone__status-icons" aria-hidden="true">
+                      <svg viewBox="0 0 16 12" fill="currentColor"><rect x="0" y="8" width="2.4" height="4" rx=".6" /><rect x="3.8" y="6" width="2.4" height="6" rx=".6" /><rect x="7.6" y="3.5" width="2.4" height="8.5" rx=".6" /><rect x="11.4" y="1" width="2.4" height="11" rx=".6" /></svg>
+                      <svg viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.2c2.3 0 4.4.9 5.9 2.4l1.1-1.1A9.9 9.9 0 0 0 8 .6 9.9 9.9 0 0 0 1 3.5l1.1 1.1A8.3 8.3 0 0 1 8 2.2Zm0 3.2c1.4 0 2.7.6 3.6 1.5l1.1-1.1A6.7 6.7 0 0 0 8 3.8c-1.8 0-3.5.7-4.7 1.9l1.1 1.1c1-.9 2.2-1.4 3.6-1.4Zm0 3.2c-.6 0-1.1.2-1.5.6L8 10.7l1.5-1.5c-.4-.4-.9-.6-1.5-.6Z" /></svg>
+                      <svg viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".6" /><rect x="2" y="2" width="19" height="8" rx="1.8" fill="currentColor" /><rect x="23.6" y="4" width="1.6" height="4" rx=".8" fill="currentColor" fill-opacity=".6" /></svg>
+                    </span>
+                  </div>
+                  <div class="phone__clock">
+                    <div class="phone__time">9:41</div>
+                    <div class="phone__date" data-i18n="phone.date">Tuesday, December 17</div>
+                  </div>
+                  <div class="notif">
+                    <div class="notif__head">
+                      <img class="notif__avatar" src="../assets/img/aroma-cafe-logo.svg" alt="" width="48" height="48" />
+                      <div class="notif__app">
+                        <div class="notif__name">Aroma Café <small data-i18n="phone.now">now</small></div>
+                        <div class="notif__via">FaveUp</div>
+                      </div>
+                    </div>
+                    <p class="notif__title" data-i18n="phone.notifTitle">☕ Fresh beans just arrived!</p>
+                    <p class="notif__body" data-i18n="phone.notifBody">Try our Ethiopian blend. The first 20 people get 20% off!</p>
+                    <img class="notif__image" src="../assets/img/aroma-swieza-kawa-ziarna.webp" alt="Freshly roasted coffee beans at Aroma Café" width="720" height="313" data-i18n-attr="alt:phone.imageAlt" />
+                  </div>
+                  <div class="phone__unlock">
+                    <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#lock" /></svg>
+                    <span data-i18n="phone.unlock">Slide to unlock</span>
+                  </div>
+                  <video class="phone__video" src="../assets/video/faveup-animacja.mp4" playsinline preload="none"></video>
+                  <button class="phone__hit" type="button" aria-label="Play the film: how FaveUp works" data-i18n-attr="aria-label:player.playAria"></button>
+                  <div class="phone__hint" aria-hidden="true"><span><svg class="i"><use href="../assets/icons.svg#play" /></svg></span></div>
+                  <div class="phone__spinner" aria-hidden="true"></div>
+                  <div class="phone__controls">
+                    <button class="phone__close" type="button" aria-label="Close the film" data-i18n-attr="aria-label:player.closeAria">
+                      <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#x" /></svg>
+                    </button>
+                    <button class="phone__mute" type="button" aria-label="Mute / unmute" data-i18n-attr="aria-label:player.muteAria">
+                      <svg class="i i-on" aria-hidden="true"><use href="../assets/icons.svg#volume-2" /></svg>
+                      <svg class="i i-off" aria-hidden="true"><use href="../assets/icons.svg#volume-x" /></svg>
+                    </button>
+                    <div class="phone__progress" aria-hidden="true"><span></span></div>
+                  </div>
+                  <div class="phone__home" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="phone__island" aria-hidden="true"></div>
+            </div>
+
+            <div class="hero__cta-film">
+              <svg class="hero__arrow" viewBox="0 0 120 70" aria-hidden="true">
+                <path d="M6 58C30 62 70 52 104 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 7" />
+                <path d="M90 16l15 0l-2 15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <button class="play-cta" type="button" data-play="hero-phone" data-state="idle">
+                <span class="play-cta__icon">
+                  <svg class="i i-play" data-when="idle paused" aria-hidden="true"><use href="../assets/icons.svg#play" /></svg>
+                  <svg class="i" data-when="playing" aria-hidden="true"><use href="../assets/icons.svg#pause" /></svg>
+                </span>
+                <span>
+                  <span class="play-cta__label" data-when="idle" data-i18n="player.play">See how FaveUp works</span>
+                  <span class="play-cta__label" data-when="playing" data-i18n="player.pause">Pause the film</span>
+                  <span class="play-cta__label" data-when="paused" data-i18n="player.resume">Resume the film</span>
+                  <span class="play-cta__meta" data-when="idle" data-i18n="player.meta">Short film · 0:36 · with sound</span>
+                  <span class="play-cta__meta" data-when="playing paused" data-time>0:00 / 0:36</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <a class="scroll-hint" href="#what">
+          <span data-i18n="hero.scroll">Scroll down to see how it works</span>
+          <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg>
+        </a>
+      </section>
+
+      <section class="section" id="what">
+        <div class="container">
+          <div class="what reveal">
+            <div class="what__intro">
+              <div class="what__head">
+                <span class="what__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#zap" /></svg></span>
+                <h2 class="h2" data-i18n="what.title">What is FaveUp?</h2>
+              </div>
+              <p class="what__lead" data-i18n="what.desc">FaveUp is a simple push notification channel for local businesses that bypasses social media noise, SMS blasts and ineffective newsletters: customers scan a QR code at your place and get news about promotions, novelties and new products, while you build customer loyalty and grow sales among your regulars.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--gray">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="h2 h2--xl" data-i18n="how.title">How does it work in practice?</h2>
+            <p class="section__sub" data-i18n="how.subtitle">4 simple steps to reach your customers</p>
+          </div>
+          <ol class="steps">
+            <li class="step reveal">
+              <div class="step__visual">
+                <svg class="step__art" viewBox="0 0 240 150" aria-hidden="true">
+                <rect class="ink-fill" x="92" y="18" width="56" height="114" rx="12" />
+                <path class="ink" d="M113 28h14" />
+                <path class="accent-line" d="M104 56V46h10M126 46h10v10M136 70v10h-10M114 80h-10V70" />
+                <rect class="dark" x="110" y="52" width="6" height="6" rx="1" /><rect class="dark" x="124" y="52" width="6" height="6" rx="1" /><rect class="dark" x="110" y="66" width="6" height="6" rx="1" />
+                <rect class="soft" x="102" y="94" width="36" height="14" rx="7" />
+                <path class="ink" d="M114 101l4 4 8-8" />
+                <circle class="accent" cx="160" cy="36" r="15" />
+                <path fill="#fff" d="M160 44l-6.6-6.5a3.9 3.9 0 0 1 5.5-5.5l1.1 1.1 1.1-1.1a3.9 3.9 0 0 1 5.5 5.5z" />
+                <circle cx="74" cy="98" r="16" fill="#fff" stroke="#36d6c6" stroke-width="2.5" />
+                <circle class="ink" cx="72" cy="96" r="6" />
+                <path class="ink" d="M76.5 100.5l5 5" />
+                </svg>
+              </div>
+              <div class="step__head">
+                <span class="step__num">01</span>
+                <h3 class="step__title" data-i18n="how.s1Title">Scan the QR code</h3>
+              </div>
+              <p class="step__desc" data-i18n="how.s1Desc">Customers scan your QR code at the counter, bar or table, or find you on the map in the FaveUp app, and add your place to their favorites.</p>
+            </li>
+            <li class="step reveal" style="--delay: 0.08s">
+              <div class="step__visual">
+                <svg class="step__art" viewBox="0 0 240 150" aria-hidden="true">
+                <rect class="ink-fill" x="52" y="28" width="96" height="66" rx="8" />
+                <path class="ink-fill" d="M42 100h116l-7 12H49z" />
+                <rect class="dark" x="64" y="40" width="38" height="5" rx="2.5" />
+                <rect class="soft" x="64" y="52" width="70" height="5" rx="2.5" /><rect class="soft" x="64" y="62" width="54" height="5" rx="2.5" />
+                <rect class="accent" x="102" y="74" width="34" height="12" rx="6" />
+                <path class="accent-line" stroke-dasharray="1 7" d="M142 78c10-4 16-14 24-20" />
+                <path class="accent" d="M168 52l30-14-12 30-6-12z" />
+                <path fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" d="M180 56l18-18" />
+                </svg>
+              </div>
+              <div class="step__head">
+                <span class="step__num">02</span>
+                <h3 class="step__title" data-i18n="how.s2Title">You send a push</h3>
+              </div>
+              <p class="step__desc" data-i18n="how.s2Desc">In a simple web panel you write about news, a promotion or free appointment slots, AI helps you keep it short, and you send it with one click.</p>
+            </li>
+            <li class="step reveal" style="--delay: 0.16s">
+              <div class="step__visual">
+                <svg class="step__art" viewBox="0 0 240 150" aria-hidden="true">
+                <path class="accent-line" d="M80 58c-4 4.5-4 13.5 0 18M71 51c-8 8.5-8 23.5 0 32" />
+                <rect class="ink-fill" x="92" y="18" width="56" height="114" rx="12" />
+                <path class="ink" d="M113 28h14" />
+                <rect x="99" y="40" width="42" height="22" rx="6" fill="#fff" stroke="#36d6c6" stroke-width="2" />
+                <rect class="accent" x="103" y="45" width="10" height="10" rx="3" />
+                <rect class="dark" x="117" y="46" width="19" height="3.5" rx="1.75" /><rect class="soft" x="117" y="52.5" width="14" height="3.5" rx="1.75" />
+                <rect x="99" y="68" width="42" height="22" rx="6" fill="#fff" stroke="#c8f1e9" stroke-width="2" />
+                <rect class="soft" x="103" y="73" width="10" height="10" rx="3" />
+                <rect class="soft" x="117" y="74" width="19" height="3.5" rx="1.75" /><rect class="soft" x="117" y="80.5" width="14" height="3.5" rx="1.75" />
+                <circle class="accent" cx="160" cy="36" r="15" />
+                <path fill="#fff" d="M160 27.5c-3.9 0-6.8 3-6.8 6.8v4.6l-2.2 3.3h18l-2.2-3.3v-4.6c0-3.8-2.9-6.8-6.8-6.8z" />
+                <circle fill="#fff" cx="160" cy="45.4" r="2.1" />
+              </svg>
+              </div>
+              <div class="step__head">
+                <span class="step__num">03</span>
+                <h3 class="step__title" data-i18n="how.s3Title">Push on their phone</h3>
+              </div>
+              <p class="step__desc" data-i18n="how.s3Desc">The message lands on your customers' phones right away – no algorithm, no noise.</p>
+            </li>
+            <li class="step reveal" style="--delay: 0.24s">
+              <div class="step__visual">
+                <svg class="step__art" viewBox="0 0 240 150" aria-hidden="true">
+                <path class="ink" d="M48 126H192" />
+                <rect class="ink-fill" x="60" y="96" width="22" height="30" rx="4" />
+                <rect class="ink-fill" x="92" y="82" width="22" height="44" rx="4" />
+                <rect class="ink-fill" x="124" y="66" width="22" height="60" rx="4" />
+                <rect class="accent" x="156" y="46" width="22" height="80" rx="4" />
+                <path class="accent-line" d="M58 82l34-18 30-8 46-30" />
+                <path class="accent-line" d="M156 24h14v14" />
+                </svg>
+              </div>
+              <div class="step__head">
+                <span class="step__num">04</span>
+                <h3 class="step__title" data-i18n="how.s4Title">Statistics</h3>
+              </div>
+              <p class="step__desc" data-i18n="how.s4Desc">See how many customers follow you and how they react to each push, while sales grow.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="h2 h2--xl" data-i18n="why.title">Why FaveUp?</h2>
+            <p class="section__sub" data-i18n="why.subtitle">The simplest way to stay in touch with your regular customers</p>
+          </div>
+          <div class="benefits">
+            <article class="benefit reveal">
+              <div class="benefit__top">
+                <span class="benefit__num">01</span>
+                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chart-column-increasing" /></svg></span>
+              </div>
+              <p class="benefit__text" data-i18n="why.b1">You reach people who already know and like your place more effectively and grow sales among regulars – they get notified about new products, promotions and events</p>
+            </article>
+            <article class="benefit reveal" style="--delay: 0.08s">
+              <div class="benefit__top">
+                <span class="benefit__num">02</span>
+                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#clock" /></svg></span>
+              </div>
+              <p class="benefit__text" data-i18n="why.b2">You can add time-limited offers and boost customer engagement with limited-time promotions</p>
+            </article>
+            <article class="benefit reveal">
+              <div class="benefit__top">
+                <span class="benefit__num">03</span>
+                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#send" /></svg></span>
+              </div>
+              <p class="benefit__text" data-i18n="why.b3">You get a simple, instant communication channel without fighting for reach and ads</p>
+            </article>
+            <article class="benefit reveal" style="--delay: 0.08s">
+              <div class="benefit__top">
+                <span class="benefit__num">04</span>
+                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#smartphone" /></svg></span>
+              </div>
+              <p class="benefit__text" data-i18n="why.b4">You have a permanent channel to your customers without building and maintaining your own mobile app, the way big chains do</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--gray">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="h2 h2--xl" data-i18n="for.title">Who is it for?</h2>
+            <p class="section__sub" data-i18n="for.subtitle">We help local businesses in many industries — here are a few</p>
+          </div>
+          <ul class="industries">
+            <li class="industry reveal"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#coffee" /></svg><span data-i18n="for.i1">Cafes, Restaurants &amp; Bakeries</span></li>
+            <li class="industry reveal" style="--delay: 0.04s"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#shopping-bag" /></svg><span data-i18n="for.i2">Retail Stores</span></li>
+            <li class="industry reveal" style="--delay: 0.08s"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#hammer" /></svg><span data-i18n="for.i3">Local Artisans</span></li>
+            <li class="industry reveal" style="--delay: 0.12s"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#dumbbell" /></svg><span data-i18n="for.i4">Gyms &amp; Fitness Studios</span></li>
+            <li class="industry reveal" style="--delay: 0.16s"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#scissors" /></svg><span data-i18n="for.i5">Hair &amp; Beauty Salons</span></li>
+            <li class="industry industry--cta reveal" style="--delay: 0.2s">
+              <a href="#contact" data-join>
+                <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#sparkles" /></svg>
+                <strong data-i18n="for.ctaTitle">Maybe your business needs this too?</strong>
+                <span class="industry__link"><span data-i18n="for.ctaLink">Join the beta</span> <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#arrow-right" /></svg></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container container--mid">
+          <div class="section__head reveal">
+            <h2 class="h2 h2--xl" data-i18n="faq.title">Frequently asked questions</h2>
+            <p class="section__sub" data-i18n="faq.subtitle">What to know about push notifications for your place</p>
+          </div>
+          <div class="faq reveal">
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q1">How is FaveUp different from SMS marketing, newsletters and social media?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a1">Social media posts get buried by the algorithm, newsletters get lost among other emails, and every SMS in a campaign is paid for separately. A FaveUp push notification lands straight on the phone screen of people who chose to follow your place – no algorithm, no ads, no fighting for reach.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q2">Is FaveUp a loyalty program?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a2">FaveUp builds customer loyalty, but it isn't another stamp card. Instead of a reward after the tenth coffee, you give regulars what they actually look for: a heads-up about a fresh delivery, a new product, a free appointment slot or a deal for the next hour. So they come back more often and are keener to try new things.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q3">How do customers start following my place?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a3">You put a QR code at the counter, bar or table – as a sticker or a stand. Customers scan it with their phone and add your place to their favorites. They can also find you on the map in the FaveUp app.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q4">Do I need my own mobile app?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a4">No. Customers keep all their favorite places in one FaveUp app, and you send notifications from a simple panel in your browser. You don't build or maintain an app of your own.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q5">What kinds of businesses is FaveUp for?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a5">Local businesses with regular customers: cafes, restaurants, bakeries and pastry shops, retail stores, hair and beauty salons, gyms, fitness studios, local artisans and cultural venues. We are already running a QR code pilot with a cafe, a pastry shop and a local cultural center in Brochów, Poland.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.q6">How much does FaveUp cost and when does it launch?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.a6">The app is in development. Businesses that join the beta now get 20% off at launch.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container container--narrow">
+          <div class="contact reveal">
+            <span class="contact__glow contact__glow--a" aria-hidden="true"></span>
+            <span class="contact__glow contact__glow--b" aria-hidden="true"></span>
+            <div class="contact__inner">
+              <p class="badge"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg><span data-i18n="contact.badge">Get in touch</span></p>
+              <h2 class="h2 h2--xl" data-i18n="contact.title">Sign up for the beta and get 20% off at launch.</h2>
+              <p class="contact__sub" data-i18n="contact.subtitle">Grow your sales with FaveUp</p>
+              <form class="signup" data-signup data-source="business-view">
+                <label class="sr-only" for="email-business" data-i18n="form.label">Email address</label>
+                <input id="email-business" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
+                <button class="btn btn--gradient btn--block" type="submit">
+                  <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg>
+                  <span class="signup__idle" data-i18n="form.submit">Join the beta and get 20% off at launch</span>
+                  <span class="signup__busy" data-i18n="form.sending">Sending…</span>
+                </button>
+                <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
+              </form>
+              <div class="signup-done" hidden>
+                <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#check" /></svg>
+                <p class="signup-done__title" data-i18n="form.thanks">Thank you!</p>
+                <p data-i18n="form.thanksDesc">We'll get back to you at that address.</p>
+              </div>
+              <div class="contact__ask">
+                <p data-i18n="contact.question">Have a question?</p>
+                <a href="mailto:hello@faveup.app">hello@faveup.app</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__top">
+            <div class="brand">
+              <span class="logo logo--sm" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="#fff" d="M12 21.5C12 21.5 3.5 14.5 3.5 9C3.5 5.5 6 3.5 8.5 3.5C10.5 3.5 11.5 4.5 12 6C12.5 4.5 13.5 3.5 15.5 3.5C18 3.5 20.5 5.5 20.5 9C20.5 14.5 12 21.5 12 21.5Z" /><circle cx="12" cy="9" r="2.5" fill="none" stroke="#40E0D0" stroke-width="2" /></svg>
+              </span>
+              <span class="brand__text">
+                <span class="brand__name">FaveUp</span>
+                <span class="footer__tagline" data-i18n="brand.tagline">Built with ❤️ for local businesses and their communities</span>
+              </span>
+            </div>
+            <nav class="footer__links">
+              <a href="mailto:hello@faveup.app">hello@faveup.app</a>
+              <a class="footer__deck" href="../prezentacja/?lang=en" data-i18n-attr="href:footer.presentationHref">
+                <span data-i18n="footer.presentation">Detailed Presentation</span>
+                <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#arrow-right" /></svg>
+              </a>
+            </nav>
+          </div>
+          <p class="footer__bottom">
+            <span data-i18n="footer.dev">The app is currently in development.</span> •
+            <span data-i18n="footer.copy">© 2026 FaveUp. Connecting local businesses with their communities.</span>
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- ====================== FOR USERS ====================== -->
+    <main id="view-users" data-view="users" hidden>
+      <section class="hero">
+        <div class="hero__bg" aria-hidden="true"><span class="blob blob--a"></span><span class="blob blob--b"></span></div>
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <h1 class="hero__title" data-i18n="users.title">Instant updates from the spots you love</h1>
+            <p class="hero__lead hero__lead--muted" data-i18n="users.subtitle">Follow your favorite cafes, restaurants and local spots and hear about deals and news right away</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--attention btn--lg" href="#waitlist" data-join data-i18n="users.cta">Join the waitlist</a>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="demo-card">
+              <h3 class="demo-card__title" data-i18n="users.demoTitle">See it in action 📱</h3>
+              <p class="demo-card__sub" data-i18n="users.demoSub">Example notification from a local coffee shop</p>
+              <div class="phone phone--sm" data-arrive>
+                <div class="phone__frame">
+                  <div class="phone__screen">
+                    <div class="phone__status">
+                      <span>9:41</span>
+                      <span class="phone__status-icons" aria-hidden="true">
+                        <svg viewBox="0 0 16 12" fill="currentColor"><rect x="0" y="8" width="2.4" height="4" rx=".6" /><rect x="3.8" y="6" width="2.4" height="6" rx=".6" /><rect x="7.6" y="3.5" width="2.4" height="8.5" rx=".6" /><rect x="11.4" y="1" width="2.4" height="11" rx=".6" /></svg>
+                        <svg viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.2c2.3 0 4.4.9 5.9 2.4l1.1-1.1A9.9 9.9 0 0 0 8 .6 9.9 9.9 0 0 0 1 3.5l1.1 1.1A8.3 8.3 0 0 1 8 2.2Zm0 3.2c1.4 0 2.7.6 3.6 1.5l1.1-1.1A6.7 6.7 0 0 0 8 3.8c-1.8 0-3.5.7-4.7 1.9l1.1 1.1c1-.9 2.2-1.4 3.6-1.4Zm0 3.2c-.6 0-1.1.2-1.5.6L8 10.7l1.5-1.5c-.4-.4-.9-.6-1.5-.6Z" /></svg>
+                        <svg viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".6" /><rect x="2" y="2" width="19" height="8" rx="1.8" fill="currentColor" /><rect x="23.6" y="4" width="1.6" height="4" rx=".8" fill="currentColor" fill-opacity=".6" /></svg>
+                      </span>
+                    </div>
+                    <div class="phone__clock">
+                      <div class="phone__time">9:41</div>
+                      <div class="phone__date" data-i18n="phone.date">Tuesday, December 17</div>
+                    </div>
+                    <div class="notif">
+                      <div class="notif__head">
+                        <img class="notif__avatar" src="../assets/img/aroma-cafe-logo.svg" alt="" width="48" height="48" />
+                        <div class="notif__app">
+                          <div class="notif__name">Aroma Café <small data-i18n="phone.now">now</small></div>
+                          <div class="notif__via">FaveUp</div>
+                        </div>
+                      </div>
+                      <p class="notif__title" data-i18n="phone.notifTitle">☕ Fresh beans just arrived!</p>
+                      <p class="notif__body" data-i18n="phone.notifBody">Try our Ethiopian blend. The first 20 people get 20% off!</p>
+                      <img class="notif__image" src="../assets/img/aroma-swieza-kawa-ziarna.webp" alt="Freshly roasted coffee beans at Aroma Café" width="720" height="313" data-i18n-attr="alt:phone.imageAlt" />
+                    </div>
+                    <div class="phone__unlock">
+                      <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#lock" /></svg>
+                      <span data-i18n="phone.unlock">Slide to unlock</span>
+                    </div>
+                    <div class="phone__home" aria-hidden="true"></div>
+                  </div>
+                </div>
+                <div class="phone__island" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="scroll-hint" href="#users-more">
+          <span data-i18n="hero.scroll">Scroll down to see how it works</span>
+          <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg>
+        </a>
+      </section>
+
+      <section class="section" id="users-more">
+        <div class="container container--mid">
+          <div class="soon reveal">
+            <p class="badge" data-i18n="users.soon">Coming soon</p>
+            <h2 class="soon__title" data-i18n="users.stayTitle">Stay connected with your favorite local spots</h2>
+            <p class="soon__lead" data-i18n="users.stayDesc">Imagine getting instant notifications about special events, exclusive deals, and important updates from the places you actually care about.</p>
+            <ul class="features">
+              <li>
+                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#heart" /></svg></span>
+                <div><h3 data-i18n="users.f1Title">From places you love</h3><p data-i18n="users.f1Desc">Only hear from local spots you choose to follow</p></div>
+              </li>
+              <li>
+                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#sparkles" /></svg></span>
+                <div><h3 data-i18n="users.f2Title">Essential updates only</h3><p data-i18n="users.f2Desc">No spam, just the good stuff that matters</p></div>
+              </li>
+              <li>
+                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#tag" /></svg></span>
+                <div><h3 data-i18n="users.f3Title">Never miss a deal</h3><p data-i18n="users.f3Desc">Get exclusive offers before they're gone</p></div>
+              </li>
+              <li>
+                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#ban" /></svg></span>
+                <div><h3 data-i18n="users.f4Title">Zero FOMO, zero noise</h3><p data-i18n="users.f4Desc">Unfollow anytime with a single tap</p></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="waitlist reveal" id="waitlist">
+            <div class="waitlist__card">
+              <p class="badge"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg><span data-i18n="contact.badge">Get in touch</span></p>
+              <h2 class="waitlist__title" data-i18n="contact.title">Sign up for the beta and get 20% off at launch.</h2>
+              <p class="contact__sub" data-i18n="contact.subtitle">Grow your sales with FaveUp</p>
+              <form class="signup" data-signup data-source="users-view">
+                <label class="sr-only" for="email-users" data-i18n="form.label">Email address</label>
+                <input id="email-users" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
+                <button class="btn btn--gradient btn--block" type="submit">
+                  <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg>
+                  <span class="signup__idle" data-i18n="form.submit">Join the beta and get 20% off at launch</span>
+                  <span class="signup__busy" data-i18n="form.sending">Sending…</span>
+                </button>
+                <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
+              </form>
+              <div class="signup-done" hidden>
+                <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#check" /></svg>
+                <p class="signup-done__title" data-i18n="form.thanks">Thank you!</p>
+                <p data-i18n="form.thanksDesc">We'll get back to you at that address.</p>
+              </div>
+              <div class="contact__ask">
+                <p data-i18n="contact.question">Have a question?</p>
+                <a href="mailto:hello@faveup.app">hello@faveup.app</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="users-copy" data-i18n="users.copy">© 2026 FaveUp. Building better connections between local businesses and their communities.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

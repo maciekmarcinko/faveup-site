@@ -256,7 +256,8 @@
   .segmented button {
     padding: 8px 12px;
   }
-  .segmented--lang button {
+  .segmented--lang button,
+  .segmented--lang a {
     padding: 8px 10px;
   }
   .topbar__actions {
@@ -1336,5 +1337,82 @@
   from {
     opacity: 0;
     transform: translateY(10px);
+  }
+}
+
+/* FAQ: native <details>, so answers stay in the HTML for crawlers and work without JS. */
+
+.faq {
+  display: grid;
+  gap: 12px;
+}
+
+.faq__item {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.faq__item[open] {
+  border-color: rgb(54 214 198 / 0.45);
+  box-shadow: 0 20px 40px -32px rgb(32 178 170 / 0.7);
+}
+
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+.faq__q {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.faq__item summary .i {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--teal-600);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.faq__item[open] summary .i {
+  transform: rotate(180deg);
+}
+
+.faq__a {
+  padding: 0 24px 22px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-600);
+}
+
+@media (max-width: 479px) {
+  .faq__item summary {
+    padding: 18px 18px;
+  }
+  .faq__q {
+    font-size: 16px;
+  }
+  .faq__a {
+    padding: 0 18px 20px;
+    font-size: 15px;
   }
 }
