@@ -59,7 +59,7 @@
     <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/base.css?v=64d03394aa" />
-    <link rel="stylesheet" href="css/landing.css?v=38f75a9c27" />
+    <link rel="stylesheet" href="css/landing.css?v=a9b694f051" />
     <script src="/js/consent.js?v=8b6aeb6c25"></script>
     <script>
       document.documentElement.classList.add('js');
@@ -137,6 +137,8 @@
           </div>
 
           <div class="hero__visual">
+            <div class="hero__stage">
+            <div class="hero__rings" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="phone" id="hero-phone" data-player data-arrive>
               <div class="phone__frame">
                 <div class="phone__screen">
@@ -187,6 +189,29 @@
               </div>
               <div class="phone__island" aria-hidden="true"></div>
             </div>
+            <!-- Decorative pushes around the phone: what customers get from their favourite places. -->
+            <div class="float float--a" aria-hidden="true">
+              <img src="assets/img/flora-logo.svg" alt="" width="36" height="36" />
+              <div>
+                <p class="float__head"><strong data-i18n="what.exampleName">Kwiaciarnia Flora</strong> <span data-i18n="phone.now">teraz</span></p>
+                <p class="float__text" data-i18n="hero.floatA">Tulipany -20% do 18:00 🌷</p>
+              </div>
+            </div>
+            <div class="float float--b" aria-hidden="true">
+              <span class="float__icon float__icon--salon"><svg class="i"><use href="assets/icons.svg#scissors" /></svg></span>
+              <div>
+                <p class="float__head"><strong>Salon Bella</strong> <span>2 min</span></p>
+                <p class="float__text" data-i18n="hero.floatB">Zwolnił się termin dziś o 15:00 ✂️</p>
+              </div>
+            </div>
+            <div class="float float--c" aria-hidden="true">
+              <span class="float__icon float__icon--fit"><svg class="i"><use href="assets/icons.svg#dumbbell" /></svg></span>
+              <div>
+                <p class="float__head"><strong>Fit Studio</strong> <span>15 min</span></p>
+                <p class="float__text" data-i18n="hero.floatC">Dodatkowa joga jutro o 7:00 🧘</p>
+              </div>
+            </div>
+            </div>
 
             <div class="hero__cta-film">
               <svg class="hero__arrow" viewBox="0 0 120 70" aria-hidden="true">
@@ -223,7 +248,8 @@
                 <span class="what__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#zap" /></svg></span>
                 <h2 class="h2" data-i18n="what.title">Czym jest FaveUp?</h2>
               </div>
-              <p class="what__lead" data-i18n="what.desc">FaveUp to prosty kanał powiadomień push dla lokalnych firm, który omija szum social mediów, kampanie SMS i nieskuteczne newslettery: klienci skanują kod QR w Twoim lokalu, otrzymują informacje o promocjach, nowościach i nowych produktach, a Ty budujesz lojalność stałych klientów i zwiększasz sprzedaż.</p>
+              <p class="what__lead" data-i18n="what.desc">FaveUp to prosty kanał powiadomień push dla lokalnych firm. Twoje wiadomości trafiają tylko do osób, które same wybrały Twój lokal, więc naprawdę je czytają. Ty budujesz lojalność stałych klientów i sprzedajesz więcej.</p>
+              <img class="what__photo" src="assets/img/people-street.webp" alt="Kobieta uśmiecha się do powiadomienia na telefonie" width="960" height="640" loading="lazy" data-i18n-attr="alt:what.photoAlt" />
             </div>
 
             <aside class="what__case">
@@ -340,42 +366,41 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section__head reveal">
+      <section class="section section--dark" id="why">
+        <div class="container why">
+          <div class="why__copy reveal">
             <h2 class="h2 h2--xl" data-i18n="why.title">Dlaczego FaveUp?</h2>
             <p class="section__sub" data-i18n="why.subtitle">Najprostszy sposób na utrzymanie kontaktu ze stałymi klientami</p>
+            <ul class="why__list">
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#heart" /></svg></span>
+                <div><h3 data-i18n="why.b1Title">Mówisz do tych, którzy już Cię lubią</h3><p data-i18n="why.b1">Powiadomienie trafia do osób, które same dodały Twój lokal do ulubionych.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#zap" /></svg></span>
+                <div><h3 data-i18n="why.b2Title">Oferty, które działają od ręki</h3><p data-i18n="why.b2">Promocja na najbliższą godzinę? Wyślij ją teraz, a klienci przyjdą jeszcze dziś.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#megaphone-off" /></svg></span>
+                <div><h3 data-i18n="why.b3Title">Bez walki o zasięgi</h3><p data-i18n="why.b3">Obserwują Cię tylko ci, którzy Cię lubią, a Twoje powiadomienie trafia do każdego z nich, bez algorytmów i reklam.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smartphone" /></svg></span>
+                <div><h3 data-i18n="why.b4Title">Gotowe rozwiązanie zamiast własnej aplikacji</h3><p data-i18n="why.b4">Nie musisz inwestować w budowę i utrzymanie aplikacji, jak robią to duże sieci. Dostajesz gotowe rozwiązanie za niewielką cenę.</p></div>
+              </li>
+            </ul>
           </div>
-          <div class="benefits">
-            <article class="benefit reveal">
-              <div class="benefit__top">
-                <span class="benefit__num">01</span>
-                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chart-column-increasing" /></svg></span>
+          <figure class="why__photo reveal" style="--delay: 0.1s">
+            <img src="assets/img/cynamonki.webp" alt="Świeżo upieczone cynamonki w kawiarni" width="399" height="501" loading="lazy" data-i18n-attr="alt:why.photoAlt" />
+            <div class="why__push" aria-hidden="true">
+              <img src="assets/img/aroma-cafe-logo.svg" alt="" width="40" height="40" />
+              <div>
+                <p class="why__push-head"><strong>Aroma Café</strong> <span data-i18n="phone.now">teraz</span></p>
+                <p class="why__push-title" data-i18n="why.pushTitle">Cynamonki właśnie wyszły z pieca! 🥐</p>
+                <p class="why__push-text" data-i18n="why.pushText">Pokaż ten push na barze: kawa + cynamonka -50%.</p>
               </div>
-              <p class="benefit__text" data-i18n="why.b1">Skuteczniej docierasz do osób, które już znają i lubią Twoje miejsce, i zwiększasz sprzedaż wśród stałych klientów – dostają powiadomienia o nowych produktach, promocjach i wydarzeniach</p>
-            </article>
-            <article class="benefit reveal" style="--delay: 0.08s">
-              <div class="benefit__top">
-                <span class="benefit__num">02</span>
-                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#clock" /></svg></span>
-              </div>
-              <p class="benefit__text" data-i18n="why.b2">Możesz dodawać oferty czasowe i zwiększać zaangażowanie klientów dzięki promocjom limitowanym czasowo</p>
-            </article>
-            <article class="benefit reveal">
-              <div class="benefit__top">
-                <span class="benefit__num">03</span>
-                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#send" /></svg></span>
-              </div>
-              <p class="benefit__text" data-i18n="why.b3">Zyskujesz prosty i natychmiastowy kanał komunikacji bez walki o zasięgi i reklamy</p>
-            </article>
-            <article class="benefit reveal" style="--delay: 0.08s">
-              <div class="benefit__top">
-                <span class="benefit__num">04</span>
-                <span class="benefit__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smartphone" /></svg></span>
-              </div>
-              <p class="benefit__text" data-i18n="why.b4">Masz stały kanał do swoich klientów bez budowania i utrzymywania własnej aplikacji mobilnej, jak robią to duże sieci</p>
-            </article>
-          </div>
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -386,11 +411,11 @@
             <p class="section__sub" data-i18n="for.subtitle">Pomagamy lokalnym firmom z wielu branż — poniżej kilka z nich</p>
           </div>
           <ul class="industries">
-            <li class="industry reveal"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#coffee" /></svg><span data-i18n="for.i1">Kawiarnie, Restauracje i Cukiernie</span></li>
-            <li class="industry reveal" style="--delay: 0.04s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shopping-bag" /></svg><span data-i18n="for.i2">Sklepy Detaliczne</span></li>
-            <li class="industry reveal" style="--delay: 0.08s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#hammer" /></svg><span data-i18n="for.i3">Lokalni Rzemieślnicy</span></li>
-            <li class="industry reveal" style="--delay: 0.12s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#dumbbell" /></svg><span data-i18n="for.i4">Siłownie i Studia Fitness</span></li>
-            <li class="industry reveal" style="--delay: 0.16s"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scissors" /></svg><span data-i18n="for.i5">Fryzjerzy i Salony Beauty</span></li>
+            <li class="industry reveal"><img class="industry__photo" src="assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Kawiarnie, Restauracje i Cukiernie</span></li>
+            <li class="industry reveal" style="--delay: 0.04s"><img class="industry__photo" src="assets/img/people-shop.webp" alt="" width="720" height="477" loading="lazy" /><span data-i18n="for.i2">Sklepy Detaliczne</span></li>
+            <li class="industry reveal" style="--delay: 0.08s"><img class="industry__photo" src="assets/img/people-artisan.webp" alt="" width="720" height="1080" loading="lazy" /><span data-i18n="for.i3">Lokalni Rzemieślnicy</span></li>
+            <li class="industry reveal" style="--delay: 0.12s"><img class="industry__photo" src="assets/img/people-gym.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i4">Siłownie i Studia Fitness</span></li>
+            <li class="industry reveal" style="--delay: 0.16s"><img class="industry__photo" src="assets/img/people-hair.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i5">Fryzjerzy i Salony Beauty</span></li>
             <li class="industry industry--cta reveal" style="--delay: 0.2s">
               <a href="#contact" data-join>
                 <svg class="i" aria-hidden="true"><use href="assets/icons.svg#sparkles" /></svg>
@@ -512,10 +537,9 @@
             </div>
           </div>
           <div class="hero__visual">
-            <div class="demo-card">
-              <h3 class="demo-card__title" data-i18n="users.demoTitle">Zobacz to w akcji 📱</h3>
-              <p class="demo-card__sub" data-i18n="users.demoSub">Przykładowe powiadomienie z lokalnej kawiarni</p>
-              <div class="phone phone--sm" data-arrive>
+              <div class="hero__stage">
+              <div class="hero__rings" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="phone" data-arrive>
                 <div class="phone__frame">
                   <div class="phone__screen">
                     <div class="phone__status">
@@ -551,6 +575,28 @@
                 </div>
                 <div class="phone__island" aria-hidden="true"></div>
               </div>
+              <!-- Decorative pushes around the phone: what customers get from their favourite places. -->
+              <div class="float float--a" aria-hidden="true">
+                <img src="assets/img/flora-logo.svg" alt="" width="36" height="36" />
+                <div>
+                  <p class="float__head"><strong data-i18n="what.exampleName">Kwiaciarnia Flora</strong> <span data-i18n="phone.now">teraz</span></p>
+                  <p class="float__text" data-i18n="hero.floatA">Tulipany -20% do 18:00 🌷</p>
+                </div>
+              </div>
+              <div class="float float--b" aria-hidden="true">
+                <span class="float__icon float__icon--salon"><svg class="i"><use href="assets/icons.svg#scissors" /></svg></span>
+                <div>
+                  <p class="float__head"><strong>Salon Bella</strong> <span>2 min</span></p>
+                  <p class="float__text" data-i18n="hero.floatB">Zwolnił się termin dziś o 15:00 ✂️</p>
+                </div>
+              </div>
+              <div class="float float--c" aria-hidden="true">
+                <span class="float__icon float__icon--fit"><svg class="i"><use href="assets/icons.svg#dumbbell" /></svg></span>
+                <div>
+                  <p class="float__head"><strong>Fit Studio</strong> <span>15 min</span></p>
+                  <p class="float__text" data-i18n="hero.floatC">Dodatkowa joga jutro o 7:00 🧘</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -561,60 +607,112 @@
       </section>
 
       <section class="section" id="users-more">
-        <div class="container container--mid">
-          <div class="soon reveal">
-            <p class="badge" data-i18n="users.soon">Wkrótce</p>
-            <h2 class="soon__title" data-i18n="users.stayTitle">Pozostań w kontakcie ze swoimi ulubionymi lokalnymi miejscami</h2>
-            <p class="soon__lead" data-i18n="users.stayDesc">
+        <div class="container">
+          <div class="what u-intro reveal">
+            <div class="what__intro">
+              <p class="badge" data-i18n="users.soon">Wkrótce</p>
+              <h2 class="h2 h2--xl" data-i18n="users.stayTitle">Pozostań w kontakcie ze swoimi ulubionymi lokalnymi miejscami</h2>
+              <p class="what__lead" data-i18n="users.stayDesc">
               Wyobraź sobie otrzymywanie natychmiastowych powiadomień o specjalnych wydarzeniach, ekskluzywnych ofertach i ważnych aktualizacjach z miejsc, na których Ci naprawdę zależy.
             </p>
-            <ul class="features">
+            </div>
+            <img class="u-intro__photo" src="assets/img/people-street.webp" alt="Kobieta uśmiecha się do powiadomienia na telefonie" width="960" height="640" loading="lazy" data-i18n-attr="alt:what.photoAlt" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--gray">
+        <div class="container">
+          <div class="section__head reveal">
+            <h2 class="h2 h2--xl" data-i18n="users.placesTitle">Obserwuj miejsca ze swojej okolicy</h2>
+            <p class="section__sub" data-i18n="users.placesSub">Kawiarnie, sklepy, salony i siłownie, które lubisz, w jednej aplikacji</p>
+          </div>
+          <ul class="industries">
+            <li class="industry reveal"><img class="industry__photo" src="assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Kawiarnie, Restauracje i Cukiernie</span></li>
+            <li class="industry reveal" style="--delay: 0.04s"><img class="industry__photo" src="assets/img/people-shop.webp" alt="" width="720" height="477" loading="lazy" /><span data-i18n="for.i2">Sklepy Detaliczne</span></li>
+            <li class="industry reveal" style="--delay: 0.08s"><img class="industry__photo" src="assets/img/people-artisan.webp" alt="" width="720" height="1080" loading="lazy" /><span data-i18n="for.i3">Lokalni Rzemieślnicy</span></li>
+            <li class="industry reveal" style="--delay: 0.12s"><img class="industry__photo" src="assets/img/people-gym.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i4">Siłownie i Studia Fitness</span></li>
+            <li class="industry reveal" style="--delay: 0.16s"><img class="industry__photo" src="assets/img/people-hair.webp" alt="" width="720" height="481" loading="lazy" /><span data-i18n="for.i5">Fryzjerzy i Salony Beauty</span></li>
+            <li class="industry industry--cta reveal" style="--delay: 0.2s">
+              <a href="#waitlist" data-join>
+                <svg class="i" aria-hidden="true"><use href="assets/icons.svg#bell-ring" /></svg>
+                <strong data-i18n="users.tileCtaTitle">Chcesz dowiadywać się pierwszy?</strong>
+                <span class="industry__link"><span data-i18n="users.tileCtaLink">Dołącz do listy</span> <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right" /></svg></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--dark">
+        <div class="container why">
+          <div class="why__copy reveal">
+            <h2 class="h2 h2--xl" data-i18n="users.whyTitle">Dlaczego warto?</h2>
+            <ul class="why__list">
               <li>
-                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#heart" /></svg></span>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#heart" /></svg></span>
                 <div><h3 data-i18n="users.f1Title">Z miejsc, które kochasz</h3><p data-i18n="users.f1Desc">Słyszysz tylko od lokalnych miejsc, które wybierasz do obserwowania</p></div>
               </li>
               <li>
-                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#sparkles" /></svg></span>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#sparkles" /></svg></span>
                 <div><h3 data-i18n="users.f2Title">Tylko istotne aktualizacje</h3><p data-i18n="users.f2Desc">Bez spamu, tylko dobre rzeczy, które się liczą</p></div>
               </li>
               <li>
-                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tag" /></svg></span>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tag" /></svg></span>
                 <div><h3 data-i18n="users.f3Title">Nigdy nie przegap okazji</h3><p data-i18n="users.f3Desc">Otrzymuj ekskluzywne oferty zanim znikną</p></div>
               </li>
               <li>
-                <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#ban" /></svg></span>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#ban" /></svg></span>
                 <div><h3 data-i18n="users.f4Title">Zero FOMO, zero hałasu</h3><p data-i18n="users.f4Desc">Przestań obserwować w każdej chwili jednym dotknięciem</p></div>
               </li>
             </ul>
           </div>
-
-          <div class="waitlist reveal" id="waitlist">
-            <div class="waitlist__card">
-              <p class="badge"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail" /></svg><span data-i18n="contact.badge">Skontaktuj się z nami</span></p>
-              <h2 class="waitlist__title" data-i18n="contact.title">Zapisz się do wersji beta i zyskaj 20% zniżki na start.</h2>
-              <p class="contact__sub" data-i18n="contact.subtitle">Zwiększ sprzedaż w swoim biznesie z FaveUp</p>
-              <form class="signup" data-signup data-source="users-view">
-                <label class="sr-only" for="email-users" data-i18n="form.label">Adres e-mail</label>
-                <input id="email-users" type="email" name="email" required autocomplete="email" placeholder="Twój adres e-mail" data-i18n-attr="placeholder:form.placeholder" />
-                <button class="btn btn--gradient btn--block" type="submit">
-                  <svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail" /></svg>
-                  <span class="signup__idle" data-i18n="form.submit">Dołącz do bety i odbierz -20% na start</span>
-                  <span class="signup__busy" data-i18n="form.sending">Wysyłanie…</span>
-                </button>
-                <p class="signup__error" role="alert" hidden data-i18n="form.error">Nie udało się wysłać. Spróbuj ponownie lub napisz na hello@faveup.app.</p>
-              </form>
-              <div class="signup-done" hidden>
-                <svg class="i" aria-hidden="true"><use href="assets/icons.svg#check" /></svg>
-                <p class="signup-done__title" data-i18n="form.thanks">Dziękujemy!</p>
-                <p data-i18n="form.thanksDesc">Odezwiemy się na podany adres.</p>
-              </div>
-              <div class="contact__ask">
-                <p data-i18n="contact.question">Masz pytanie?</p>
-                <a href="mailto:hello@faveup.app">hello@faveup.app</a>
+          <figure class="why__photo reveal" style="--delay: 0.1s">
+            <img src="assets/img/cynamonki.webp" alt="Świeżo upieczone cynamonki w kawiarni" width="399" height="501" loading="lazy" data-i18n-attr="alt:why.photoAlt" />
+            <div class="why__push" aria-hidden="true">
+              <img src="assets/img/aroma-cafe-logo.svg" alt="" width="40" height="40" />
+              <div>
+                <p class="why__push-head"><strong>Aroma Café</strong> <span data-i18n="phone.now">teraz</span></p>
+                <p class="why__push-title" data-i18n="why.pushTitle">Cynamonki właśnie wyszły z pieca! 🥐</p>
+                <p class="why__push-text" data-i18n="why.pushText">Pokaż ten push na barze: kawa + cynamonka -50%.</p>
               </div>
             </div>
-          </div>
+          </figure>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="container container--narrow">
+          <div class="contact reveal" id="waitlist">
+            <span class="contact__glow contact__glow--a" aria-hidden="true"></span>
+            <span class="contact__glow contact__glow--b" aria-hidden="true"></span>
+            <div class="contact__inner">
+                <p class="badge"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail" /></svg><span data-i18n="contact.badge">Skontaktuj się z nami</span></p>
+                <h2 class="h2 h2--xl" data-i18n="contact.title">Zapisz się do wersji beta i zyskaj 20% zniżki na start.</h2>
+                <p class="contact__sub" data-i18n="contact.subtitle">Zwiększ sprzedaż w swoim biznesie z FaveUp</p>
+                <form class="signup" data-signup data-source="users-view">
+                  <label class="sr-only" for="email-users" data-i18n="form.label">Adres e-mail</label>
+                  <input id="email-users" type="email" name="email" required autocomplete="email" placeholder="Twój adres e-mail" data-i18n-attr="placeholder:form.placeholder" />
+                  <button class="btn btn--gradient btn--block" type="submit">
+                    <svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail" /></svg>
+                    <span class="signup__idle" data-i18n="form.submit">Dołącz do bety i odbierz -20% na start</span>
+                    <span class="signup__busy" data-i18n="form.sending">Wysyłanie…</span>
+                  </button>
+                  <p class="signup__error" role="alert" hidden data-i18n="form.error">Nie udało się wysłać. Spróbuj ponownie lub napisz na hello@faveup.app.</p>
+                </form>
+                <div class="signup-done" hidden>
+                  <svg class="i" aria-hidden="true"><use href="assets/icons.svg#check" /></svg>
+                  <p class="signup-done__title" data-i18n="form.thanks">Dziękujemy!</p>
+                  <p data-i18n="form.thanksDesc">Odezwiemy się na podany adres.</p>
+                </div>
+                <div class="contact__ask">
+                  <p data-i18n="contact.question">Masz pytanie?</p>
+                  <a href="mailto:hello@faveup.app">hello@faveup.app</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
           <p class="users-copy" data-i18n="users.copy">© 2026 FaveUp. Budujemy lepsze połączenia między lokalnymi firmami a ich społecznościami.</p>
         </div>
       </section>
