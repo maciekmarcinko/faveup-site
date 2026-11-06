@@ -54,5 +54,6 @@ Any other static host works too, as long as it answers HTTP Range requests for t
 | `assets/FaveUp-Prezentacja.pdf` | the PDF as supplied |
 | `assets/deck/*.webp` | app screens, partner logos and the contact photo cut from the PDF's 4K slide images |
 | `assets/img/` | notification images from the current site, `og.png` is the current share image |
+| `assets/img/people-*.webp` | free photos from Unsplash (Unsplash License, commercial use allowed, no credit required), downloaded 2026-11-06 at 720–960 px: cafe `8jp-6SjVibM`, shop `IxgPCAUSaOM`, artisan `2_1pezL2DPQ`, gym `n7OGQW9qQM4`, hair `FkAZqQJTbXM`, street `UGX2qdjdKkw` (unsplash.com/photos/&lt;id&gt;) |
 | `assets/icons.svg` | Lucide icons (ISC), regenerate with `npm run icons` after adding a name in `scripts/icons.mjs` |
 | `assets/fonts/` | DM Sans (OFL), self-hosted, the typeface used in the PDF |

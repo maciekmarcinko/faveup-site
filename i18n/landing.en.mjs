@@ -55,6 +55,10 @@ export default {
   'hero.title': 'Sell more with simple notifications',
   'hero.subtitle': 'Your regulars always hear in time – none of them will miss an important moment at your place again',
   'hero.cta': 'Join the waitlist',
+  'hero.floatA': 'Tulips 20% off until 6 pm 🌷',
+  'hero.floatB': 'A slot just opened today at 3 pm ✂️',
+  'hero.floatC': 'Extra yoga class tomorrow at 7 am 🧘',
+
   'hero.scroll': 'Scroll down to see how it works',
 
   'phone.date': 'Tuesday, December 17',
@@ -73,8 +77,8 @@ export default {
   'player.muteAria': 'Mute / unmute',
 
   'what.title': 'What is FaveUp?',
-  'what.desc':
-    'FaveUp is a simple push notification channel for local businesses that bypasses social media noise, SMS blasts and ineffective newsletters: customers scan a QR code at your place and get news about promotions, novelties and new products, while you build customer loyalty and grow sales among your regulars.',
+  'what.desc': 'FaveUp is a simple push notification channel for local businesses. Your messages reach only people who chose your place themselves, so they actually read them. You build customer loyalty and sell more to your regulars.',
+  'what.photoAlt': 'A woman smiling at a notification on her phone',
   'what.exampleLabel': 'Real-life example',
   'what.exampleName': 'Flora Flowers',
   'what.examplePush': 'Today until 6 pm only: tulip bouquets 20% off. Just 25 left, first come, first served! 🌷',
@@ -95,12 +99,17 @@ export default {
 
   'why.title': 'Why FaveUp?',
   'why.subtitle': 'The simplest way to stay in touch with your regular customers',
-  'why.b1':
-    'You reach people who already know and like your place more effectively and grow sales among regulars – they get notified about new products, promotions and events',
-  'why.b2': 'You can add time-limited offers and boost customer engagement with limited-time promotions',
-  'why.b3': 'You get a simple, instant communication channel without fighting for reach and ads',
-  'why.b4':
-    'You have a permanent channel to your customers without building and maintaining your own mobile app, the way big chains do',
+  'why.b1Title': 'Talk to people who already like you',
+  'why.b2Title': 'Offers that work right away',
+  'why.b3Title': 'No fighting for reach',
+  'why.b4Title': 'A ready-made solution instead of your own app',
+  'why.photoAlt': 'Freshly baked cinnamon rolls at a café',
+  'why.pushTitle': 'Cinnamon rolls just came out of the oven! 🥐',
+  'why.pushText': 'Show this push at the bar: coffee + cinnamon roll 50% off.',
+  'why.b1': 'Your push reaches people who added your place to their favorites themselves.',
+  'why.b2': 'A deal for the next hour? Send it now and customers come in today.',
+  'why.b3': 'Only people who like you follow you, and your push reaches every one of them, with no algorithms and no ads.',
+  'why.b4': "No need to invest in building and maintaining an app the way big chains do. You get a ready-made solution for a small price.",
 
   'for.title': 'Who is it for?',
   'for.subtitle': 'We help local businesses in many industries — here are a few',
@@ -154,8 +163,11 @@ export default {
   'users.title': 'Instant updates from the spots you love',
   'users.subtitle': 'Follow your favorite cafes, restaurants and local spots and hear about deals and news right away',
   'users.cta': 'Join the waitlist',
-  'users.demoTitle': 'See it in action 📱',
-  'users.demoSub': 'Example notification from a local coffee shop',
+  'users.placesTitle': 'Follow places near you',
+  'users.placesSub': 'The cafes, shops, salons and gyms you like, in one app',
+  'users.tileCtaTitle': 'Want to hear first?',
+  'users.tileCtaLink': 'Join the list',
+  'users.whyTitle': 'Why you will love it',
   'users.soon': 'Coming soon',
   'users.stayTitle': 'Stay connected with your favorite local spots',
   'users.stayDesc':
