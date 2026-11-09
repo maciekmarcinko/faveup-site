@@ -112,7 +112,7 @@ export default {
   'why.b4': "No need to invest in building and maintaining an app the way big chains do. You get a ready-made solution for a small price.",
 
   'for.title': 'Who is it for?',
-  'for.subtitle': 'We help local businesses in many industries — here are a few',
+  'for.subtitle': 'We help local businesses in many industries – here are a few',
   'for.i1': 'Cafes, Restaurants &amp; Bakeries',
   'for.i2': 'Retail Stores',
   'for.i3': 'Local Artisans',
