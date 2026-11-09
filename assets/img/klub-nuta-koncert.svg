@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 313" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#052b27" />
+      <stop offset="1" stop-color="#0b5249" />
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ff0e6" stop-opacity=".75" />
+      <stop offset="1" stop-color="#36d6c6" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="pool" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#b6f5ed" stop-opacity=".85" />
+      <stop offset="1" stop-color="#36d6c6" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="720" height="313" fill="url(#bg)" />
+
+  <g fill="#9ff0e6">
+    <circle cx="62" cy="58" r="16" opacity=".12" />
+    <circle cx="128" cy="112" r="9" opacity=".18" />
+    <circle cx="196" cy="42" r="12" opacity=".14" />
+    <circle cx="540" cy="48" r="13" opacity=".14" />
+    <circle cx="612" cy="110" r="9" opacity=".18" />
+    <circle cx="672" cy="56" r="17" opacity=".12" />
+  </g>
+
+  <polygon points="120,0 164,0 330,250 212,250" fill="url(#beam)" opacity=".55" />
+  <polygon points="334,0 386,0 446,250 274,250" fill="url(#beam)" />
+  <polygon points="556,0 600,0 508,250 390,250" fill="url(#beam)" opacity=".55" />
+
+  <ellipse cx="360" cy="246" rx="190" ry="26" fill="url(#pool)" />
+
+  <g fill="#04221f">
+    <rect x="356.5" y="112" width="7" height="130" rx="3.5" />
+    <rect x="324" y="238" width="72" height="8" rx="4" />
+    <rect x="345" y="58" width="30" height="58" rx="15" />
+  </g>
+  <g stroke="#36d6c6" stroke-width="2.5" opacity=".75">
+    <path d="M347 72h26M346 83h28M346 94h28" />
+  </g>
+
+  <g fill="#031a18">
+    <circle cx="40" cy="262" r="24" /><rect x="0" y="282" width="82" height="40" rx="24" />
+    <circle cx="136" cy="272" r="22" /><rect x="96" y="290" width="80" height="40" rx="24" />
+    <circle cx="232" cy="264" r="24" /><rect x="190" y="284" width="84" height="40" rx="24" />
+    <circle cx="328" cy="276" r="22" /><rect x="288" y="294" width="80" height="40" rx="24" />
+    <circle cx="420" cy="268" r="23" /><rect x="379" y="288" width="82" height="40" rx="24" />
+    <circle cx="512" cy="276" r="22" /><rect x="472" y="294" width="80" height="40" rx="24" />
+    <circle cx="600" cy="264" r="24" /><rect x="558" y="284" width="84" height="40" rx="24" />
+    <circle cx="694" cy="272" r="23" /><rect x="652" y="290" width="84" height="40" rx="24" />
+  </g>
+</svg>

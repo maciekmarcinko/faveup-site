@@ -596,11 +596,15 @@
 }
 
 /* Each pushing place has its own brand color, like a real app icon. */
-.float__icon--salon {
-  background: #7c3aed;
+.float__icon--cinema {
+  background: #e11d48;
 }
 
-.float__icon--fit {
+.float__icon--grocer {
+  background: #16a34a;
+}
+
+.float__icon--arts {
   background: #2563eb;
 }
 
@@ -641,7 +645,7 @@
 }
 
 .float--b {
-  top: 46%;
+  top: 64%;
   left: 74%;
   animation-delay: 2s, 2.7s;
 }
@@ -720,6 +724,7 @@
   }
   .float--b {
     right: -8%;
+    bottom: 13%;
   }
 }
 
