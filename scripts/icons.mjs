@@ -6,10 +6,10 @@ import { fileURLToPath } from 'node:url';
 
 const LUCIDE_VERSION = '0.460.0';
 const names = [
-  'arrow-right', 'ban', 'bell', 'bell-ring', 'building-2', 'chart-column-increasing', 'check', 'chevron-down',
-  'chevron-left', 'chevron-right', 'circle-check-big', 'circle-help', 'clock', 'clock-alert', 'coffee', 'contact-round',
+  'arrow-right', 'ban', 'bell', 'bell-ring', 'building-2', 'carrot', 'chart-column-increasing', 'check', 'chevron-down',
+  'chevron-left', 'chevron-right', 'circle-check-big', 'circle-help', 'clapperboard', 'clock', 'clock-alert', 'coffee', 'contact-round',
   'download', 'dumbbell', 'external-link', 'gallery-vertical-end', 'hammer', 'heart', 'layers', 'lock', 'mail',
-  'mail-plus', 'map-pin', 'megaphone-off', 'message-square-heart', 'message-square-text', 'newspaper', 'pause', 'phone',
+  'mail-plus', 'map-pin', 'megaphone-off', 'message-square-heart', 'message-square-text', 'newspaper', 'palette', 'pause', 'phone',
   'play', 'qr-code', 'repeat', 'rotate-ccw', 'scissors', 'send', 'shield-check', 'shopping-bag', 'smartphone',
   'sparkles', 'stamp', 'store', 'tag', 'target', 'traffic-cone', 'trending-up', 'user-round', 'users', 'users-round',
   'volume-2', 'volume-x', 'x', 'zap',
