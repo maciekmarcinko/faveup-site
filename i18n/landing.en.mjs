@@ -83,11 +83,11 @@ export default {
   'what.desc': 'FaveUp is a simple push notification channel for local businesses. Your messages reach only people who chose your place themselves, so they actually read them. You build customer loyalty and sell more to your regulars.',
   'what.photoAlt': 'A woman smiling at a notification on her phone',
   'what.exampleLabel': 'Real-life example',
-  'what.exampleName': 'Flora Flowers',
-  'what.examplePush': 'Today until 6 pm only: tulip bouquets 20% off. Just 25 left, first come, first served! 🌷',
-  'what.exampleResult': 'Customers came the same day and used the promotion.',
+  'what.exampleName': 'Trattoria Basilico',
+  'what.examplePush': '2 tables just opened up for tonight, 7 pm 🍝 First to call gets dessert on us!',
+  'what.exampleResult': 'Both tables booked in 10 minutes. A full house all evening.',
 
-  'how.title': 'How does it work in practice?',
+  'how.title': 'How does it work?',
   'how.subtitle': '4 simple steps to reach your customers',
   'how.s1Title': 'Scan the QR code',
   'how.s1Desc':
@@ -115,7 +115,7 @@ export default {
   'why.b4': "No need to invest in building and maintaining an app the way big chains do. You get a ready-made solution for a small price.",
 
   'for.title': 'Who is it for?',
-  'for.subtitle': 'We help local businesses in many industries – here are a few',
+  'for.subtitle': 'Instant notifications work for businesses in many industries',
   'for.i1': 'Cafes, Restaurants &amp; Bakeries',
   'for.i2': 'Retail Stores',
   'for.i3': 'Local Artisans',
