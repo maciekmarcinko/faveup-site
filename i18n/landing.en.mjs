@@ -122,7 +122,7 @@ export default {
   'for.i4': 'Gyms &amp; Fitness Studios',
   'for.i5': 'Hair &amp; Beauty Salons',
   'for.ctaTitle': 'Maybe your business needs this too?',
-  'for.ctaLink': 'Join the beta',
+  'for.ctaLink': 'Join the waitlist',
 
   'faq.title': 'Frequently asked questions',
   'faq.subtitle': 'What to know about push notifications for your place',
@@ -145,12 +145,12 @@ export default {
   'faq.a6': 'The app is in development. Businesses that join the beta now get 20% off at launch.',
 
   'contact.badge': 'Get in touch',
-  'contact.title': 'Sign up for the beta and get 20% off at launch.',
+  'contact.title': 'Be the first to try it and get 20% off at launch',
   'contact.subtitle': 'Grow your sales with FaveUp',
   'contact.question': 'Have a question?',
   'form.label': 'Email address',
   'form.placeholder': 'Your email address',
-  'form.submit': 'Join the beta and get 20% off at launch',
+  'form.submit': 'Join first and get 20% off at launch',
   'form.sending': 'Sending…',
   'form.error': "We couldn't send it. Please try again or write to hello@faveup.app.",
   'form.thanks': 'Thank you!',
