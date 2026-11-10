@@ -60,7 +60,7 @@
     <link rel="preload" href="../assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../css/base.css?v=64d03394aa" />
-    <link rel="stylesheet" href="../css/landing.css?v=497ed5c004" />
+    <link rel="stylesheet" href="../css/landing.css?v=b731d14567" />
     <script src="/js/consent.js?v=8b6aeb6c25"></script>
     <script>
       document.documentElement.classList.add('js');
@@ -243,10 +243,7 @@
         <div class="container">
           <div class="what reveal">
             <div class="what__intro">
-              <div class="what__head">
-                <span class="what__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#zap" /></svg></span>
-                <h2 class="h2" data-i18n="what.title">What is FaveUp?</h2>
-              </div>
+              <h2 class="h2" data-i18n="what.title">What is FaveUp?</h2>
               <p class="what__lead" data-i18n="what.desc">FaveUp is a simple push notification channel for local businesses. Your messages reach only people who chose your place themselves, so they actually read them. You build customer loyalty and sell more to your regulars.</p>
               <img class="what__photo" src="../assets/img/people-street.webp" alt="A woman smiling at a notification on her phone" width="960" height="640" loading="lazy" data-i18n-attr="alt:what.photoAlt" />
             </div>
@@ -257,15 +254,15 @@
                 <span data-i18n="what.exampleLabel">Real-life example</span>
               </p>
               <div class="what__push">
-                <img src="../assets/img/flora-logo.svg" alt="" width="44" height="44" />
+                <img src="../assets/img/basilico-logo.svg" alt="" width="44" height="44" />
                 <div>
-                  <p class="what__push-head"><strong data-i18n="what.exampleName">Flora Flowers</strong> <span data-i18n="phone.now">now</span></p>
-                  <p class="what__push-text" data-i18n="what.examplePush">Today until 6 pm only: tulip bouquets 20% off. Just 25 left, first come, first served! 🌷</p>
+                  <p class="what__push-head"><strong data-i18n="what.exampleName">Trattoria Basilico</strong> <span data-i18n="phone.now">now</span></p>
+                  <p class="what__push-text" data-i18n="what.examplePush">2 tables just opened up for tonight, 7 pm 🍝 First to call gets dessert on us!</p>
                 </div>
               </div>
               <p class="what__result">
                 <span class="what__result-icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#check" /></svg></span>
-                <span data-i18n="what.exampleResult">Customers came the same day and used the promotion.</span>
+                <span data-i18n="what.exampleResult">Both tables booked in 10 minutes. A full house all evening.</span>
               </p>
             </aside>
           </div>
@@ -276,7 +273,7 @@
         <div class="container">
           <div class="section__head reveal">
             <h2 class="h2 h2--xl" data-i18n="for.title">Who is it for?</h2>
-            <p class="section__sub" data-i18n="for.subtitle">We help local businesses in many industries – here are a few</p>
+            <p class="section__sub" data-i18n="for.subtitle">Instant notifications work for businesses in many industries</p>
           </div>
           <ul class="industries">
             <li class="industry reveal"><img class="industry__photo" src="../assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Cafes, Restaurants &amp; Bakeries</span></li>
@@ -295,10 +292,48 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="why">
+        <div class="container why why--light">
+          <div class="why__copy reveal">
+            <h2 class="h2 h2--xl" data-i18n="why.title">Why FaveUp?</h2>
+            <p class="section__sub" data-i18n="why.subtitle">The simplest way to stay in touch with your regular customers</p>
+            <ul class="why__list">
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#heart" /></svg></span>
+                <div><h3 data-i18n="why.b1Title">Talk to people who already like you</h3><p data-i18n="why.b1">Your push reaches people who added your place to their favorites themselves.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#zap" /></svg></span>
+                <div><h3 data-i18n="why.b2Title">Offers that work right away</h3><p data-i18n="why.b2">A deal for the next hour? Send it now and customers come in today.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#megaphone-off" /></svg></span>
+                <div><h3 data-i18n="why.b3Title">No fighting for reach</h3><p data-i18n="why.b3">Only people who like you follow you, and your push reaches every one of them, with no algorithms and no ads.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#smartphone" /></svg></span>
+                <div><h3 data-i18n="why.b4Title">A ready-made solution instead of your own app</h3><p data-i18n="why.b4">No need to invest in building and maintaining an app the way big chains do. You get a ready-made solution for a small price.</p></div>
+              </li>
+            </ul>
+          </div>
+          <figure class="why__photo reveal" style="--delay: 0.1s">
+            <img src="../assets/img/cynamonki.webp" alt="Freshly baked cinnamon rolls at a café" width="399" height="501" loading="lazy" data-i18n-attr="alt:why.photoAlt" />
+            <div class="why__push" aria-hidden="true">
+              <img src="../assets/img/aroma-cafe-logo.svg" alt="" width="40" height="40" />
+              <div>
+                <p class="why__push-head"><strong>Aroma Café</strong> <span data-i18n="phone.now">now</span></p>
+                <p class="why__push-title" data-i18n="why.pushTitle">Cinnamon rolls just came out of the oven! 🥐</p>
+                <p class="why__push-text" data-i18n="why.pushText">Show this push at the bar: coffee + cinnamon roll 50% off.</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="how">
         <div class="container">
           <div class="section__head reveal">
-            <h2 class="h2 h2--xl" data-i18n="how.title">How does it work in practice?</h2>
+            <h2 class="h2 h2--xl" data-i18n="how.title">How does it work?</h2>
             <p class="section__sub" data-i18n="how.subtitle">4 simple steps to reach your customers</p>
           </div>
           <ol class="steps">
@@ -385,44 +420,6 @@
               <p class="step__desc" data-i18n="how.s4Desc">See how many customers follow you and how they react to each push, while sales grow.</p>
             </li>
           </ol>
-        </div>
-      </section>
-
-      <section class="section section--dark" id="why">
-        <div class="container why">
-          <div class="why__copy reveal">
-            <h2 class="h2 h2--xl" data-i18n="why.title">Why FaveUp?</h2>
-            <p class="section__sub" data-i18n="why.subtitle">The simplest way to stay in touch with your regular customers</p>
-            <ul class="why__list">
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#heart" /></svg></span>
-                <div><h3 data-i18n="why.b1Title">Talk to people who already like you</h3><p data-i18n="why.b1">Your push reaches people who added your place to their favorites themselves.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#zap" /></svg></span>
-                <div><h3 data-i18n="why.b2Title">Offers that work right away</h3><p data-i18n="why.b2">A deal for the next hour? Send it now and customers come in today.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#megaphone-off" /></svg></span>
-                <div><h3 data-i18n="why.b3Title">No fighting for reach</h3><p data-i18n="why.b3">Only people who like you follow you, and your push reaches every one of them, with no algorithms and no ads.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#smartphone" /></svg></span>
-                <div><h3 data-i18n="why.b4Title">A ready-made solution instead of your own app</h3><p data-i18n="why.b4">No need to invest in building and maintaining an app the way big chains do. You get a ready-made solution for a small price.</p></div>
-              </li>
-            </ul>
-          </div>
-          <figure class="why__photo reveal" style="--delay: 0.1s">
-            <img src="../assets/img/cynamonki.webp" alt="Freshly baked cinnamon rolls at a café" width="399" height="501" loading="lazy" data-i18n-attr="alt:why.photoAlt" />
-            <div class="why__push" aria-hidden="true">
-              <img src="../assets/img/aroma-cafe-logo.svg" alt="" width="40" height="40" />
-              <div>
-                <p class="why__push-head"><strong>Aroma Café</strong> <span data-i18n="phone.now">now</span></p>
-                <p class="why__push-title" data-i18n="why.pushTitle">Cinnamon rolls just came out of the oven! 🥐</p>
-                <p class="why__push-text" data-i18n="why.pushText">Show this push at the bar: coffee + cinnamon roll 50% off.</p>
-              </div>
-            </div>
-          </figure>
         </div>
       </section>
 

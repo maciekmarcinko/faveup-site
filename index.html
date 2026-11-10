@@ -59,7 +59,7 @@
     <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/base.css?v=64d03394aa" />
-    <link rel="stylesheet" href="css/landing.css?v=497ed5c004" />
+    <link rel="stylesheet" href="css/landing.css?v=b731d14567" />
     <script src="/js/consent.js?v=8b6aeb6c25"></script>
     <script>
       document.documentElement.classList.add('js');
@@ -244,10 +244,7 @@
         <div class="container">
           <div class="what reveal">
             <div class="what__intro">
-              <div class="what__head">
-                <span class="what__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#zap" /></svg></span>
-                <h2 class="h2" data-i18n="what.title">Czym jest FaveUp?</h2>
-              </div>
+              <h2 class="h2" data-i18n="what.title">Czym jest FaveUp?</h2>
               <p class="what__lead" data-i18n="what.desc">FaveUp to prosty kanał powiadomień push dla lokalnych firm. Twoje wiadomości trafiają tylko do osób, które same wybrały Twój lokal, więc naprawdę je czytają. Ty budujesz lojalność stałych klientów i sprzedajesz więcej.</p>
               <img class="what__photo" src="assets/img/people-street.webp" alt="Kobieta uśmiecha się do powiadomienia na telefonie" width="960" height="640" loading="lazy" data-i18n-attr="alt:what.photoAlt" />
             </div>
@@ -258,15 +255,15 @@
                 <span data-i18n="what.exampleLabel">Przykład z życia</span>
               </p>
               <div class="what__push">
-                <img src="assets/img/flora-logo.svg" alt="" width="44" height="44" />
+                <img src="assets/img/basilico-logo.svg" alt="" width="44" height="44" />
                 <div>
-                  <p class="what__push-head"><strong data-i18n="what.exampleName">Kwiaciarnia Flora</strong> <span data-i18n="phone.now">teraz</span></p>
-                  <p class="what__push-text" data-i18n="what.examplePush">Tylko dziś do 18:00: bukiety tulipanów -20%. Mamy 25 sztuk, kto pierwszy, ten lepszy! 🌷</p>
+                  <p class="what__push-head"><strong data-i18n="what.exampleName">Trattoria Basilico</strong> <span data-i18n="phone.now">teraz</span></p>
+                  <p class="what__push-text" data-i18n="what.examplePush">Zwolniły się 2 stoliki na dziś, 19:00 🍝 Kto pierwszy zadzwoni, dostaje deser od nas!</p>
                 </div>
               </div>
               <p class="what__result">
                 <span class="what__result-icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#check" /></svg></span>
-                <span data-i18n="what.exampleResult">Klienci przyszli tego samego dnia i skorzystali z promocji.</span>
+                <span data-i18n="what.exampleResult">Oba stoliki zajęte w 10 minut. Wieczór bez pustych miejsc.</span>
               </p>
             </aside>
           </div>
@@ -277,7 +274,7 @@
         <div class="container">
           <div class="section__head reveal">
             <h2 class="h2 h2--xl" data-i18n="for.title">Dla kogo?</h2>
-            <p class="section__sub" data-i18n="for.subtitle">Pomagamy lokalnym firmom z wielu branż – poniżej kilka z nich</p>
+            <p class="section__sub" data-i18n="for.subtitle">Natychmiastowe powiadomienia sprawdzą się w wielu branżach</p>
           </div>
           <ul class="industries">
             <li class="industry reveal"><img class="industry__photo" src="assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Kawiarnie, Restauracje i Cukiernie</span></li>
@@ -296,10 +293,48 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="why">
+        <div class="container why why--light">
+          <div class="why__copy reveal">
+            <h2 class="h2 h2--xl" data-i18n="why.title">Dlaczego FaveUp?</h2>
+            <p class="section__sub" data-i18n="why.subtitle">Najprostszy sposób na utrzymanie kontaktu ze stałymi klientami</p>
+            <ul class="why__list">
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#heart" /></svg></span>
+                <div><h3 data-i18n="why.b1Title">Mówisz do tych, którzy już Cię lubią</h3><p data-i18n="why.b1">Powiadomienie trafia do osób, które same dodały Twój lokal do ulubionych.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#zap" /></svg></span>
+                <div><h3 data-i18n="why.b2Title">Oferty, które działają od ręki</h3><p data-i18n="why.b2">Promocja na najbliższą godzinę? Wyślij ją teraz, a klienci przyjdą jeszcze dziś.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#megaphone-off" /></svg></span>
+                <div><h3 data-i18n="why.b3Title">Bez walki o zasięgi</h3><p data-i18n="why.b3">Obserwują Cię tylko ci, którzy Cię lubią, a Twoje powiadomienie trafia do każdego z nich, bez algorytmów i reklam.</p></div>
+              </li>
+              <li>
+                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smartphone" /></svg></span>
+                <div><h3 data-i18n="why.b4Title">Gotowe rozwiązanie zamiast własnej aplikacji</h3><p data-i18n="why.b4">Nie musisz inwestować w budowę i utrzymanie aplikacji, jak robią to duże sieci. Dostajesz gotowe rozwiązanie za niewielką cenę.</p></div>
+              </li>
+            </ul>
+          </div>
+          <figure class="why__photo reveal" style="--delay: 0.1s">
+            <img src="assets/img/cynamonki.webp" alt="Świeżo upieczone cynamonki w kawiarni" width="399" height="501" loading="lazy" data-i18n-attr="alt:why.photoAlt" />
+            <div class="why__push" aria-hidden="true">
+              <img src="assets/img/aroma-cafe-logo.svg" alt="" width="40" height="40" />
+              <div>
+                <p class="why__push-head"><strong>Aroma Café</strong> <span data-i18n="phone.now">teraz</span></p>
+                <p class="why__push-title" data-i18n="why.pushTitle">Cynamonki właśnie wyszły z pieca! 🥐</p>
+                <p class="why__push-text" data-i18n="why.pushText">Pokaż ten push na barze: kawa + cynamonka -50%.</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="how">
         <div class="container">
           <div class="section__head reveal">
-            <h2 class="h2 h2--xl" data-i18n="how.title">Jak to wygląda w praktyce?</h2>
+            <h2 class="h2 h2--xl" data-i18n="how.title">Jak to działa?</h2>
             <p class="section__sub" data-i18n="how.subtitle">4 proste kroki do kontaktu z klientami</p>
           </div>
           <ol class="steps">
@@ -386,44 +421,6 @@
               <p class="step__desc" data-i18n="how.s4Desc">Widzisz, ilu klientów Cię obserwuje i jak reagują na powiadomienia, a sprzedaż rośnie.</p>
             </li>
           </ol>
-        </div>
-      </section>
-
-      <section class="section section--dark" id="why">
-        <div class="container why">
-          <div class="why__copy reveal">
-            <h2 class="h2 h2--xl" data-i18n="why.title">Dlaczego FaveUp?</h2>
-            <p class="section__sub" data-i18n="why.subtitle">Najprostszy sposób na utrzymanie kontaktu ze stałymi klientami</p>
-            <ul class="why__list">
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#heart" /></svg></span>
-                <div><h3 data-i18n="why.b1Title">Mówisz do tych, którzy już Cię lubią</h3><p data-i18n="why.b1">Powiadomienie trafia do osób, które same dodały Twój lokal do ulubionych.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#zap" /></svg></span>
-                <div><h3 data-i18n="why.b2Title">Oferty, które działają od ręki</h3><p data-i18n="why.b2">Promocja na najbliższą godzinę? Wyślij ją teraz, a klienci przyjdą jeszcze dziś.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#megaphone-off" /></svg></span>
-                <div><h3 data-i18n="why.b3Title">Bez walki o zasięgi</h3><p data-i18n="why.b3">Obserwują Cię tylko ci, którzy Cię lubią, a Twoje powiadomienie trafia do każdego z nich, bez algorytmów i reklam.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smartphone" /></svg></span>
-                <div><h3 data-i18n="why.b4Title">Gotowe rozwiązanie zamiast własnej aplikacji</h3><p data-i18n="why.b4">Nie musisz inwestować w budowę i utrzymanie aplikacji, jak robią to duże sieci. Dostajesz gotowe rozwiązanie za niewielką cenę.</p></div>
-              </li>
-            </ul>
-          </div>
-          <figure class="why__photo reveal" style="--delay: 0.1s">
-            <img src="assets/img/cynamonki.webp" alt="Świeżo upieczone cynamonki w kawiarni" width="399" height="501" loading="lazy" data-i18n-attr="alt:why.photoAlt" />
-            <div class="why__push" aria-hidden="true">
-              <img src="assets/img/aroma-cafe-logo.svg" alt="" width="40" height="40" />
-              <div>
-                <p class="why__push-head"><strong>Aroma Café</strong> <span data-i18n="phone.now">teraz</span></p>
-                <p class="why__push-title" data-i18n="why.pushTitle">Cynamonki właśnie wyszły z pieca! 🥐</p>
-                <p class="why__push-text" data-i18n="why.pushText">Pokaż ten push na barze: kawa + cynamonka -50%.</p>
-              </div>
-            </div>
-          </figure>
         </div>
       </section>
 

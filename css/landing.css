@@ -811,28 +811,6 @@
   }
 }
 
-.what__head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.what__icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: var(--mint-150);
-  color: #0e7a6a;
-  flex-shrink: 0;
-}
-
-.what__icon .i {
-  width: 24px;
-  height: 24px;
-}
-
 .what__lead {
   margin-top: 20px;
   max-width: 36em;
@@ -1094,7 +1072,14 @@
   }
 }
 
-/* Why FaveUp: the page's one dark moment, deep teal with a teal-toned photo. */
+/* How it works sits on the dark section: white cards that float on deep teal. */
+.section--dark .step {
+  border-color: rgb(255 255 255 / 0.12);
+  color: var(--gray-900);
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.55);
+}
+
+/* Why FaveUp: deep teal by default (users view); .why--light puts it on a plain white section (business view). */
 
 .section--dark {
   position: relative;
@@ -1232,6 +1217,97 @@
   font-size: 14px;
   line-height: 1.4;
   color: var(--gray-600);
+}
+
+/* Business view: the same layout on white, so icons, text and photo use light-surface colors.
+   One rounded panel holds both columns; its mint tint grows towards the photo, which sits on a
+   tilted turquoise card with a heart badge echoing the first reason. */
+.why--light {
+  padding: clamp(24px, 5vw, 56px);
+  border-radius: 32px;
+  border: 1px solid rgb(54 214 198 / 0.2);
+  background:
+    radial-gradient(60% 80% at 85% 45%, rgb(54 214 198 / 0.16) 0%, transparent 70%),
+    linear-gradient(225deg, #e2f7f2 0%, #f3fcfa 40%, #fff 75%);
+}
+
+/* A soft dashed line joins each icon to the next, so the four reasons read as one story. */
+.why--light .why__list li {
+  position: relative;
+}
+
+.why--light .why__list li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 56px;
+  bottom: -20px;
+  border-left: 2px dashed rgb(54 214 198 / 0.45);
+}
+
+.why--light .why__photo::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: -14px;
+  bottom: 60px;
+  left: 18px;
+  border-radius: 30px;
+  background: linear-gradient(160deg, #5fe3d5 0%, #17a796 100%);
+  transform: rotate(4deg);
+}
+
+.why--light .why__photo::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: -18px;
+  left: -18px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background: #36d6c6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/%3E%3C/svg%3E") center / 26px no-repeat;
+  box-shadow: 0 14px 30px -12px rgb(16 74 66 / 0.55);
+}
+
+.why--light .why__photo > img {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 479px) {
+  .why--light .why__photo::before {
+    right: -8px;
+    left: 12px;
+  }
+  .why--light .why__photo::after {
+    top: -12px;
+    left: -10px;
+    width: 52px;
+    height: 52px;
+    background-size: 22px;
+  }
+}
+
+.why--light .why__icon {
+  background: var(--mint-150);
+  border-color: transparent;
+  color: #0e7a6a;
+}
+
+.why--light .why__list p {
+  color: var(--gray-600);
+}
+
+.why--light .why__photo > img {
+  box-shadow: 0 40px 80px -36px rgb(16 74 66 / 0.45);
+}
+
+.why--light .why__push {
+  background: #fff;
+  border: 1px solid rgb(17 24 39 / 0.08);
+  box-shadow: 0 30px 60px -28px rgb(16 74 66 / 0.4);
 }
 
 @media (max-width: 479px) {
