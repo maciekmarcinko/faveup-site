@@ -66,10 +66,9 @@ export default {
 
   'phone.date': 'Tuesday, December 17',
   'phone.now': 'now',
-  'phone.notifName': 'Nuta Club',
-  'phone.notifTitle': '🎷 Jazz concert tonight, free entry!',
-  'phone.notifBody': 'We start at 8 pm, doors open at 7 pm. Only 60 seats, so come early!',
-  'phone.imageAlt': 'A stage with a microphone before a concert at Nuta Club',
+  'phone.notifTitle': '☕ Fresh beans just arrived!',
+  'phone.notifBody': 'Try our Ethiopian blend. The first 20 people get 20% off!',
+  'phone.imageAlt': 'Freshly roasted coffee beans at Aroma Café',
   'phone.unlock': 'Slide to unlock',
 
   'player.play': 'See how FaveUp works',
