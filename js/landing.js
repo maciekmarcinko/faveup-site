@@ -14,9 +14,12 @@ setupAds();
 // ---------- Business / users views (kept on the old hash routes so existing links work) ----------
 
 const topbar = document.querySelector('[data-topbar]');
-// The ad page (/dla-firm/) is built without the users view.
+// The ad page (/dla-firm/) is built without the users view, and the landing has it switched off
+// (data-off) while FaveUp only talks to businesses; old #/users-view links then open the business view.
 const views = Object.fromEntries(
-  [['business', document.getElementById('view-business')], ['users', document.getElementById('view-users')]].filter(([, view]) => view),
+  [['business', document.getElementById('view-business')], ['users', document.getElementById('view-users')]].filter(
+    ([, view]) => view && !('off' in view.dataset),
+  ),
 );
 const player = setupPlayer(document.getElementById('hero-phone'));
 
@@ -56,8 +59,8 @@ for (const link of document.querySelectorAll('[data-join]')) {
   });
 }
 
-// In-page anchors would otherwise overwrite the view hash.
-for (const link of document.querySelectorAll('.scroll-hint')) {
+// In-page links (scroll hint, "see the test") scroll smoothly instead of jumping and rewriting the hash.
+for (const link of document.querySelectorAll('[data-scroll]')) {
   link.addEventListener('click', (event) => {
     event.preventDefault();
     document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });

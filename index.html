@@ -58,8 +58,8 @@
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="css/base.css?v=64d03394aa" />
-    <link rel="stylesheet" href="css/landing.css?v=fdcdf06af7" />
+    <link rel="stylesheet" href="css/base.css?v=862ac8fbf6" />
+    <link rel="stylesheet" href="css/landing.css?v=d3f49fbd6e" />
     <script src="/js/consent.js?v=36b65fb878" data-marketing></script>
     <script>
       document.documentElement.classList.add('js');
@@ -85,7 +85,7 @@
         if (asked === 'en' || (!asked && saved === 'en')) location.replace(`en/${location.hash}`);
       })();
     </script>
-    <script type="module" src="js/landing.js?v=01b97ce28d"></script>
+    <script type="module" src="js/landing.js?v=c181e0abce"></script>
   </head>
   <body>
     <header class="topbar" data-topbar data-view-current="business">
@@ -107,7 +107,8 @@
             <span class="topbar__cta-short" data-for-view="users" data-i18n="nav.joinUsersShort">Dołącz</span>
           </a>
           <!-- ad-page:cut -->
-          <div class="segmented" role="group" aria-label="Widok" data-i18n-attr="aria-label:nav.viewLabel">
+          <!-- The users view is switched off for now: remove `hidden` here and `data-off` on #view-users to bring it back. -->
+          <div class="segmented" role="group" aria-label="Widok" data-i18n-attr="aria-label:nav.viewLabel" hidden>
             <button type="button" data-view-button="business" aria-pressed="true" title="Dla Biznesu" data-i18n-attr="title:nav.business">
               <svg class="i" aria-hidden="true"><use href="assets/icons.svg#building-2" /></svg>
               <span class="view-label hide-xs" data-i18n="nav.business">Dla Biznesu</span>
@@ -146,7 +147,8 @@
                   <span class="signup__idle" data-i18n="form.submit">Zgłoś swój lokal</span>
                   <span class="signup__busy" data-i18n="form.sending">Wysyłanie…</span>
                 </button>
-                <p class="signup__note" data-i18n="form.note">Zgłaszasz lokal do testów rozwiązania. Bez zobowiązań, 20% zniżki po starcie aplikacji.</p>
+                <p class="signup__note" data-i18n="form.note">Zgłaszasz lokal do bezpłatnego testu, bez zobowiązań. Po starcie pełnej aplikacji dostajesz 20% zniżki.</p>
+                <a class="signup__more" href="#test" data-scroll data-i18n="form.more">Zobacz, jak wygląda bezpłatny test</a>
                 <p class="signup__error" role="alert" hidden data-i18n="form.error">Nie udało się wysłać. Spróbuj ponownie lub napisz na hello@faveup.app.</p>
               </form>
             </div>
@@ -244,7 +246,7 @@
             </div>
           </div>
         </div>
-        <a class="scroll-hint" href="#what">
+        <a class="scroll-hint" href="#what" data-scroll>
           <span data-i18n="hero.scroll">Przewiń w dół, aby zobaczyć, jak to działa</span>
           <svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg>
         </a>
@@ -323,7 +325,7 @@
               </li>
               <li>
                 <span class="why__icon"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smartphone" /></svg></span>
-                <div><h3 data-i18n="why.b4Title">Gotowe rozwiązanie zamiast własnej aplikacji</h3><p data-i18n="why.b4">Nie musisz inwestować w budowę i utrzymanie aplikacji, jak robią to duże sieci. Dostajesz gotowe rozwiązanie za niewielką cenę.</p></div>
+                <div><h3 data-i18n="why.b4Title">Gotowe rozwiązanie zamiast własnej aplikacji</h3><p data-i18n="why.b4">Nie musisz inwestować w budowę i utrzymanie aplikacji, jak robią to duże sieci. Po starcie korzystasz z gotowej aplikacji FaveUp za niewielką opłatą.</p></div>
               </li>
             </ul>
           </div>
@@ -344,8 +346,9 @@
       <section class="section section--dark" id="how">
         <div class="container">
           <div class="section__head reveal">
-            <h2 class="h2 h2--xl" data-i18n="how.title">Jak to działa?</h2>
-            <p class="section__sub" data-i18n="how.subtitle">4 proste kroki do kontaktu z klientami</p>
+            <p class="badge" data-i18n="how.badge">Wkrótce</p>
+            <h2 class="h2 h2--xl" data-i18n="how.title">Jak działa pełna aplikacja?</h2>
+            <p class="section__sub" data-i18n="how.subtitle">4 proste kroki do kontaktu z klientami po starcie aplikacji</p>
           </div>
           <ol class="steps">
             <li class="step reveal">
@@ -432,7 +435,7 @@
             </li>
           </ol>
           <div class="how__cta reveal">
-            <a class="btn btn--primary btn--lg" href="#contact" data-join data-i18n="how.cta">Zgłoś swój lokal</a>
+            <a class="btn btn--secondary btn--lg" href="#test" data-scroll data-i18n="how.cta">Zacznij od bezpłatnego testu</a>
           </div>
         </div>
       </section>
@@ -446,19 +449,19 @@
           <div class="faq reveal">
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.qApp">Czy moi klienci muszą instalować aplikację?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.aApp">Na etapie testu nie. Klient skanuje kod QR, zapisuje się imieniem i adresem e-mail, a bonus na następną wizytę dostaje od razu mailem. Pełna aplikacja FaveUp z powiadomieniami push jest w budowie. Gdy wystartuje, zaczynasz od razu z listą klientów, którzy chcą być na bieżąco z Twoim miejscem.</p>
+              <p class="faq__a" data-i18n="faq.aApp">W bezpłatnym teście nie. Klient skanuje kod QR, zapisuje się imieniem i adresem e-mail, a bonus na następną wizytę dostaje od razu mailem. Pełna aplikacja FaveUp z powiadomieniami push jest w budowie. Gdy wystartuje, zaczynasz od razu z listą klientów, którzy chcą być na bieżąco z Twoim miejscem.</p>
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.qTime">Ile czasu mi to zajmie?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.aTime">Na start wystarczy 15 minut: spotykamy się w Twoim lokalu i ustalamy, gdzie stanie kod QR i jaki bonus dostaną klienci. Potem kod działa sam, a Ty tylko zapraszasz klientów do skanowania.</p>
+              <p class="faq__a" data-i18n="faq.aTime">Start bezpłatnego testu to 15 minut: spotykamy się w Twoim lokalu i ustalamy, gdzie stanie kod QR i jaki bonus dostaną klienci. Potem kod działa sam, a Ty tylko zapraszasz klientów do skanowania.</p>
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.qFew">Co, jeśli mało klientów się zapisze?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.aFew">Dlatego zaczynamy od testu z bonusem: obsługa zaprasza do skanowania, a klient dostaje bonus na następną wizytę. W trzech lokalach na Brochowie zapisało się w ten sposób ponad 200 klientów. Liczymy też, ilu z nich wraca z kodem, więc od początku widzisz, czy to działa u Ciebie.</p>
+              <p class="faq__a" data-i18n="faq.aFew">Dlatego zaczynamy od bezpłatnego testu z bonusem: obsługa zaprasza do skanowania, a klient dostaje bonus na następną wizytę. W trzech lokalach na Brochowie zapisało się w ten sposób ponad 200 klientów. Liczymy też, ilu z nich wraca z kodem, więc od początku widzisz, czy to działa u Ciebie.</p>
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q1">Czym FaveUp różni się od SMS-ów, newslettera i social mediów?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.a1">Posty w social mediach giną w algorytmie, newslettery przepadają wśród innych maili, a za każdą wiadomość w kampanii SMS płacisz osobno. Powiadomienie push z FaveUp trafia od razu na ekran telefonu osób, które same wybrały Twój lokal – bez algorytmu, reklam i walki o zasięgi.</p>
+              <p class="faq__a" data-i18n="faq.a1">Posty w social mediach giną w algorytmie, newslettery przepadają wśród innych maili, a za każdą wiadomość w kampanii SMS płacisz osobno. W pełnej aplikacji powiadomienie push z FaveUp trafia od razu na ekran telefonu osób, które same wybrały Twój lokal – bez algorytmu, reklam i walki o zasięgi.</p>
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q2">Czy FaveUp to program lojalnościowy?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
@@ -466,33 +469,48 @@
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q3">Jak klienci zaczynają obserwować mój lokal?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.a3">Stawiasz kod QR przy kasie, na barze lub stoliku – jako naklejkę albo stojak. Klient skanuje go telefonem i dodaje Twoje miejsce do ulubionych. Może też znaleźć Cię na mapie w aplikacji FaveUp.</p>
-            </details>
-            <details class="faq__item">
-              <summary><h3 class="faq__q" data-i18n="faq.q4">Czy muszę mieć własną aplikację mobilną?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.a4">Nie. Klienci mają wszystkie ulubione miejsca w jednej aplikacji FaveUp, a Ty wysyłasz powiadomienia z prostego panelu w przeglądarce. Nie budujesz ani nie utrzymujesz własnej aplikacji.</p>
-            </details>
-            <details class="faq__item">
-              <summary><h3 class="faq__q" data-i18n="faq.q5">Dla jakich firm jest FaveUp?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.a5">Dla lokalnych firm, które mają stałych klientów: kawiarni, restauracji, piekarni i cukierni, sklepów, salonów fryzjerskich i kosmetycznych, siłowni, studiów fitness, lokalnych rzemieślników i miejsc kultury. Test z kodami QR prowadzimy już w kawiarni, cukierni i lokalnym centrum kultury w Brochowie.</p>
+              <p class="faq__a" data-i18n="faq.a3">Stawiasz kod QR przy kasie, na barze lub stoliku, jako naklejkę albo stojak, a klient skanuje go telefonem. W bezpłatnym teście zapisuje się adresem e-mail, a po starcie aplikacji dodaje Twój lokal do ulubionych. Wtedy może też znaleźć Cię na mapie w aplikacji FaveUp.</p>
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q6">Ile kosztuje FaveUp i kiedy start?</h3><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.a6">Aplikacja jest w fazie rozwoju, a cenę podamy przed startem. Firmy, które zgłoszą się teraz, dostaną 20% zniżki po starcie aplikacji.</p>
+              <p class="faq__a" data-i18n="faq.a6">Bezpłatny test nic nie kosztuje. Pełna aplikacja jest w fazie rozwoju, a jej cenę podamy przed startem. Firmy, które zgłoszą się teraz, dostaną 20% zniżki po starcie aplikacji.</p>
             </details>
           </div>
         </div>
       </section>
 
-      <section class="section" id="contact">
-        <div class="container container--narrow">
-          <div class="contact reveal">
+      <!-- The free test is what a business signs up for today; the sections above it describe the full app. -->
+      <section class="section section--gray test" id="test">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="badge"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#sparkles" /></svg><span data-i18n="test.badge">Bezpłatny test</span></p>
+            <h2 class="h2 h2--xl" data-i18n="test.title">Zacznij od bezpłatnego testu w swoim lokalu</h2>
+            <p class="section__sub" data-i18n="test.subtitle">Zanim wystartuje pełna aplikacja, sprawdzasz u siebie, czy klienci chcą być z Tobą w kontakcie.</p>
+          </div>
+          <ol class="test-steps">
+            <li class="test-step reveal">
+              <span class="test-step__num">1</span>
+              <h3 data-i18n="test.s1Title">Stawiamy kod QR</h3>
+              <p data-i18n="test.s1">Spotykamy się na 15 minut. Kod QR staje przy kasie jako naklejka albo stojak, a Ty wybierasz bonus dla klientów.</p>
+            </li>
+            <li class="test-step reveal" style="--delay: 0.08s">
+              <span class="test-step__num">2</span>
+              <h3 data-i18n="test.s2Title">Klienci się zapisują</h3>
+              <p data-i18n="test.s2">Obsługa zaprasza do skanowania. Klient zapisuje się imieniem i adresem e-mail, a bonus na następną wizytę dostaje od razu mailem.</p>
+            </li>
+            <li class="test-step reveal" style="--delay: 0.16s">
+              <span class="test-step__num">3</span>
+              <h3 data-i18n="test.s3Title">Widzisz wyniki</h3>
+              <p data-i18n="test.s3">Liczymy, ilu klientów się zapisało i ilu wróciło z kodem. Po starcie aplikacji masz już listę osób, które chcą Twoich powiadomień.</p>
+            </li>
+          </ol>
+          <div class="test__signup">
+          <div class="contact reveal" id="contact">
             <span class="contact__glow contact__glow--a" aria-hidden="true"></span>
             <span class="contact__glow contact__glow--b" aria-hidden="true"></span>
             <div class="contact__inner">
-              <p class="badge"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail" /></svg><span data-i18n="contact.badge">Skontaktuj się z nami</span></p>
-              <h2 class="h2 h2--xl" data-i18n="contact.title">Zgłoś swój lokal i zyskaj 20% zniżki po starcie aplikacji</h2>
-              <p class="contact__sub" data-i18n="contact.subtitle">Umówimy 15 minut w Twoim lokalu i pokażemy, jak działa test z kodem QR.</p>
+              <h3 class="contact__title" data-i18n="contact.title">Zgłoś swój lokal do testu</h3>
+              <p class="contact__sub" data-i18n="contact.subtitle">Umówimy 15 minut w Twoim lokalu i pokażemy, jak działa test z kodem QR. Po starcie pełnej aplikacji dostajesz 20% zniżki.</p>
               <form class="signup" data-signup data-source="business-view" data-lead>
                 <label class="sr-only" for="email-business" data-i18n="form.label">Adres e-mail</label>
                 <input id="email-business" type="email" name="email" required autocomplete="email" placeholder="Twój adres e-mail" data-i18n-attr="placeholder:form.placeholder" />
@@ -502,7 +520,7 @@
                   <span class="signup__idle" data-i18n="form.submit">Zgłoś swój lokal</span>
                   <span class="signup__busy" data-i18n="form.sending">Wysyłanie…</span>
                 </button>
-                <p class="signup__note" data-i18n="form.note">Zgłaszasz lokal do testów rozwiązania. Bez zobowiązań, 20% zniżki po starcie aplikacji.</p>
+                <p class="signup__note" data-i18n="form.note">Zgłaszasz lokal do bezpłatnego testu, bez zobowiązań. Po starcie pełnej aplikacji dostajesz 20% zniżki.</p>
                 <p class="signup__error" role="alert" hidden data-i18n="form.error">Nie udało się wysłać. Spróbuj ponownie lub napisz na hello@faveup.app.</p>
               </form>
               <div class="founder">
@@ -514,6 +532,7 @@
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -536,8 +555,8 @@
             </nav>
           </div>
           <p class="footer__bottom">
-            <span data-i18n="footer.dev">Aplikacja jest obecnie w fazie rozwoju.</span> •
-            <span data-i18n="footer.copy">© 2026 FaveUp. Łączymy lokalne firmy z ich społecznościami.</span>
+            <span data-i18n="footer.dev">Pełna aplikacja jest obecnie w fazie rozwoju.</span> •
+            <span data-i18n="footer.copy">© 2026 FaveUp.</span>
           </p>
         </div>
       </footer>
@@ -545,7 +564,7 @@
 
     <!-- ====================== FOR USERS ====================== -->
     <!-- ad-page:cut -->
-    <main id="view-users" data-view="users" hidden>
+    <main id="view-users" data-view="users" hidden data-off>
       <section class="hero">
         <div class="hero__bg" aria-hidden="true"><span class="blob blob--a"></span><span class="blob blob--b"></span></div>
         <div class="container hero__grid">
@@ -614,7 +633,7 @@
             </div>
           </div>
         </div>
-        <a class="scroll-hint" href="#users-more">
+        <a class="scroll-hint" href="#users-more" data-scroll>
           <span data-i18n="hero.scroll">Przewiń w dół, aby zobaczyć, jak to działa</span>
           <svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-down" /></svg>
         </a>

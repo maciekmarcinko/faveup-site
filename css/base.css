@@ -513,6 +513,14 @@ a {
   transform: scale(1.06);
 }
 
+/* The visible circle stays small; the hit area around it reaches about 44 px for a finger. */
+.phone__controls button::after {
+  content: '';
+  position: absolute;
+  inset: -0.6em;
+  border-radius: 50%;
+}
+
 .phone__controls .i {
   width: 1.6em;
   height: 1.6em;
