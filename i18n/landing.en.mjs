@@ -62,6 +62,15 @@ export default {
   'hero.floatB': 'Fresh strawberries, today until 5 pm 🍓',
 
   'hero.scroll': 'Scroll down to see how it works',
+  'test.badge': 'Free test',
+  'test.title': 'Start with a free test at your place',
+  'test.subtitle': 'Before the full app launches, you check at your own place whether customers want to stay in touch with you.',
+  'test.s1Title': 'We set up a QR code',
+  'test.s1': 'We meet for 15 minutes. The QR code goes by the till as a sticker or a stand, and you choose a bonus for your customers.',
+  'test.s2Title': 'Customers sign up',
+  'test.s2': 'Your staff invite customers to scan. They sign up with their name and email and get a bonus for their next visit by email straight away.',
+  'test.s3Title': 'You see the results',
+  'test.s3': "We count how many customers signed up and how many came back with the code. When the app launches, you already have a list of people who want your notifications.",
 
   'phone.date': 'Tuesday, December 17',
   'phone.now': 'now',
@@ -86,8 +95,9 @@ export default {
   'what.examplePush': '2 tables just opened up for tonight, 7 pm 🍝 First to call gets dessert on us!',
   'what.exampleResult': 'Both tables booked in 10 minutes. A full house all evening.',
 
-  'how.title': 'How does it work?',
-  'how.subtitle': '4 simple steps to reach your customers',
+  'how.title': "How will the full app work?",
+  'how.subtitle': "4 simple steps to reach your customers once the app launches",
+  'how.badge': 'Coming soon',
   'how.s1Title': 'Scan the QR code',
   'how.s1Desc':
     'Customers scan your QR code at the counter, bar or table, or find you on the map in the FaveUp app, and add your place to their favorites.',
@@ -98,7 +108,7 @@ export default {
   'how.s3Desc': "The message lands on your customers' phones right away – no algorithm, no noise.",
   'how.s4Title': 'Statistics',
   'how.s4Desc': 'See how many customers follow you and how they react to each push, while sales grow.',
-  'how.cta': 'Sign up your place',
+  'how.cta': "Start with a free test",
 
   'why.title': 'Why FaveUp?',
   'why.subtitle': 'The simplest way to stay in touch with your regular customers',
@@ -112,7 +122,7 @@ export default {
   'why.b1': 'Your push reaches people who added your place to their favorites themselves.',
   'why.b2': 'A deal for the next hour? Send it now and customers come in today.',
   'why.b3': 'Only people who like you follow you, and your push reaches every one of them, with no algorithms and no ads.',
-  'why.b4': "No need to invest in building and maintaining an app the way big chains do. You get a ready-made solution for a small price.",
+  'why.b4': "No need to invest in building and maintaining an app the way big chains do. Once it launches, you use the ready-made FaveUp app for a small fee.",
 
   'for.title': 'Who is it for?',
   'for.subtitle': 'Instant notifications work for businesses in many industries',
@@ -127,50 +137,39 @@ export default {
   'faq.title': 'Frequently asked questions',
   'faq.subtitle': 'What to know about push notifications for your place',
   'faq.qApp': 'Do my customers have to install an app?',
-  'faq.aApp':
-    "Not during the test. Customers scan the QR code, sign up with their name and email, and get a bonus for their next visit by email straight away. The full FaveUp app with push notifications is being built. When it launches, you start with a list of customers who want to hear from your place.",
+  'faq.aApp': "Not in the free test. Customers scan the QR code, sign up with their name and email, and get a bonus for their next visit by email straight away. The full FaveUp app with push notifications is being built. When it launches, you start with a list of customers who want to hear from your place.",
   'faq.qTime': 'How much of my time will it take?',
-  'faq.aTime':
-    'Getting started takes 15 minutes: we meet at your place and decide where the QR code goes and what bonus customers get. After that the code works on its own, and you just invite customers to scan it.',
+  'faq.aTime': "Starting the free test takes 15 minutes: we meet at your place and decide where the QR code goes and what bonus customers get. After that the code works on its own, and you just invite customers to scan it.",
   'faq.qFew': 'What if only a few customers sign up?',
-  'faq.aFew':
-    "That's why we start with a test and a bonus: your staff invite customers to scan, and they get a bonus for their next visit. In three places in Brochów, over 200 customers signed up this way. We also count how many come back with the code, so from day one you can see whether it works for you.",
+  'faq.aFew': "That's why we start with a free test and a bonus: your staff invite customers to scan, and they get a bonus for their next visit. In three places in Brochów, over 200 customers signed up this way. We also count how many come back with the code, so from day one you can see whether it works for you.",
   'faq.q1': 'How is FaveUp different from SMS marketing, newsletters and social media?',
-  'faq.a1':
-    'Social media posts get buried by the algorithm, newsletters get lost among other emails, and every SMS in a campaign is paid for separately. A FaveUp push notification lands straight on the phone screen of people who chose to follow your place – no algorithm, no ads, no fighting for reach.',
+  'faq.a1': "Social media posts get buried by the algorithm, newsletters get lost among other emails, and every SMS in a campaign is paid for separately. In the full app, a FaveUp push notification lands straight on the phone screen of people who chose to follow your place – no algorithm, no ads, no fighting for reach.",
   'faq.q2': 'Is FaveUp a loyalty program?',
   'faq.a2':
     "FaveUp builds customer loyalty, but it isn't another stamp card. Instead of a reward after the tenth coffee, you give regulars what they actually look for: a heads-up about a fresh delivery, a new product, a free appointment slot or a deal for the next hour. So they come back more often and are keener to try new things.",
   'faq.q3': 'How do customers start following my place?',
-  'faq.a3':
-    'You put a QR code at the counter, bar or table – as a sticker or a stand. Customers scan it with their phone and add your place to their favorites. They can also find you on the map in the FaveUp app.',
-  'faq.q4': 'Do I need my own mobile app?',
-  'faq.a4':
-    "No. Customers keep all their favorite places in one FaveUp app, and you send notifications from a simple panel in your browser. You don't build or maintain an app of your own.",
-  'faq.q5': 'What kinds of businesses is FaveUp for?',
-  'faq.a5':
-    'Local businesses with regular customers: cafes, restaurants, bakeries and pastry shops, retail stores, hair and beauty salons, gyms, fitness studios, local artisans and cultural venues. We are already running a QR code pilot with a cafe, a pastry shop and a local cultural center in Brochów, Poland.',
+  'faq.a3': "You put a QR code at the counter, bar or table, as a sticker or a stand, and customers scan it with their phone. In the free test they sign up with their email; once the app launches, they add your place to their favorites. They can then also find you on the map in the FaveUp app.",
   'faq.q6': 'How much does FaveUp cost and when does it launch?',
-  'faq.a6': "The app is in development, and we'll announce the price before launch. Businesses that sign up now get 20% off after the app launches.",
+  'faq.a6': "The free test costs nothing. The full app is in development, and we'll announce its price before launch. Businesses that sign up now get 20% off after the app launches.",
 
-  'contact.badge': 'Get in touch',
-  'contact.title': 'Sign up your place and get 20% off after the app launches',
-  'contact.subtitle': "We'll set up 15 minutes at your place and show you how the QR code test works.",
+  'contact.title': "Sign up your place for the test",
+  'contact.subtitle': "We'll set up 15 minutes at your place and show you how the QR code test works. Once the full app launches, you get 20% off.",
   'founder.ask': 'Have a question? Write to us',
   'founder.role': 'founder of FaveUp',
   'contact.question': 'Have a question?',
   'form.label': 'Email address',
   'form.placeholder': 'Your email address',
   'form.submit': 'Sign up your place',
-  'form.note': "You're signing up your place to test FaveUp. No commitment, 20% off after the app launches.",
+  'form.more': 'See how the free test works',
+  'form.note': "You're signing up your place for a free test, with no commitment. Once the full app launches, you get 20% off.",
   'form.sending': 'Sending…',
   'form.error': "We couldn't send it. Please try again or write to hello@faveup.app.",
   'form.thanks': 'Thank you!',
 
   'footer.privacy': 'Privacy policy',
   'footer.privacyHref': 'privacy/',
-  'footer.dev': 'The app is currently in development.',
-  'footer.copy': '© 2026 FaveUp. Connecting local businesses with their communities.',
+  'footer.dev': "The full app is currently in development.",
+  'footer.copy': '© 2026 FaveUp.',
 
   'users.title': 'Instant updates from the spots you love',
   'users.subtitle': 'Follow your favorite cafes, restaurants and local spots and hear about deals and news right away',

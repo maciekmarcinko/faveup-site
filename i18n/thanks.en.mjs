@@ -8,8 +8,8 @@ export default {
   title: 'Thank you, we got your sign-up!',
   nextTitle: "What's next?",
   next1: "We'll email you to set up 15 minutes at your place.",
-  next2: "We'll show you how the QR code test and the bonus for your customers work.",
-  next3: 'Once the app launches, you get 20% off.',
+  next2: "We'll show you how the free QR code test and the bonus for your customers work.",
+  next3: 'Once the full app launches, you get 20% off.',
 
   moreTitle: 'Speed things up (optional)',
   moreSub: "Tell us which place it is, and we'll come prepared.",

@@ -91,6 +91,21 @@
   font-size: 18px;
 }
 
+/* Secondary action: outlined, so the sign-up buttons stay the only solid ones. */
+.btn--secondary {
+  border: 2px solid var(--teal);
+  background: transparent;
+  color: var(--teal-ink);
+}
+
+.btn--secondary:hover {
+  background: rgb(54 214 198 / 0.12);
+}
+
+.section--dark .btn--secondary {
+  color: #fff;
+}
+
 .btn--sm {
   padding: 10px 20px;
   font-size: 14px;
@@ -421,6 +436,28 @@
 .signup__note {
   font-size: 14px;
   color: var(--gray-600);
+}
+
+/* From the hero form down to the test steps, for visitors who want to know what they sign up for. */
+.signup__more {
+  justify-self: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .signup--hero .signup__more {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signup__more {
+    justify-self: start;
+  }
 }
 
 .contact .signup__note {
@@ -765,6 +802,71 @@
   margin-top: 14px;
   font-size: clamp(17px, 2vw, 20px);
   color: var(--gray-600);
+}
+
+/* Free test: what a business actually signs up for today, before the full app launches. */
+
+.test-steps {
+  display: grid;
+  gap: 16px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .test-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.test-step {
+  padding: 28px 24px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.test-step__num {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(54 214 198 / 0.15);
+  color: var(--teal-ink);
+  font-weight: 800;
+}
+
+.test-step h3 {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.test-step p {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-600);
+}
+
+/* The sign-up card sits right under the test steps, so the explanation and the form are one block. */
+.test__signup {
+  max-width: 720px;
+  margin: 48px auto 0;
+}
+
+.contact__title {
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
 }
 
 /* What is FaveUp: the pitch on the left, a real-life push on the right. */
@@ -1464,22 +1566,25 @@
   text-align: center;
 }
 
+/* A label, not a button: the same soft pill as the hero eyebrow, so it never looks clickable. */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 24px;
-  padding: 8px 22px;
+  margin-bottom: 20px;
+  padding: 6px 14px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #40e0d0, #36c5b7);
-  color: #fff;
+  background: rgb(54 214 198 / 0.14);
+  color: var(--teal-ink);
   font-size: 14px;
   font-weight: 600;
 }
 
+.section--dark .badge,
 .contact .badge {
-  background: rgb(255 255 255 / 0.18);
-  border: 1px solid rgb(255 255 255 / 0.35);
+  border: 1px solid rgb(255 255 255 / 0.3);
+  background: rgb(255 255 255 / 0.1);
+  color: #fff;
 }
 
 .badge .i {
@@ -1718,6 +1823,21 @@
   color: var(--gray-900);
 }
 
+/* Small text links get a finger-sized (44 px) hit area without changing the layout. */
+.signup__more,
+.founder__mail,
+.footer__links a {
+  position: relative;
+}
+
+.signup__more::after,
+.founder__mail::after,
+.footer__links a::after {
+  content: '';
+  position: absolute;
+  inset: -12px -6px;
+}
+
 .footer__deck {
   display: inline-flex;
   align-items: center;
@@ -1796,6 +1916,7 @@
 
 /* ---------- View switching ---------- */
 
+.segmented[hidden],
 [data-view][hidden] {
   display: none;
 }

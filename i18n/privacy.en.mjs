@@ -20,7 +20,7 @@ export default {
 
   'who.title': '1. Who is responsible for your data',
   'who.body':
-    'The controller of your personal data is FaveUp. For anything about your data, write to us at <a href="mailto:hello@faveup.app">hello@faveup.app</a>.',
+    'The controller of your personal data is Maciej Marcinko, who runs FaveUp as a sole proprietorship (Polish tax ID, NIP: 8992651531). For anything about your data, write to us at <a href="mailto:hello@faveup.app">hello@faveup.app</a>.',
 
   'what.title': '2. What data we collect and why',
 
