@@ -60,11 +60,12 @@
     <link rel="preload" href="../assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../css/base.css?v=64d03394aa" />
-    <link rel="stylesheet" href="../css/landing.css?v=b731d14567" />
-    <script src="/js/consent.js?v=8b6aeb6c25"></script>
+    <link rel="stylesheet" href="../css/landing.css?v=fdcdf06af7" />
+    <script src="/js/consent.js?v=36b65fb878" data-marketing></script>
     <script>
       document.documentElement.classList.add('js');
-      // This script is copied into en/index.html as is, so it reads the page language instead of assuming PL.
+      // This script is copied into en/index.html and the ad pages (dla-firm/) as is, so it reads the
+      // page language instead of assuming PL.
       (() => {
         const pageLang = document.documentElement.lang;
         // Old deep links from the Figma site pointed at the deck via the hash router.
@@ -72,7 +73,8 @@
           location.replace('prezentacja/');
           return;
         }
-        if (pageLang !== 'pl') return;
+        // An ad click must land on the page the ad paid for, whatever language was remembered.
+        if (pageLang !== 'pl' || document.documentElement.hasAttribute('data-ad-page')) return;
         // Old ?lang=en links and visitors who picked English earlier land on the English page.
         let saved = null;
         try {
@@ -84,10 +86,10 @@
         if (asked === 'en' || (!asked && saved === 'en')) location.replace(`en/${location.hash}`);
       })();
     </script>
-    <script type="module" src="../js/landing.js?v=b50f12486d"></script>
+    <script type="module" src="../js/landing.js?v=01b97ce28d"></script>
   </head>
   <body>
-    <header class="topbar" data-topbar>
+    <header class="topbar" data-topbar data-view-current="business">
       <div class="container topbar__inner">
         <a class="brand" href="./" aria-label="FaveUp" data-i18n-attr="href:nav.homeHref">
           <span class="logo" aria-hidden="true">
@@ -100,9 +102,12 @@
         </a>
         <div class="topbar__actions">
           <a class="btn btn--primary btn--attention btn--sm topbar__cta" href="#contact" data-join>
-            <span class="topbar__cta-long" data-i18n="nav.join">Join the waitlist</span>
-            <span class="topbar__cta-short" data-i18n="nav.joinShort">Join</span>
+            <span class="topbar__cta-long" data-for-view="business" data-i18n="nav.join">Sign up your place</span>
+            <span class="topbar__cta-short" data-for-view="business" data-i18n="nav.joinShort">Sign up</span>
+            <span class="topbar__cta-long" data-for-view="users" data-i18n="nav.joinUsers">Join the waitlist</span>
+            <span class="topbar__cta-short" data-for-view="users" data-i18n="nav.joinUsersShort">Join</span>
           </a>
+          <!-- ad-page:cut -->
           <div class="segmented" role="group" aria-label="View" data-i18n-attr="aria-label:nav.viewLabel">
             <button type="button" data-view-button="business" aria-pressed="true" title="For Business" data-i18n-attr="title:nav.business">
               <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#building-2" /></svg>
@@ -117,6 +122,7 @@
             <a href="../" hreflang="pl" lang="pl" data-set-lang="pl" aria-current="false" data-i18n-attr="aria-current:nav.plCurrent">PL</a>
             <a href="./" hreflang="en" lang="en" data-set-lang="en" aria-current="page" data-i18n-attr="href:nav.enHref; aria-current:nav.enCurrent">EN</a>
           </div>
+          <!-- /ad-page:cut -->
         </div>
       </div>
     </header>
@@ -131,7 +137,17 @@
             <h1 class="hero__title rise" style="--delay: 0.05s" data-i18n="hero.title">Sell more with simple notifications</h1>
             <p class="hero__lead rise" style="--delay: 0.1s" data-i18n="hero.subtitle">Your regulars always hear in time – none of them will miss an important moment at your place again</p>
             <div class="hero__actions rise" style="--delay: 0.15s">
-              <a class="btn btn--primary btn--attention btn--lg" href="#contact" data-join data-i18n="hero.cta">Join the waitlist</a>
+              <form class="signup signup--hero" data-signup data-source="business-hero" data-lead>
+                <label class="sr-only" for="email-hero" data-i18n="form.label">Email address</label>
+                <input id="email-hero" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
+                <input class="signup__trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <button class="btn btn--primary btn--attention btn--lg" type="submit">
+                  <span class="signup__idle" data-i18n="form.submit">Sign up your place</span>
+                  <span class="signup__busy" data-i18n="form.sending">Sending…</span>
+                </button>
+                <p class="signup__note" data-i18n="form.note">You're signing up your place to test FaveUp. No commitment, 20% off after the app launches.</p>
+                <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
+              </form>
             </div>
           </div>
 
@@ -165,6 +181,22 @@
                     <p class="notif__body" data-i18n="phone.notifBody">Try our Ethiopian blend. The first 20 people get 20% off!</p>
                     <img class="notif__image" src="../assets/img/aroma-swieza-kawa-ziarna.webp" alt="Freshly roasted coffee beans at Aroma Café" width="720" height="313" data-i18n-attr="alt:phone.imageAlt" />
                   </div>
+                  <div class="notif-queue">
+                    <div class="notif notif--mini">
+                      <span class="notif__icon notif__icon--grocer" aria-hidden="true"><svg class="i"><use href="../assets/icons.svg#carrot" /></svg></span>
+                      <div class="notif__app">
+                        <div class="notif__name"><span data-i18n="hero.floatBName">Greengrocer</span> <small>2 min</small></div>
+                        <p class="notif__text" data-i18n="hero.floatB">Fresh strawberries, today until 5 pm 🍓</p>
+                      </div>
+                    </div>
+                    <div class="notif notif--mini">
+                      <span class="notif__icon notif__icon--cinema" aria-hidden="true"><svg class="i"><use href="../assets/icons.svg#clapperboard" /></svg></span>
+                      <div class="notif__app">
+                        <div class="notif__name"><span data-i18n="hero.floatAName">Aurora Cinema</span> <small>15 min</small></div>
+                        <p class="notif__text" data-i18n="hero.floatA">Last 4 tickets for the 8 pm screening 🎬</p>
+                      </div>
+                    </div>
+                  </div>
                   <div class="phone__unlock">
                     <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#lock" /></svg>
                     <span data-i18n="phone.unlock">Slide to unlock</span>
@@ -187,28 +219,6 @@
                 </div>
               </div>
               <div class="phone__island" aria-hidden="true"></div>
-            </div>
-            <!-- Decorative pushes around the phone: what customers get from their favourite places. -->
-            <div class="float float--a" aria-hidden="true">
-              <span class="float__icon float__icon--cinema"><svg class="i"><use href="../assets/icons.svg#clapperboard" /></svg></span>
-              <div>
-                <p class="float__head"><strong data-i18n="hero.floatAName">Aurora Cinema</strong> <span data-i18n="phone.now">now</span></p>
-                <p class="float__text" data-i18n="hero.floatA">Last 4 tickets for the 8 pm screening 🎬</p>
-              </div>
-            </div>
-            <div class="float float--b" aria-hidden="true">
-              <span class="float__icon float__icon--grocer"><svg class="i"><use href="../assets/icons.svg#carrot" /></svg></span>
-              <div>
-                <p class="float__head"><strong data-i18n="hero.floatBName">Greengrocer</strong> <span>2 min</span></p>
-                <p class="float__text" data-i18n="hero.floatB">Fresh strawberries, today until 5 pm 🍓</p>
-              </div>
-            </div>
-            <div class="float float--c" aria-hidden="true">
-              <span class="float__icon float__icon--arts"><svg class="i"><use href="../assets/icons.svg#palette" /></svg></span>
-              <div>
-                <p class="float__head"><strong data-i18n="hero.floatCName">Arts Centre</strong> <span>15 min</span></p>
-                <p class="float__text" data-i18n="hero.floatC">Kids' workshop: 3 spots left 🎨</p>
-              </div>
             </div>
             </div>
 
@@ -251,7 +261,7 @@
             <aside class="what__case">
               <p class="what__case-label">
                 <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#sparkles" /></svg>
-                <span data-i18n="what.exampleLabel">Real-life example</span>
+                <span data-i18n="what.exampleLabel">Example situation</span>
               </p>
               <div class="what__push">
                 <img src="../assets/img/basilico-logo.svg" alt="" width="44" height="44" />
@@ -276,16 +286,16 @@
             <p class="section__sub" data-i18n="for.subtitle">Instant notifications work for businesses in many industries</p>
           </div>
           <ul class="industries">
-            <li class="industry reveal"><img class="industry__photo" src="../assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Cafes, Restaurants &amp; Bakeries</span></li>
-            <li class="industry reveal" style="--delay: 0.04s"><img class="industry__photo" src="../assets/img/people-shop.webp" alt="" width="720" height="477" loading="lazy" /><span data-i18n="for.i2">Retail Stores</span></li>
-            <li class="industry reveal" style="--delay: 0.08s"><img class="industry__photo" src="../assets/img/people-artisan.webp" alt="" width="720" height="1080" loading="lazy" /><span data-i18n="for.i3">Local Artisans</span></li>
-            <li class="industry reveal" style="--delay: 0.12s"><img class="industry__photo" src="../assets/img/people-gym.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i4">Gyms &amp; Fitness Studios</span></li>
-            <li class="industry reveal" style="--delay: 0.16s"><img class="industry__photo" src="../assets/img/people-hair.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i5">Hair &amp; Beauty Salons</span></li>
+            <li class="industry reveal"><img class="industry__photo" src="../assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Cafes, restaurants &amp; bakeries</span></li>
+            <li class="industry reveal" style="--delay: 0.04s"><img class="industry__photo" src="../assets/img/people-shop.webp" alt="" width="720" height="477" loading="lazy" /><span data-i18n="for.i2">Retail stores</span></li>
+            <li class="industry reveal" style="--delay: 0.08s"><img class="industry__photo" src="../assets/img/people-artisan.webp" alt="" width="720" height="1080" loading="lazy" /><span data-i18n="for.i3">Local artisans</span></li>
+            <li class="industry reveal" style="--delay: 0.12s"><img class="industry__photo" src="../assets/img/people-gym.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i4">Gyms &amp; fitness studios</span></li>
+            <li class="industry reveal" style="--delay: 0.16s"><img class="industry__photo" src="../assets/img/people-hair.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i5">Hair &amp; beauty salons</span></li>
             <li class="industry industry--cta reveal" style="--delay: 0.2s">
               <a href="#contact" data-join>
                 <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#sparkles" /></svg>
                 <strong data-i18n="for.ctaTitle">Maybe your business needs this too?</strong>
-                <span class="industry__link"><span data-i18n="for.ctaLink">Join the waitlist</span> <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#arrow-right" /></svg></span>
+                <span class="industry__link"><span data-i18n="for.ctaLink">Sign up your place</span> <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#arrow-right" /></svg></span>
               </a>
             </li>
           </ul>
@@ -420,6 +430,9 @@
               <p class="step__desc" data-i18n="how.s4Desc">See how many customers follow you and how they react to each push, while sales grow.</p>
             </li>
           </ol>
+          <div class="how__cta reveal">
+            <a class="btn btn--primary btn--lg" href="#contact" data-join data-i18n="how.cta">Sign up your place</a>
+          </div>
         </div>
       </section>
 
@@ -430,6 +443,18 @@
             <p class="section__sub" data-i18n="faq.subtitle">What to know about push notifications for your place</p>
           </div>
           <div class="faq reveal">
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.qApp">Do my customers have to install an app?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.aApp">Not during the test. Customers scan the QR code, sign up with their name and email, and get a bonus for their next visit by email straight away. The full FaveUp app with push notifications is being built. When it launches, you start with a list of customers who want to hear from your place.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.qTime">How much of my time will it take?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.aTime">Getting started takes 15 minutes: we meet at your place and decide where the QR code goes and what bonus customers get. After that the code works on its own, and you just invite customers to scan it.</p>
+            </details>
+            <details class="faq__item">
+              <summary><h3 class="faq__q" data-i18n="faq.qFew">What if only a few customers sign up?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
+              <p class="faq__a" data-i18n="faq.aFew">That's why we start with a test and a bonus: your staff invite customers to scan, and they get a bonus for their next visit. In three places in Brochów, over 200 customers signed up this way. We also count how many come back with the code, so from day one you can see whether it works for you.</p>
+            </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q1">How is FaveUp different from SMS marketing, newsletters and social media?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
               <p class="faq__a" data-i18n="faq.a1">Social media posts get buried by the algorithm, newsletters get lost among other emails, and every SMS in a campaign is paid for separately. A FaveUp push notification lands straight on the phone screen of people who chose to follow your place – no algorithm, no ads, no fighting for reach.</p>
@@ -452,7 +477,7 @@
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q6">How much does FaveUp cost and when does it launch?</h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.a6">The app is in development. Businesses that join the beta now get 20% off at launch.</p>
+              <p class="faq__a" data-i18n="faq.a6">The app is in development, and we'll announce the price before launch. Businesses that sign up now get 20% off after the app launches.</p>
             </details>
           </div>
         </div>
@@ -465,26 +490,27 @@
             <span class="contact__glow contact__glow--b" aria-hidden="true"></span>
             <div class="contact__inner">
               <p class="badge"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg><span data-i18n="contact.badge">Get in touch</span></p>
-              <h2 class="h2 h2--xl" data-i18n="contact.title">Be the first to try it and get 20% off at launch</h2>
-              <p class="contact__sub" data-i18n="contact.subtitle">Grow your sales with FaveUp</p>
-              <form class="signup" data-signup data-source="business-view">
+              <h2 class="h2 h2--xl" data-i18n="contact.title">Sign up your place and get 20% off after the app launches</h2>
+              <p class="contact__sub" data-i18n="contact.subtitle">We'll set up 15 minutes at your place and show you how the QR code test works.</p>
+              <form class="signup" data-signup data-source="business-view" data-lead>
                 <label class="sr-only" for="email-business" data-i18n="form.label">Email address</label>
                 <input id="email-business" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
+                <input class="signup__trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <button class="btn btn--gradient btn--block" type="submit">
                   <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg>
-                  <span class="signup__idle" data-i18n="form.submit">Join first and get 20% off at launch</span>
+                  <span class="signup__idle" data-i18n="form.submit">Sign up your place</span>
                   <span class="signup__busy" data-i18n="form.sending">Sending…</span>
                 </button>
+                <p class="signup__note" data-i18n="form.note">You're signing up your place to test FaveUp. No commitment, 20% off after the app launches.</p>
                 <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
               </form>
-              <div class="signup-done" hidden>
-                <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#check" /></svg>
-                <p class="signup-done__title" data-i18n="form.thanks">Thank you!</p>
-                <p data-i18n="form.thanksDesc">We'll get back to you at that address.</p>
-              </div>
-              <div class="contact__ask">
-                <p data-i18n="contact.question">Have a question?</p>
-                <a href="mailto:hello@faveup.app">hello@faveup.app</a>
+              <div class="founder">
+                <img class="founder__photo" src="../assets/deck/maciej-marcinko.webp" alt="" width="48" height="48" loading="lazy" />
+                <div>
+                  <p class="founder__ask" data-i18n="founder.ask">Have a question? Write to us</p>
+                  <a class="founder__mail" href="mailto:hello@faveup.app">hello@faveup.app</a>
+                  <p class="founder__name">Maciek Marcinko, <span data-i18n="founder.role">founder of FaveUp</span></p>
+                </div>
               </div>
             </div>
           </div>
@@ -506,10 +532,6 @@
             <nav class="footer__links">
               <a href="mailto:hello@faveup.app">hello@faveup.app</a>
               <a href="privacy/" data-i18n-attr="href:footer.privacyHref" data-i18n="footer.privacy">Privacy policy</a>
-              <a class="footer__deck" href="prezentacja/" data-i18n-attr="href:footer.presentationHref">
-                <span data-i18n="footer.presentation">Detailed Presentation</span>
-                <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#arrow-right" /></svg>
-              </a>
             </nav>
           </div>
           <p class="footer__bottom">
@@ -521,6 +543,7 @@
     </main>
 
     <!-- ====================== FOR USERS ====================== -->
+    <!-- ad-page:cut -->
     <main id="view-users" data-view="users" hidden>
       <section class="hero">
         <div class="hero__bg" aria-hidden="true"><span class="blob blob--a"></span><span class="blob blob--b"></span></div>
@@ -562,6 +585,22 @@
                       <p class="notif__body" data-i18n="phone.notifBody">Try our Ethiopian blend. The first 20 people get 20% off!</p>
                       <img class="notif__image" src="../assets/img/aroma-swieza-kawa-ziarna.webp" alt="Freshly roasted coffee beans at Aroma Café" width="720" height="313" data-i18n-attr="alt:phone.imageAlt" />
                     </div>
+                    <div class="notif-queue">
+                      <div class="notif notif--mini">
+                        <span class="notif__icon notif__icon--grocer" aria-hidden="true"><svg class="i"><use href="../assets/icons.svg#carrot" /></svg></span>
+                        <div class="notif__app">
+                          <div class="notif__name"><span data-i18n="hero.floatBName">Greengrocer</span> <small>2 min</small></div>
+                          <p class="notif__text" data-i18n="hero.floatB">Fresh strawberries, today until 5 pm 🍓</p>
+                        </div>
+                      </div>
+                      <div class="notif notif--mini">
+                        <span class="notif__icon notif__icon--cinema" aria-hidden="true"><svg class="i"><use href="../assets/icons.svg#clapperboard" /></svg></span>
+                        <div class="notif__app">
+                          <div class="notif__name"><span data-i18n="hero.floatAName">Aurora Cinema</span> <small>15 min</small></div>
+                          <p class="notif__text" data-i18n="hero.floatA">Last 4 tickets for the 8 pm screening 🎬</p>
+                        </div>
+                      </div>
+                    </div>
                     <div class="phone__unlock">
                       <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#lock" /></svg>
                       <span data-i18n="phone.unlock">Slide to unlock</span>
@@ -570,28 +609,6 @@
                   </div>
                 </div>
                 <div class="phone__island" aria-hidden="true"></div>
-              </div>
-              <!-- Decorative pushes around the phone: what customers get from their favourite places. -->
-              <div class="float float--a" aria-hidden="true">
-                <span class="float__icon float__icon--cinema"><svg class="i"><use href="../assets/icons.svg#clapperboard" /></svg></span>
-                <div>
-                  <p class="float__head"><strong data-i18n="hero.floatAName">Aurora Cinema</strong> <span data-i18n="phone.now">now</span></p>
-                  <p class="float__text" data-i18n="hero.floatA">Last 4 tickets for the 8 pm screening 🎬</p>
-                </div>
-              </div>
-              <div class="float float--b" aria-hidden="true">
-                <span class="float__icon float__icon--grocer"><svg class="i"><use href="../assets/icons.svg#carrot" /></svg></span>
-                <div>
-                  <p class="float__head"><strong data-i18n="hero.floatBName">Greengrocer</strong> <span>2 min</span></p>
-                  <p class="float__text" data-i18n="hero.floatB">Fresh strawberries, today until 5 pm 🍓</p>
-                </div>
-              </div>
-              <div class="float float--c" aria-hidden="true">
-                <span class="float__icon float__icon--arts"><svg class="i"><use href="../assets/icons.svg#palette" /></svg></span>
-                <div>
-                  <p class="float__head"><strong data-i18n="hero.floatCName">Arts Centre</strong> <span>15 min</span></p>
-                  <p class="float__text" data-i18n="hero.floatC">Kids' workshop: 3 spots left 🎨</p>
-                </div>
               </div>
             </div>
           </div>
@@ -622,11 +639,11 @@
             <p class="section__sub" data-i18n="users.placesSub">The cafes, shops, salons and gyms you like, in one app</p>
           </div>
           <ul class="industries">
-            <li class="industry reveal"><img class="industry__photo" src="../assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Cafes, Restaurants &amp; Bakeries</span></li>
-            <li class="industry reveal" style="--delay: 0.04s"><img class="industry__photo" src="../assets/img/people-shop.webp" alt="" width="720" height="477" loading="lazy" /><span data-i18n="for.i2">Retail Stores</span></li>
-            <li class="industry reveal" style="--delay: 0.08s"><img class="industry__photo" src="../assets/img/people-artisan.webp" alt="" width="720" height="1080" loading="lazy" /><span data-i18n="for.i3">Local Artisans</span></li>
-            <li class="industry reveal" style="--delay: 0.12s"><img class="industry__photo" src="../assets/img/people-gym.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i4">Gyms &amp; Fitness Studios</span></li>
-            <li class="industry reveal" style="--delay: 0.16s"><img class="industry__photo" src="../assets/img/people-hair.webp" alt="" width="720" height="481" loading="lazy" /><span data-i18n="for.i5">Hair &amp; Beauty Salons</span></li>
+            <li class="industry reveal"><img class="industry__photo" src="../assets/img/people-cafe.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i1">Cafes, restaurants &amp; bakeries</span></li>
+            <li class="industry reveal" style="--delay: 0.04s"><img class="industry__photo" src="../assets/img/people-shop.webp" alt="" width="720" height="477" loading="lazy" /><span data-i18n="for.i2">Retail stores</span></li>
+            <li class="industry reveal" style="--delay: 0.08s"><img class="industry__photo" src="../assets/img/people-artisan.webp" alt="" width="720" height="1080" loading="lazy" /><span data-i18n="for.i3">Local artisans</span></li>
+            <li class="industry reveal" style="--delay: 0.12s"><img class="industry__photo" src="../assets/img/people-gym.webp" alt="" width="720" height="480" loading="lazy" /><span data-i18n="for.i4">Gyms &amp; fitness studios</span></li>
+            <li class="industry reveal" style="--delay: 0.16s"><img class="industry__photo" src="../assets/img/people-hair.webp" alt="" width="720" height="481" loading="lazy" /><span data-i18n="for.i5">Hair &amp; beauty salons</span></li>
             <li class="industry industry--cta reveal" style="--delay: 0.2s">
               <a href="#waitlist" data-join>
                 <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#bell-ring" /></svg>
@@ -681,15 +698,16 @@
             <span class="contact__glow contact__glow--a" aria-hidden="true"></span>
             <span class="contact__glow contact__glow--b" aria-hidden="true"></span>
             <div class="contact__inner">
-                <p class="badge"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg><span data-i18n="contact.badge">Get in touch</span></p>
-                <h2 class="h2 h2--xl" data-i18n="contact.title">Be the first to try it and get 20% off at launch</h2>
-                <p class="contact__sub" data-i18n="contact.subtitle">Grow your sales with FaveUp</p>
+                <p class="badge"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#bell-ring" /></svg><span data-i18n="users.formBadge">Waitlist</span></p>
+                <h2 class="h2 h2--xl" data-i18n="users.formTitle">Be the first to know when FaveUp launches</h2>
+                <p class="contact__sub" data-i18n="users.formSub">We'll let you know when the app is ready.</p>
                 <form class="signup" data-signup data-source="users-view">
                   <label class="sr-only" for="email-users" data-i18n="form.label">Email address</label>
                   <input id="email-users" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
+                  <input class="signup__trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
                   <button class="btn btn--gradient btn--block" type="submit">
                     <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#mail" /></svg>
-                    <span class="signup__idle" data-i18n="form.submit">Join first and get 20% off at launch</span>
+                    <span class="signup__idle" data-i18n="users.formSubmit">Sign me up</span>
                     <span class="signup__busy" data-i18n="form.sending">Sending…</span>
                   </button>
                   <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
@@ -697,7 +715,7 @@
                 <div class="signup-done" hidden>
                   <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#check" /></svg>
                   <p class="signup-done__title" data-i18n="form.thanks">Thank you!</p>
-                  <p data-i18n="form.thanksDesc">We'll get back to you at that address.</p>
+                  <p data-i18n="users.formThanks">We'll let you know when the app launches.</p>
                 </div>
                 <div class="contact__ask">
                   <p data-i18n="contact.question">Have a question?</p>
@@ -711,5 +729,6 @@
         </div>
       </section>
     </main>
+    <!-- /ad-page:cut -->
   </body>
 </html>

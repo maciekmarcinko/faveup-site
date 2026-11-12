@@ -20,7 +20,7 @@
     <link rel="preload" href="../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../css/base.css?v=64d03394aa" />
     <link rel="stylesheet" href="../css/legal.css?v=09f25986fd" />
-    <script src="/js/consent.js?v=8b6aeb6c25"></script>
+    <script src="/js/consent.js?v=36b65fb878" data-marketing></script>
     <script type="module">
       import { setupLangLinks } from '/js/lang-links.js';
       setupLangLinks();
@@ -44,7 +44,7 @@
 
     <main class="legal-container legal">
       <h1 data-i18n="title">Polityka prywatności</h1>
-      <p class="legal__updated" data-i18n="updated">Ostatnia aktualizacja: 5 listopada 2026</p>
+      <p class="legal__updated" data-i18n="updated">Ostatnia aktualizacja: 12 listopada 2026</p>
 
       <section>
         <h2 data-i18n="who.title">1. Kto odpowiada za Twoje dane</h2>
@@ -55,7 +55,7 @@
         <h2 data-i18n="what.title">2. Jakie dane zbieramy i po co</h2>
 
         <h3 data-i18n="waitlist.title">Lista oczekujących na stronie głównej</h3>
-        <p data-i18n="waitlist.body">Gdy zapisujesz się na listę, zbieramy Twój adres e-mail, wybrany język i to, czy zapisujesz się jako firma, czy jako użytkownik. Używamy ich, żeby poinformować Cię o starcie aplikacji FaveUp. Podstawą jest Twoja zgoda (art. 6 ust. 1 lit. a RODO). Dane trzymamy do startu aplikacji albo do chwili, gdy poprosisz o ich usunięcie.</p>
+        <p data-i18n="waitlist.body">Gdy zapisujesz się na listę, zbieramy Twój adres e-mail, wybrany język i to, czy zapisujesz się jako firma, czy jako użytkownik. Jeśli zgłaszasz swój lokal, możesz też podać jego nazwę, adres lub dzielnicę i numer telefonu. Do zapisu dołączamy informację, skąd trafiłeś na stronę (np. nazwę kampanii reklamowej z linku). Używamy tych danych, żeby poinformować Cię o starcie aplikacji FaveUp, a jeśli zgłaszasz lokal, żeby skontaktować się z Tobą w sprawie testu. Podstawą jest Twoja zgoda (art. 6 ust. 1 lit. a RODO). Dane trzymamy do startu aplikacji albo do chwili, gdy poprosisz o ich usunięcie.</p>
 
         <h3 data-i18n="qr.title">Strony zapisu z kodów QR w lokalach</h3>
         <p data-i18n="qr.body">Gdy zapisujesz się przez kod QR w lokalu partnerskim (np. w Cukierni Zalewski), zbieramy Twój adres e-mail, język, nazwę lokalu i datę zapisu. Używamy ich, żeby wysłać Ci kod rabatowy i informować Cię o starcie FaveUp, zgodnie z regulaminem promocji widocznym na stronie zapisu (art. 6 ust. 1 lit. b RODO). Listę zapisów widzi także lokal, w którym się zapisujesz. Dane trzymamy do końca promocji i startu aplikacji albo do chwili, gdy poprosisz o ich usunięcie.</p>
@@ -63,6 +63,9 @@
         <h3 data-i18n="stats.title">Statystyki odwiedzin (Google Analytics)</h3>
         <p data-i18n="stats.body">Tylko jeśli się zgodzisz, korzystamy z Google Analytics, żeby wiedzieć, które strony są odwiedzane, skąd przychodzą odwiedzający (np. z wyszukiwarki albo z kodu QR), z jakich urządzeń korzystają i z jakiego kraju lub miasta mniej więcej pochodzą. Google Analytics nie zapisuje pełnego adresu IP. Podstawą jest Twoja zgoda (art. 6 ust. 1 lit. a RODO). Dane w Google Analytics są usuwane po maksymalnie 14 miesiącach.</p>
         <p data-i18n="stats.denied">Jeśli nie wyrazisz zgody, Google Analytics nie zapisuje żadnych plików cookie. Google dostaje wtedy tylko podstawowe sygnały bez plików cookie (tryb uzyskiwania zgody, ang. Consent Mode), które nie pozwalają Cię rozpoznać ani powiązać Twoich wizyt.</p>
+
+        <h3 data-i18n="ads.title">Pomiar reklam (Google Ads i Meta)</h3>
+        <p data-i18n="ads.body">Tylko jeśli zgodzisz się na pliki cookie reklamowe, korzystamy z tagu Google Ads i piksela Meta (Facebook, Instagram), żeby sprawdzić, czy ktoś, kto kliknął naszą reklamę, zgłosił potem swój lokal. Dzięki temu wiemy, które reklamy działają. Google i Meta mogą użyć tych informacji także do wyświetlania naszych reklam. Nie przekazujemy im Twojego adresu e-mail ani innych danych z formularza. Podstawą jest Twoja zgoda (art. 6 ust. 1 lit. a RODO). Bez zgody piksel Meta się nie wczytuje, a Google dostaje tylko podstawowe sygnały bez plików cookie.</p>
 
         <h3 data-i18n="logs.title">Dane techniczne</h3>
         <p data-i18n="logs.body">Strona jest hostowana w GitHub Pages. GitHub, jak każdy serwer, może zapisywać adres IP i informacje o przeglądarce w logach, żeby chronić usługę przed nadużyciami.</p>
@@ -82,8 +85,8 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>faveup-consent</code></td>
-                <td data-i18n="cookies.consentPurpose">Pamięta, czy zgadzasz się na Google Analytics. Zapisywane w pamięci przeglądarki.</td>
+                <td><code>faveup-consent</code>, <code>faveup-consent-ads</code></td>
+                <td data-i18n="cookies.consentPurpose">Pamięta, czy zgadzasz się na Google Analytics, a <code>faveup-consent-ads</code>, czy zgadzasz się na pliki cookie reklamowe. Zapisywane w pamięci przeglądarki.</td>
                 <td data-i18n="cookies.untilCleared">Do wyczyszczenia danych przeglądarki</td>
               </tr>
               <tr>
@@ -96,10 +99,25 @@
                 <td data-i18n="cookies.gaPurpose">Pliki cookie Google Analytics, które odróżniają jednego odwiedzającego od drugiego. Zapisywane tylko po Twojej zgodzie.</td>
                 <td data-i18n="cookies.gaTime">Do 2 lat</td>
               </tr>
+              <tr>
+                <td><code>_gcl_au</code>, <code>_gcl_aw</code></td>
+                <td data-i18n="cookies.gclPurpose">Pliki cookie Google Ads, które łączą kliknięcie reklamy ze zgłoszeniem. Zapisywane tylko po Twojej zgodzie na reklamy.</td>
+                <td data-i18n="cookies.gclTime">Do 90 dni</td>
+              </tr>
+              <tr>
+                <td><code>_fbp</code>, <code>_fbc</code></td>
+                <td data-i18n="cookies.fbPurpose">Pliki cookie piksela Meta, które łączą kliknięcie reklamy ze zgłoszeniem. Zapisywane tylko po Twojej zgodzie na reklamy.</td>
+                <td data-i18n="cookies.fbTime">Do 90 dni</td>
+              </tr>
+              <tr>
+                <td><code>faveup-attribution</code>, <code>faveup-lead</code></td>
+                <td data-i18n="cookies.sessionPurpose">Pamiętają, z jakiej reklamy lub strony trafiłeś na stronę i że właśnie wysłałeś zgłoszenie, żeby policzyć je tylko raz. Zapisywane w pamięci przeglądarki na czas jednej wizyty.</td>
+                <td data-i18n="cookies.sessionTime">Do zamknięcia karty</td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <p data-i18n="cookies.change">Swoją decyzję możesz zmienić w każdej chwili. Jeśli wycofasz zgodę, usuniemy pliki cookie Google Analytics z Twojej przeglądarki.</p>
+        <p data-i18n="cookies.change">Swoją decyzję możesz zmienić w każdej chwili. Jeśli wycofasz zgodę, usuniemy pliki cookie Google Analytics i pliki cookie reklamowe z Twojej przeglądarki.</p>
         <p><button type="button" class="legal__button" data-cookie-settings data-i18n="cookies.button">Zmień ustawienia plików cookie</button></p>
       </section>
 
@@ -110,10 +128,11 @@
           <li><strong>Formspree</strong>: odbiera zapisy na listę oczekujących.</li>
           <li><strong>Supabase</strong>: baza danych zapisów ze stron z kodami QR.</li>
           <li><strong>Make.com</strong>: wysyła e-maile z kodem rabatowym.</li>
-          <li><strong>Google</strong>: Google Analytics, tylko po Twojej zgodzie.</li>
+          <li><strong>Google</strong>: Google Analytics i Google Ads, tylko po Twojej zgodzie.</li>
+          <li><strong>Meta Platforms</strong>: piksel Meta, tylko po Twojej zgodzie na reklamy.</li>
           <li><strong>GitHub</strong>: hosting strony.</li>
         </ul>
-        <p data-i18n="recipients.transfer">Część z tych firm może przetwarzać dane poza Europejskim Obszarem Gospodarczym, np. w USA. Odbywa się to wtedy na podstawie decyzji Komisji Europejskiej (EU-US Data Privacy Framework) albo standardowych klauzul umownych. Nie sprzedajemy Twoich danych i nie używamy ich do reklam.</p>
+        <p data-i18n="recipients.transfer">Część z tych firm może przetwarzać dane poza Europejskim Obszarem Gospodarczym, np. w USA. Odbywa się to wtedy na podstawie decyzji Komisji Europejskiej (EU-US Data Privacy Framework) albo standardowych klauzul umownych. Nie sprzedajemy Twoich danych, a danych z formularzy nie przekazujemy Google ani Meta.</p>
       </section>
 
       <section>

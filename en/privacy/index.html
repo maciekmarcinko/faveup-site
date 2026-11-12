@@ -21,7 +21,7 @@
     <link rel="preload" href="../../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../../css/base.css?v=64d03394aa" />
     <link rel="stylesheet" href="../../css/legal.css?v=09f25986fd" />
-    <script src="/js/consent.js?v=8b6aeb6c25"></script>
+    <script src="/js/consent.js?v=36b65fb878" data-marketing></script>
     <script type="module">
       import { setupLangLinks } from '/js/lang-links.js';
       setupLangLinks();
@@ -45,7 +45,7 @@
 
     <main class="legal-container legal">
       <h1 data-i18n="title">Privacy policy</h1>
-      <p class="legal__updated" data-i18n="updated">Last updated: 5 November 2026</p>
+      <p class="legal__updated" data-i18n="updated">Last updated: 12 November 2026</p>
 
       <section>
         <h2 data-i18n="who.title">1. Who is responsible for your data</h2>
@@ -56,7 +56,7 @@
         <h2 data-i18n="what.title">2. What data we collect and why</h2>
 
         <h3 data-i18n="waitlist.title">Waitlist on the home page</h3>
-        <p data-i18n="waitlist.body">When you join the waitlist, we collect your email address, the language you chose and whether you signed up as a business or as a user. We use them to tell you when the FaveUp app launches. The legal basis is your consent (Art. 6(1)(a) GDPR). We keep the data until the app launches or until you ask us to delete it.</p>
+        <p data-i18n="waitlist.body">When you join the waitlist, we collect your email address, the language you chose and whether you signed up as a business or as a user. If you sign up your place, you can also give us its name, address or neighborhood and a phone number. We add where you came to the site from (for example the ad campaign named in the link). We use this data to tell you when the FaveUp app launches and, if you signed up a place, to contact you about the test. The legal basis is your consent (Art. 6(1)(a) GDPR). We keep the data until the app launches or until you ask us to delete it.</p>
 
         <h3 data-i18n="qr.title">Signup pages opened from QR codes in venues</h3>
         <p data-i18n="qr.body">When you sign up through a QR code in a partner venue (for example Cukiernia Zalewski), we collect your email address, language, the venue name and the signup date. We use them to send you a discount code and to tell you about the FaveUp launch, under the promotion terms shown on the signup page (Art. 6(1)(b) GDPR). The venue where you signed up can also see its list of signups. We keep the data until the promotion ends and the app launches, or until you ask us to delete it.</p>
@@ -64,6 +64,9 @@
         <h3 data-i18n="stats.title">Visit statistics (Google Analytics)</h3>
         <p data-i18n="stats.body">Only if you agree, we use Google Analytics to learn which pages are visited, where visitors come from (for example a search engine or a QR code), which devices they use and roughly which country or city they are in. Google Analytics does not store your full IP address. The legal basis is your consent (Art. 6(1)(a) GDPR). Google Analytics deletes the data after 14 months at most.</p>
         <p data-i18n="stats.denied">If you do not agree, Google Analytics stores no cookies. Google then only receives basic cookieless signals (Consent Mode), which cannot identify you or link your visits together.</p>
+
+        <h3 data-i18n="ads.title">Ad measurement (Google Ads and Meta)</h3>
+        <p data-i18n="ads.body">Only if you agree to advertising cookies, we use the Google Ads tag and the Meta pixel (Facebook, Instagram) to see whether someone who clicked one of our ads then signed up their place. That tells us which ads work. Google and Meta may also use this information to show our ads. We do not pass them your email address or anything else from the form. The legal basis is your consent (Art. 6(1)(a) GDPR). Without consent the Meta pixel does not load, and Google only receives basic cookieless signals.</p>
 
         <h3 data-i18n="logs.title">Technical data</h3>
         <p data-i18n="logs.body">The site is hosted on GitHub Pages. Like any web server, GitHub may log IP addresses and browser details to protect the service from abuse.</p>
@@ -83,8 +86,8 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>faveup-consent</code></td>
-                <td data-i18n="cookies.consentPurpose">Remembers whether you agreed to Google Analytics. Kept in browser storage.</td>
+                <td><code>faveup-consent</code>, <code>faveup-consent-ads</code></td>
+                <td data-i18n="cookies.consentPurpose">Remembers whether you agreed to Google Analytics, and <code>faveup-consent-ads</code> whether you agreed to advertising cookies. Kept in browser storage.</td>
                 <td data-i18n="cookies.untilCleared">Until you clear your browser data</td>
               </tr>
               <tr>
@@ -97,10 +100,25 @@
                 <td data-i18n="cookies.gaPurpose">Google Analytics cookies that tell one visitor apart from another. Only set after you agree.</td>
                 <td data-i18n="cookies.gaTime">Up to 2 years</td>
               </tr>
+              <tr>
+                <td><code>_gcl_au</code>, <code>_gcl_aw</code></td>
+                <td data-i18n="cookies.gclPurpose">Google Ads cookies that link an ad click to a sign-up. Only set after you agree to advertising cookies.</td>
+                <td data-i18n="cookies.gclTime">Up to 90 days</td>
+              </tr>
+              <tr>
+                <td><code>_fbp</code>, <code>_fbc</code></td>
+                <td data-i18n="cookies.fbPurpose">Meta pixel cookies that link an ad click to a sign-up. Only set after you agree to advertising cookies.</td>
+                <td data-i18n="cookies.fbTime">Up to 90 days</td>
+              </tr>
+              <tr>
+                <td><code>faveup-attribution</code>, <code>faveup-lead</code></td>
+                <td data-i18n="cookies.sessionPurpose">Remember which ad or page brought you to the site and that you just signed up, so the sign-up is counted only once. Kept in browser storage for one visit.</td>
+                <td data-i18n="cookies.sessionTime">Until you close the tab</td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <p data-i18n="cookies.change">You can change your choice at any time. If you withdraw consent, we remove the Google Analytics cookies from your browser.</p>
+        <p data-i18n="cookies.change">You can change your choice at any time. If you withdraw consent, we remove the Google Analytics and advertising cookies from your browser.</p>
         <p><button type="button" class="legal__button" data-cookie-settings data-i18n="cookies.button">Change cookie settings</button></p>
       </section>
 
@@ -111,10 +129,11 @@
           <li><strong>Formspree</strong>: receives waitlist signups.</li>
           <li><strong>Supabase</strong>: database for signups from the QR code pages.</li>
           <li><strong>Make.com</strong>: sends the discount code emails.</li>
-          <li><strong>Google</strong>: Google Analytics, only after you agree.</li>
+          <li><strong>Google</strong>: Google Analytics and Google Ads, only after you agree.</li>
+          <li><strong>Meta Platforms</strong>: the Meta pixel, only after you agree to advertising cookies.</li>
           <li><strong>GitHub</strong>: hosts the site.</li>
         </ul>
-        <p data-i18n="recipients.transfer">Some of these companies may process data outside the European Economic Area, for example in the USA. In that case it is based on a European Commission decision (EU-US Data Privacy Framework) or standard contractual clauses. We do not sell your data or use it for advertising.</p>
+        <p data-i18n="recipients.transfer">Some of these companies may process data outside the European Economic Area, for example in the USA. In that case it is based on a European Commission decision (EU-US Data Privacy Framework) or standard contractual clauses. We do not sell your data, and we do not pass form data to Google or Meta.</p>
       </section>
 
       <section>
