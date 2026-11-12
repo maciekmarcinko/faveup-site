@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title data-i18n="meta.title">Dziękujemy | FaveUp</title>
+    <meta name="theme-color" content="#36D6C6" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="preload" href="../assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../css/base.css?v=64d03394aa" />
+    <link rel="stylesheet" href="../css/landing.css?v=fdcdf06af7" />
+    <script src="/js/consent.js?v=36b65fb878" data-marketing></script>
+    <script type="module" src="../js/thanks.js?v=9b95c3033e"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="../" aria-label="FaveUp" data-i18n-attr="href:nav.homeHref">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="#fff" d="M12 21.5C12 21.5 3.5 14.5 3.5 9C3.5 5.5 6 3.5 8.5 3.5C10.5 3.5 11.5 4.5 12 6C12.5 4.5 13.5 3.5 15.5 3.5C18 3.5 20.5 5.5 20.5 9C20.5 14.5 12 21.5 12 21.5Z" /><circle cx="12" cy="9" r="2.5" fill="none" stroke="#40E0D0" stroke-width="2" /></svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">FaveUp</span>
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <main class="thanks">
+      <div class="container container--narrow">
+        <div class="thanks__card">
+          <span class="thanks__check" aria-hidden="true"><svg class="i"><use href="../assets/icons.svg#check" /></svg></span>
+          <h1 class="h2 h2--xl" data-i18n="title">Dziękujemy, zgłoszenie dotarło!</h1>
+          <h2 class="thanks__next" data-i18n="nextTitle">Co dalej?</h2>
+          <ol class="thanks__steps">
+            <li data-i18n="next1">Napiszemy do Ciebie mailem, żeby umówić 15 minut w Twoim lokalu.</li>
+            <li data-i18n="next2">Pokażemy, jak działa test z kodem QR i bonusem dla Twoich klientów.</li>
+            <li data-i18n="next3">Po starcie aplikacji dostajesz 20% zniżki.</li>
+          </ol>
+        </div>
+
+        <section class="thanks__more" data-lead-details hidden>
+          <h2 class="thanks__more-title" data-i18n="moreTitle">Przyspiesz kontakt (opcjonalnie)</h2>
+          <p class="thanks__more-sub" data-i18n="moreSub">Powiedz nam, o jaki lokal chodzi, a przygotujemy się do rozmowy.</p>
+          <form class="signup thanks__form" data-details-form>
+            <label for="place-name" data-i18n="nameLabel">Nazwa lokalu</label>
+            <input id="place-name" type="text" name="business_name" required autocomplete="organization" />
+            <label for="place-area" data-i18n="areaLabel">Adres lub dzielnica</label>
+            <input id="place-area" type="text" name="business_area" autocomplete="street-address" />
+            <label for="place-phone" data-i18n="phoneLabel">Telefon (opcjonalnie)</label>
+            <input id="place-phone" type="tel" name="phone" autocomplete="tel" />
+            <input class="signup__trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button class="btn btn--primary btn--lg" type="submit">
+              <span class="signup__idle" data-i18n="send">Wyślij</span>
+              <span class="signup__busy" data-i18n="sending">Wysyłanie…</span>
+            </button>
+            <p class="signup__error" role="alert" hidden data-i18n="error">Nie udało się wysłać. Spróbuj ponownie lub napisz na hello@faveup.app.</p>
+          </form>
+          <div class="signup-done" hidden>
+            <svg class="i" aria-hidden="true"><use href="../assets/icons.svg#check" /></svg>
+            <p class="signup-done__title" data-i18n="doneTitle">Dzięki, mamy to!</p>
+            <p data-i18n="doneDesc">Do usłyszenia wkrótce.</p>
+          </div>
+        </section>
+
+        <p class="thanks__links">
+          <a href="../" data-i18n-attr="href:nav.homeHref" data-i18n="home">Wróć na stronę główną</a>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

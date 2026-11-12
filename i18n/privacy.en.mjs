@@ -16,7 +16,7 @@ export default {
   'nav.enCurrent': 'page',
 
   title: 'Privacy policy',
-  updated: 'Last updated: 5 November 2026',
+  updated: 'Last updated: 12 November 2026',
 
   'who.title': '1. Who is responsible for your data',
   'who.body':
@@ -26,7 +26,7 @@ export default {
 
   'waitlist.title': 'Waitlist on the home page',
   'waitlist.body':
-    'When you join the waitlist, we collect your email address, the language you chose and whether you signed up as a business or as a user. We use them to tell you when the FaveUp app launches. The legal basis is your consent (Art. 6(1)(a) GDPR). We keep the data until the app launches or until you ask us to delete it.',
+    'When you join the waitlist, we collect your email address, the language you chose and whether you signed up as a business or as a user. If you sign up your place, you can also give us its name, address or neighborhood and a phone number. We add where you came to the site from (for example the ad campaign named in the link). We use this data to tell you when the FaveUp app launches and, if you signed up a place, to contact you about the test. The legal basis is your consent (Art. 6(1)(a) GDPR). We keep the data until the app launches or until you ask us to delete it.',
 
   'qr.title': 'Signup pages opened from QR codes in venues',
   'qr.body':
@@ -38,6 +38,10 @@ export default {
   'stats.denied':
     'If you do not agree, Google Analytics stores no cookies. Google then only receives basic cookieless signals (Consent Mode), which cannot identify you or link your visits together.',
 
+  'ads.title': 'Ad measurement (Google Ads and Meta)',
+  'ads.body':
+    'Only if you agree to advertising cookies, we use the Google Ads tag and the Meta pixel (Facebook, Instagram) to see whether someone who clicked one of our ads then signed up their place. That tells us which ads work. Google and Meta may also use this information to show our ads. We do not pass them your email address or anything else from the form. The legal basis is your consent (Art. 6(1)(a) GDPR). Without consent the Meta pixel does not load, and Google only receives basic cookieless signals.',
+
   'logs.title': 'Technical data',
   'logs.body':
     'The site is hosted on GitHub Pages. Like any web server, GitHub may log IP addresses and browser details to protect the service from abuse.',
@@ -47,14 +51,22 @@ export default {
   'cookies.colName': 'Name',
   'cookies.colPurpose': 'What it is for',
   'cookies.colTime': 'How long',
-  'cookies.consentPurpose': 'Remembers whether you agreed to Google Analytics. Kept in browser storage.',
+  'cookies.consentPurpose':
+    'Remembers whether you agreed to Google Analytics, and <code>faveup-consent-ads</code> whether you agreed to advertising cookies. Kept in browser storage.',
   'cookies.untilCleared': 'Until you clear your browser data',
   'cookies.langPurpose': 'Remembers the site language you chose. Kept in browser storage.',
   'cookies.gaPurpose':
     'Google Analytics cookies that tell one visitor apart from another. Only set after you agree.',
   'cookies.gaTime': 'Up to 2 years',
+  'cookies.gclPurpose': 'Google Ads cookies that link an ad click to a sign-up. Only set after you agree to advertising cookies.',
+  'cookies.gclTime': 'Up to 90 days',
+  'cookies.fbPurpose': 'Meta pixel cookies that link an ad click to a sign-up. Only set after you agree to advertising cookies.',
+  'cookies.fbTime': 'Up to 90 days',
+  'cookies.sessionPurpose':
+    'Remember which ad or page brought you to the site and that you just signed up, so the sign-up is counted only once. Kept in browser storage for one visit.',
+  'cookies.sessionTime': 'Until you close the tab',
   'cookies.change':
-    'You can change your choice at any time. If you withdraw consent, we remove the Google Analytics cookies from your browser.',
+    'You can change your choice at any time. If you withdraw consent, we remove the Google Analytics and advertising cookies from your browser.',
   'cookies.button': 'Change cookie settings',
 
   'recipients.title': '4. Who we share data with',
@@ -63,11 +75,12 @@ export default {
           <li><strong>Formspree</strong>: receives waitlist signups.</li>
           <li><strong>Supabase</strong>: database for signups from the QR code pages.</li>
           <li><strong>Make.com</strong>: sends the discount code emails.</li>
-          <li><strong>Google</strong>: Google Analytics, only after you agree.</li>
+          <li><strong>Google</strong>: Google Analytics and Google Ads, only after you agree.</li>
+          <li><strong>Meta Platforms</strong>: the Meta pixel, only after you agree to advertising cookies.</li>
           <li><strong>GitHub</strong>: hosts the site.</li>
         `,
   'recipients.transfer':
-    'Some of these companies may process data outside the European Economic Area, for example in the USA. In that case it is based on a European Commission decision (EU-US Data Privacy Framework) or standard contractual clauses. We do not sell your data or use it for advertising.',
+    'Some of these companies may process data outside the European Economic Area, for example in the USA. In that case it is based on a European Commission decision (EU-US Data Privacy Framework) or standard contractual clauses. We do not sell your data, and we do not pass form data to Google or Meta.',
 
   'rights.title': '5. Your rights',
   'rights.body':

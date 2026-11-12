@@ -1,14 +1,16 @@
 // Publishes site/ (as committed on main) to the gh-pages branch that GitHub Pages serves.
 import { execFileSync } from 'node:child_process';
+import { buildAdPages } from './build-ad-page.mjs';
 import { buildEnglish } from './build-en.mjs';
 import { versionAssets, versionedPages } from './version-assets.mjs';
 
 // Deploy publishes what is committed, so stale asset versions (new HTML with a cached old
 // stylesheet) or an uncommitted en/index.html (English that no longer matches the Polish page)
-// would ship broken pages.
+// or ad page (/dla-firm/) would ship broken pages.
 versionAssets();
 await buildEnglish();
-const stale = execFileSync('git', ['status', '--porcelain', '--', 'site/en', ...versionedPages], { encoding: 'utf8' });
+buildAdPages();
+const stale = execFileSync('git', ['status', '--porcelain', '--', 'site/en', 'site/dla-firm', ...versionedPages], { encoding: 'utf8' });
 if (stale) throw new Error(`pages changed after rebuilding; commit them and deploy again:\n${stale}`);
 
 const split = execFileSync('git', ['subtree', 'split', '--prefix', 'site', 'main'], {

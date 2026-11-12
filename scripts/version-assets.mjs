@@ -10,7 +10,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const site = path.join(root, 'site');
 
 // The QR pages under /cukierniazalewski*/ are versioned by the QRs project, not here.
-export const versionedPages = ['site/index.html', 'site/prezentacja/index.html', 'site/privacy/index.html'];
+export const versionedPages = ['site/index.html', 'site/prezentacja/index.html', 'site/privacy/index.html', 'site/dziekujemy/index.html'];
 
 // A module's hash covers the files it imports, so editing a helper also changes the entry's URL.
 function collect(file, seen = new Set()) {

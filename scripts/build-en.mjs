@@ -12,6 +12,7 @@ const pages = [
   { source: 'site/index.html', target: 'site/en/index.html', dictionary: 'i18n/landing.en.mjs' },
   { source: 'site/prezentacja/index.html', target: 'site/en/prezentacja/index.html', dictionary: 'i18n/deck.en.mjs' },
   { source: 'site/privacy/index.html', target: 'site/en/privacy/index.html', dictionary: 'i18n/privacy.en.mjs' },
+  { source: 'site/dziekujemy/index.html', target: 'site/en/dziekujemy/index.html', dictionary: 'i18n/thanks.en.mjs' },
 ];
 
 async function buildPage({ source, target, dictionary }) {
