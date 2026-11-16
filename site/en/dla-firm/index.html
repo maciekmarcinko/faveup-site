@@ -61,7 +61,7 @@
     <link rel="preload" href="../../assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../../css/base.css?v=862ac8fbf6" />
-    <link rel="stylesheet" href="../../css/landing.css?v=d3f49fbd6e" />
+    <link rel="stylesheet" href="../../css/landing.css?v=6d2e106c3c" />
     <script src="/js/consent.js?v=2ecc3de276" data-cookie-button data-marketing></script>
     <script>
       document.documentElement.classList.add('js');
@@ -130,6 +130,7 @@
                   <span class="signup__idle" data-i18n="form.submit">Sign up your place</span>
                   <span class="signup__busy" data-i18n="form.sending">Sending…</span>
                 </button>
+                <p class="signup__proof"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#users" /></svg><span data-i18n="hero.proof">Over 200 customers have already signed up at 3 places in Wroclaw</span></p>
                 <p class="signup__note" data-i18n="form.note">You're signing up your place for a free test, with no commitment. Once the full app launches, you get 20% off.</p>
                 <a class="signup__more" href="#test" data-scroll data-i18n="form.more">See how the free test works</a>
                 <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
@@ -240,8 +241,21 @@
           <div class="what reveal">
             <div class="what__intro">
               <h2 class="h2" data-i18n="what.title">What is FaveUp?</h2>
-              <p class="what__lead" data-i18n="what.desc">FaveUp is a simple push notification channel for local businesses. Your messages reach only people who chose your place themselves, so they actually read them. You build customer loyalty and sell more to your regulars.</p>
-              <img class="what__photo" src="../../assets/img/people-street.webp" alt="A woman smiling at a notification on her phone" width="960" height="640" loading="lazy" data-i18n-attr="alt:what.photoAlt" />
+              <p class="what__lead" data-i18n="what.desc">FaveUp is a simple push notification channel for local businesses. You write about what's new or on offer, and the message lands straight on your regulars' phones. You build their loyalty and sell more.</p>
+              <ul class="what__benefits">
+                <li>
+                  <span class="what__benefit-icon"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#heart" /></svg></span>
+                  <div><h3 data-i18n="why.b1Title">Talk to people who already like you</h3><p data-i18n="why.b1">Your push reaches everyone who added your place to their favorites themselves, with no algorithms and no ads.</p></div>
+                </li>
+                <li>
+                  <span class="what__benefit-icon"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#zap" /></svg></span>
+                  <div><h3 data-i18n="why.b2Title">Offers that work right away</h3><p data-i18n="why.b2">A deal for the next hour? Send it now and customers come in today.</p></div>
+                </li>
+                <li>
+                  <span class="what__benefit-icon"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#smartphone" /></svg></span>
+                  <div><h3 data-i18n="why.b4Title">A ready-made solution instead of your own app</h3><p data-i18n="why.b4">No need to invest in building and maintaining an app the way big chains do. Once it launches, you use the ready-made FaveUp app for a small fee.</p></div>
+                </li>
+              </ul>
             </div>
 
             <aside class="what__case">
@@ -288,43 +302,6 @@
         </div>
       </section>
 
-      <section class="section" id="why">
-        <div class="container why why--light">
-          <div class="why__copy reveal">
-            <h2 class="h2 h2--xl" data-i18n="why.title">Why FaveUp?</h2>
-            <p class="section__sub" data-i18n="why.subtitle">The simplest way to stay in touch with your regular customers</p>
-            <ul class="why__list">
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#heart" /></svg></span>
-                <div><h3 data-i18n="why.b1Title">Talk to people who already like you</h3><p data-i18n="why.b1">Your push reaches people who added your place to their favorites themselves.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#zap" /></svg></span>
-                <div><h3 data-i18n="why.b2Title">Offers that work right away</h3><p data-i18n="why.b2">A deal for the next hour? Send it now and customers come in today.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#megaphone-off" /></svg></span>
-                <div><h3 data-i18n="why.b3Title">No fighting for reach</h3><p data-i18n="why.b3">Only people who like you follow you, and your push reaches every one of them, with no algorithms and no ads.</p></div>
-              </li>
-              <li>
-                <span class="why__icon"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#smartphone" /></svg></span>
-                <div><h3 data-i18n="why.b4Title">A ready-made solution instead of your own app</h3><p data-i18n="why.b4">No need to invest in building and maintaining an app the way big chains do. Once it launches, you use the ready-made FaveUp app for a small fee.</p></div>
-              </li>
-            </ul>
-          </div>
-          <figure class="why__photo reveal" style="--delay: 0.1s">
-            <img src="../../assets/img/cynamonki.webp" alt="Freshly baked cinnamon rolls at a café" width="399" height="501" loading="lazy" data-i18n-attr="alt:why.photoAlt" />
-            <div class="why__push" aria-hidden="true">
-              <img src="../../assets/img/aroma-cafe-logo.svg" alt="" width="40" height="40" />
-              <div>
-                <p class="why__push-head"><strong>Aroma Café</strong> <span data-i18n="phone.now">now</span></p>
-                <p class="why__push-title" data-i18n="why.pushTitle">Cinnamon rolls just came out of the oven! 🥐</p>
-                <p class="why__push-text" data-i18n="why.pushText">Show this push at the bar: coffee + cinnamon roll 50% off.</p>
-              </div>
-            </div>
-          </figure>
-        </div>
-      </section>
 
       <section class="section section--dark" id="how">
         <div class="container">
@@ -435,12 +412,8 @@
               <p class="faq__a" data-i18n="faq.aApp">Not in the free test. Customers scan the QR code, sign up with their name and email, and get a bonus for their next visit by email straight away. The full FaveUp app with push notifications is being built. When it launches, you start with a list of customers who want to hear from your place.</p>
             </details>
             <details class="faq__item">
-              <summary><h3 class="faq__q" data-i18n="faq.qTime">How much of my time will it take?</h3><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.aTime">Starting the free test takes 15 minutes: we meet at your place and decide where the QR code goes and what bonus customers get. After that the code works on its own, and you just invite customers to scan it.</p>
-            </details>
-            <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.qFew">What if only a few customers sign up?</h3><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.aFew">That's why we start with a free test and a bonus: your staff invite customers to scan, and they get a bonus for their next visit. In three places in Brochów, over 200 customers signed up this way. We also count how many come back with the code, so from day one you can see whether it works for you.</p>
+              <p class="faq__a" data-i18n="faq.aFew">That's why we start with a free test and a bonus: your staff invite customers to scan, and they get a bonus for their next visit. In three places in Wroclaw, over 200 customers signed up this way. We also count how many come back with the code, so from day one you can see whether it works for you.</p>
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q1">How is FaveUp different from SMS marketing, newsletters and social media?</h3><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-down" /></svg></summary>
@@ -449,10 +422,6 @@
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q2">Is FaveUp a loyalty program?</h3><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-down" /></svg></summary>
               <p class="faq__a" data-i18n="faq.a2">FaveUp builds customer loyalty, but it isn't another stamp card. Instead of a reward after the tenth coffee, you give regulars what they actually look for: a heads-up about a fresh delivery, a new product, a free appointment slot or a deal for the next hour. So they come back more often and are keener to try new things.</p>
-            </details>
-            <details class="faq__item">
-              <summary><h3 class="faq__q" data-i18n="faq.q3">How do customers start following my place?</h3><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-down" /></svg></summary>
-              <p class="faq__a" data-i18n="faq.a3">You put a QR code at the counter, bar or table, as a sticker or a stand, and customers scan it with their phone. In the free test they sign up with their email; once the app launches, they add your place to their favorites. They can then also find you on the map in the FaveUp app.</p>
             </details>
             <details class="faq__item">
               <summary><h3 class="faq__q" data-i18n="faq.q6">How much does FaveUp cost and when does it launch?</h3><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#chevron-down" /></svg></summary>
@@ -493,7 +462,7 @@
             <span class="contact__glow contact__glow--b" aria-hidden="true"></span>
             <div class="contact__inner">
               <h3 class="contact__title" data-i18n="contact.title">Sign up your place for the test</h3>
-              <p class="contact__sub" data-i18n="contact.subtitle">We'll set up 15 minutes at your place and show you how the QR code test works. Once the full app launches, you get 20% off.</p>
+              <p class="contact__sub" data-i18n="contact.subtitle">We'll set up 15 minutes at your place and show you how the QR code test works.</p>
               <form class="signup" data-signup data-source="business-view" data-lead>
                 <label class="sr-only" for="email-business" data-i18n="form.label">Email address</label>
                 <input id="email-business" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
