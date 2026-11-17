@@ -7,11 +7,11 @@
 // thank-you page only, once per sign-up, so a reload or a direct visit never counts.
 
 // From Google Ads > Goals > Conversions > the "Lead" action > Tag setup, e.g. 'AW-123456789'.
-const GOOGLE_ADS_ID = '';
+const GOOGLE_ADS_ID = 'AW-18580802305';
 // The label part of that action's send_to ('AW-123456789/AbCdEf' -> 'AbCdEf').
-const GOOGLE_ADS_LEAD_LABEL = '';
+const GOOGLE_ADS_LEAD_LABEL = 'd98qCJeNm7odEIGWgpxF';
 // From Meta Events Manager > Data sources > the pixel, e.g. '1234567890123456'.
-const META_PIXEL_ID = '';
+const META_PIXEL_ID = '1824846238797195';
 
 // Like the GA tag in consent.js: local previews never report to ad platforms.
 const LIVE = location.hostname === 'www.faveup.app';
