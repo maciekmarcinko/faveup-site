@@ -5,9 +5,9 @@ export default {
   'meta.title': 'Thank you | FaveUp',
   'nav.homeHref': '../',
 
-  title: 'Thank you, we got your sign-up!',
+  title: "Thank you! We'll email you within 24 hours.",
   nextTitle: "What's next?",
-  next1: "We'll email you to set up 15 minutes at your place.",
+  next1: "We'll write to you to set up 15 minutes at your place.",
   next2: "We'll show you how the free QR code test and the bonus for your customers work.",
   next3: 'Once the full app launches, you get 20% off.',
 

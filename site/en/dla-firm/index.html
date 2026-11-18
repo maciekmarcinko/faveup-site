@@ -61,7 +61,7 @@
     <link rel="preload" href="../../assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="../../assets/fonts/dm-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../../css/base.css?v=862ac8fbf6" />
-    <link rel="stylesheet" href="../../css/landing.css?v=6d2e106c3c" />
+    <link rel="stylesheet" href="../../css/landing.css?v=5418d790fd" />
     <script src="/js/consent.js?v=2ecc3de276" data-cookie-button data-marketing></script>
     <script>
       document.documentElement.classList.add('js');
@@ -123,15 +123,13 @@
             <p class="hero__lead rise" style="--delay: 0.1s" data-i18n="hero.subtitle">Your regulars always hear in time – none of them will miss an important moment at your place again</p>
             <div class="hero__actions rise" style="--delay: 0.15s">
               <form class="signup signup--hero" data-signup data-source="business-hero" data-lead>
-                <label class="sr-only" for="email-hero" data-i18n="form.label">Email address</label>
+                <label class="signup__ask" for="email-hero" data-i18n="hero.ask">Leave your email and we'll get back to you within 24 hours about a <a href="#test" data-scroll>free, no-commitment test</a>.</label>
                 <input id="email-hero" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
                 <input class="signup__trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <button class="btn btn--primary btn--attention btn--lg" type="submit">
                   <span class="signup__idle" data-i18n="form.submit">Sign up your place</span>
                   <span class="signup__busy" data-i18n="form.sending">Sending…</span>
                 </button>
-                <p class="signup__proof"><svg class="i" aria-hidden="true"><use href="../../assets/icons.svg#users" /></svg><span data-i18n="hero.proof">Over 200 customers signed up at 3 places in Wroclaw</span></p>
-                <p class="signup__note" data-i18n="hero.note">Free test with no commitment, then 20% off. <a class="signup__more" href="#test" data-scroll>See how the test works</a></p>
                 <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
               </form>
             </div>
@@ -160,7 +158,7 @@
                       <img class="notif__avatar" src="../../assets/img/aroma-cafe-logo.svg" alt="" width="48" height="48" />
                       <div class="notif__app">
                         <div class="notif__name">Aroma Café <small data-i18n="phone.now">now</small></div>
-                        <div class="notif__via">FaveUp</div>
+                        <div class="notif__via">by FaveUp</div>
                       </div>
                     </div>
                     <p class="notif__title" data-i18n="phone.notifTitle">☕ Fresh beans just arrived!</p>
@@ -172,6 +170,7 @@
                       <span class="notif__icon notif__icon--grocer" aria-hidden="true"><svg class="i"><use href="../../assets/icons.svg#carrot" /></svg></span>
                       <div class="notif__app">
                         <div class="notif__name"><span data-i18n="hero.floatBName">Greengrocer</span> <small>2 min</small></div>
+                        <div class="notif__via">by FaveUp</div>
                         <p class="notif__text" data-i18n="hero.floatB">Fresh strawberries, today until 5 pm 🍓</p>
                       </div>
                     </div>
@@ -179,6 +178,7 @@
                       <span class="notif__icon notif__icon--cinema" aria-hidden="true"><svg class="i"><use href="../../assets/icons.svg#clapperboard" /></svg></span>
                       <div class="notif__app">
                         <div class="notif__name"><span data-i18n="hero.floatAName">Aurora Cinema</span> <small>15 min</small></div>
+                        <div class="notif__via">by FaveUp</div>
                         <p class="notif__text" data-i18n="hero.floatA">Last 4 tickets for the 8 pm screening 🎬</p>
                       </div>
                     </div>
@@ -237,6 +237,16 @@
 
       <section class="section" id="what">
         <div class="container">
+          <ul class="stats reveal">
+            <li class="stats__item">
+              <span class="stats__num">200+</span>
+              <span class="stats__label" data-i18n="stats.customers">customers signed up via the QR code</span>
+            </li>
+            <li class="stats__item">
+              <span class="stats__num">3</span>
+              <span class="stats__label" data-i18n="stats.places">places in Wroclaw in the first test</span>
+            </li>
+          </ul>
           <div class="what reveal">
             <div class="what__intro">
               <h2 class="h2" data-i18n="what.title">What is FaveUp?</h2>
@@ -266,6 +276,7 @@
                 <img src="../../assets/img/basilico-logo.svg" alt="" width="44" height="44" />
                 <div>
                   <p class="what__push-head"><strong data-i18n="what.exampleName">Trattoria Basilico</strong> <span data-i18n="phone.now">now</span></p>
+                  <p class="what__push-via">by FaveUp</p>
                   <p class="what__push-text" data-i18n="what.examplePush">2 tables just opened up for tonight, 7 pm 🍝 First to call gets dessert on us!</p>
                 </div>
               </div>
@@ -394,7 +405,7 @@
             </li>
           </ol>
           <div class="how__cta reveal">
-            <a class="btn btn--secondary btn--lg" href="#test" data-scroll data-i18n="how.cta">Start with a free test</a>
+            <a class="btn btn--secondary btn--lg" href="#test" data-scroll data-i18n="how.cta">We start with a free test</a>
           </div>
         </div>
       </section>
@@ -460,10 +471,10 @@
             <span class="contact__glow contact__glow--a" aria-hidden="true"></span>
             <span class="contact__glow contact__glow--b" aria-hidden="true"></span>
             <div class="contact__inner">
-              <h3 class="contact__title" data-i18n="contact.title">Sign up your place for the test</h3>
-              <p class="contact__sub" data-i18n="contact.subtitle">We'll set up 15 minutes at your place and show you how the QR code test works.</p>
+              <h3 class="contact__title" data-i18n="contact.title">Let's test FaveUp at your place</h3>
+              <p class="contact__sub" data-i18n="contact.subtitle">You get a QR code and your own FaveUp sign-up page. Customers scan it and join your followers. That's how we build your email list, and we start sending it short push-style messages right away, always agreed with you. The test is free, and once the app launches you get 20% off.</p>
               <form class="signup" data-signup data-source="business-view" data-lead>
-                <label class="sr-only" for="email-business" data-i18n="form.label">Email address</label>
+                <label class="signup__ask" for="email-business" data-i18n="form.ask">Leave your email, we'll get back to you within 24 hours</label>
                 <input id="email-business" type="email" name="email" required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:form.placeholder" />
                 <input class="signup__trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <button class="btn btn--gradient btn--block" type="submit">
@@ -471,7 +482,6 @@
                   <span class="signup__idle" data-i18n="form.submit">Sign up your place</span>
                   <span class="signup__busy" data-i18n="form.sending">Sending…</span>
                 </button>
-                <p class="signup__note" data-i18n="form.note">You're signing up your place for a free test, with no commitment. Once the full app launches, you get 20% off.</p>
                 <p class="signup__error" role="alert" hidden data-i18n="form.error">We couldn't send it. Please try again or write to hello@faveup.app.</p>
               </form>
               <div class="founder">
