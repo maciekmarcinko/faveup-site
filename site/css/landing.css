@@ -1527,7 +1527,9 @@
 }
 
 /* Last tile invites the visitor's own business; a dashed frame keeps it secondary to the main button. */
+/* Six industry cards fill the grid; the sign-up card spans the row below them. */
 .industry--cta {
+  grid-column: 1 / -1;
   padding: 0;
   border: 1.5px dashed var(--teal);
   background: linear-gradient(135deg, #f1fcfa, #fff);
