@@ -131,8 +131,7 @@ export default {
   'for.i4': 'Gyms &amp; fitness studios',
   'for.i5': 'Hair &amp; beauty salons',
   'for.i6': 'Cinemas, theaters &amp; museums',
-  'for.ctaTitle': 'Maybe your business needs this too?',
-  'for.ctaLink': 'Sign up your place',
+  'for.more': 'and many more',
 
   'faq.title': 'Frequently asked questions',
   'faq.subtitle': 'What to know about push notifications for your place',
