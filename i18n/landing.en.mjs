@@ -147,7 +147,7 @@ export default {
   'faq.q6': 'How much does FaveUp cost and when does it launch?',
   'faq.a6': "The free test costs nothing. The full app is in development, and we'll announce its price before launch. Businesses that sign up now get 20% off after the app launches.",
 
-  'contact.title': "Let's test FaveUp at your place",
+  'contact.title': "Let's test FaveUp at your place for free",
   'contact.subtitle': "You get a QR code and your own FaveUp sign-up page. Customers scan it and join your followers. That's how we build your email list, and we start sending it short push-style messages right away, always agreed with you. The test is free, and once the app launches you get 20% off.",
   'founder.ask': 'Have a question? Write to us',
   'founder.role': 'founder of FaveUp',
