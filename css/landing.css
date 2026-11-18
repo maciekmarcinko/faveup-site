@@ -1499,6 +1499,15 @@
   padding: 0 0 18px;
 }
 
+/* "i wiele innych" under the grid, ending at the last card's right edge. */
+.industries__more {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+  color: var(--gray-500);
+}
+
 .industry__photo {
   width: 100%;
   height: auto;
@@ -1527,9 +1536,7 @@
 }
 
 /* Last tile invites the visitor's own business; a dashed frame keeps it secondary to the main button. */
-/* Six industry cards fill the grid; the sign-up card spans the row below them. */
 .industry--cta {
-  grid-column: 1 / -1;
   padding: 0;
   border: 1.5px dashed var(--teal);
   background: linear-gradient(135deg, #f1fcfa, #fff);
