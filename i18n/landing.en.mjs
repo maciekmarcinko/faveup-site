@@ -162,7 +162,6 @@ export default {
 
   'footer.privacy': 'Privacy policy',
   'footer.privacyHref': 'privacy/',
-  'footer.dev': "The full app is currently in development.",
   'footer.copy': '© 2026 FaveUp.',
 
   'users.title': 'Instant updates from the spots you love',
