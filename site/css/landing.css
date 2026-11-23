@@ -1961,6 +1961,15 @@
   color: var(--gray-600);
 }
 
+.footer__disclaimer {
+  max-width: 560px;
+  margin: 8px auto 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--gray-600);
+}
+
 @media (min-width: 768px) {
   .footer__top {
     flex-direction: row;

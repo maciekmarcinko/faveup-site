@@ -163,6 +163,7 @@ export default {
   'footer.privacy': 'Privacy policy',
   'footer.privacyHref': 'privacy/',
   'footer.copy': '© 2026 FaveUp.',
+  'footer.disclaimer': 'This page is for illustrative purposes only. The FaveUp project is not yet operating as a business.',
 
   'users.title': 'Instant updates from the spots you love',
   'users.subtitle': 'Follow your favorite cafes, restaurants and local spots and hear about deals and news right away',
