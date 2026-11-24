@@ -624,6 +624,35 @@
   }
 }
 
+/* Business hero on phones: the copy and the form alone filled the first screen. Without the small
+   label and with tighter gaps, the top of the phone (clock and the newest push) peeks in under the
+   button, and the film button moves below the phone, its arrow curving up to it again. */
+@media (max-width: 639px) {
+  #view-business .hero {
+    padding-top: 24px;
+  }
+  #view-business .eyebrow {
+    display: none;
+  }
+  #view-business .hero__lead {
+    margin-top: 16px;
+  }
+  #view-business .hero__actions {
+    margin-top: 24px;
+  }
+  #view-business .hero__grid {
+    gap: 24px;
+  }
+  #view-business .hero__cta-film {
+    order: 0;
+  }
+  #view-business .hero__arrow {
+    top: -54px;
+    bottom: auto;
+    transform: scaleX(-1);
+  }
+}
+
 /* Whenever the button is beside the phone, the arrow points right at it. */
 @media (min-width: 880px) and (max-width: 1023px) {
   .hero__arrow {
