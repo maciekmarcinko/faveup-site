@@ -60,6 +60,7 @@ export default {
   'hero.floatA': 'Last 4 tickets for the 8 pm screening 🎬',
   'hero.floatBName': 'Greengrocer',
   'hero.floatB': 'Fresh strawberries, today until 5 pm 🍓',
+  'hero.pushBody': 'Limited batch: only 15 bags left.',
 
   'stats.customers': 'customers signed up via the QR code',
   'stats.places': 'places in Wroclaw in the first test',
